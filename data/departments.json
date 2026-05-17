@@ -1,0 +1,4709 @@
+[
+  {
+    "slug": "city-council",
+    "name": "City Council",
+    "fy27Objectives": [],
+    "performance": [],
+    "expenditures": [
+      {
+        "category": "Personal Services",
+        "values": [
+          40902,
+          41940,
+          36905,
+          67350
+        ],
+        "lineItems": [
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              321,
+              554,
+              365,
+              180
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              40581,
+              38948,
+              36540,
+              63910
+            ]
+          },
+          {
+            "name": "Benefits-TriMet Excise Tax",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Council Technology",
+            "values": [
+              0,
+              2439,
+              0,
+              2603
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Materials & Services",
+        "values": [
+          72445,
+          93705,
+          161505,
+          202435
+        ],
+        "lineItems": [
+          {
+            "name": "Office Supplies",
+            "values": [
+              144,
+              936,
+              500,
+              500
+            ]
+          },
+          {
+            "name": "Council Discounts",
+            "values": [
+              1680,
+              1680,
+              1680,
+              1680
+            ]
+          },
+          {
+            "name": "Donations - Outside Agency",
+            "values": [
+              0,
+              0,
+              50000,
+              50000
+            ]
+          },
+          {
+            "name": "CIO Grant Program",
+            "values": [
+              5946,
+              4651,
+              17500,
+              20000
+            ]
+          },
+          {
+            "name": "Consultants",
+            "values": [
+              18033,
+              22205,
+              22000,
+              50000
+            ]
+          },
+          {
+            "name": "Community Engagement",
+            "values": [
+              13617,
+              15105,
+              13500,
+              17900
+            ]
+          },
+          {
+            "name": "Conf & Meetings -Mayor",
+            "values": [
+              4299,
+              4725,
+              15000,
+              10000
+            ]
+          },
+          {
+            "name": "Conf & Meetings -Council",
+            "values": [
+              6767,
+              19006,
+              20000,
+              20000
+            ]
+          },
+          {
+            "name": "Membership Dues",
+            "values": [
+              4025,
+              4586,
+              5125,
+              5155
+            ]
+          },
+          {
+            "name": "Administrative Expense",
+            "values": [
+              17290,
+              18709,
+              15600,
+              26600
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "administration",
+    "name": "Administration",
+    "fy27Objectives": [
+      "Advance implementation of the Climate Action Plan in alignment with City Council goals.",
+      "Explore sustainable revenue options to support the findings of the gaps and needs analysis.",
+      "Strengthen and perpetuate positive labor-management relationships across the organization.",
+      "Engage youth, families, and adults in volunteer programs.",
+      "Conduct a community survey to gather feedback and inform City priorities and decision making.",
+      "Coordinate the municipal election for the positions of Mayor and Council Seats 1, 3, and 5.",
+      "Support employee growth and development through staff training and an updated performance management program.",
+      "Host a Board and Committee Summit to strengthen coordination and engagement across advisory bodies."
+    ],
+    "performance": [
+      {
+        "metric": "Number of hours served by volunteers",
+        "values": [
+          10100,
+          16228,
+          11500,
+          18000
+        ]
+      },
+      {
+        "metric": "Percentage of vacancies on City committees that receive more than one applicant",
+        "values": [
+          "100%",
+          "84%",
+          "100%",
+          "90%"
+        ]
+      },
+      {
+        "metric": "Percentage of survey respondents that report the quality of services provided by the City as excellent or good",
+        "values": [
+          null,
+          null,
+          null,
+          "85%"
+        ]
+      },
+      {
+        "metric": "Percentage of subscribers that open Tualatin Today monthly e-newsletter",
+        "values": [
+          "45.7%",
+          "50.5%",
+          "48%",
+          "51%"
+        ]
+      }
+    ],
+    "expenditures": [
+      {
+        "category": "Personal Services",
+        "values": [
+          1808038,
+          1863534,
+          2289305,
+          2446520
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              1094594,
+              1102343,
+              1330675,
+              1450390
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Part Time",
+            "values": [
+              55770,
+              61046,
+              65200,
+              49685
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Temporary",
+            "values": [
+              7784,
+              13473,
+              21255,
+              22005
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Overtime",
+            "values": [
+              8046,
+              10598,
+              8000,
+              8000
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              14146,
+              14500,
+              18625,
+              19535
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              84872,
+              86353,
+              107165,
+              115200
+            ]
+          },
+          {
+            "name": "Benefits-WC Insurance & Tax",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              325442,
+              325423,
+              428910,
+              460295
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              199473,
+              234204,
+              301975,
+              313910
+            ]
+          },
+          {
+            "name": "Benefits-Vacation Buy Back",
+            "values": [
+              13423,
+              11079,
+              7500,
+              7500
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Materials & Services",
+        "values": [
+          82839,
+          80420,
+          80170,
+          112870
+        ],
+        "lineItems": [
+          {
+            "name": "Office Supplies",
+            "values": [
+              6728,
+              6355,
+              6000,
+              6000
+            ]
+          },
+          {
+            "name": "Printing & Postage",
+            "values": [
+              734,
+              897,
+              800,
+              800
+            ]
+          },
+          {
+            "name": "Uniforms & Safety Equipment",
+            "values": [
+              0,
+              0,
+              250,
+              150
+            ]
+          },
+          {
+            "name": "Office Equipment & Furniture",
+            "values": [
+              1496,
+              824,
+              1000,
+              1000
+            ]
+          },
+          {
+            "name": "Computer Equip & Software",
+            "values": [
+              1383,
+              4648,
+              0,
+              2000
+            ]
+          },
+          {
+            "name": "Consultants",
+            "values": [
+              4498,
+              4200,
+              9500,
+              34500
+            ]
+          },
+          {
+            "name": "Legal",
+            "values": [
+              30455,
+              27776,
+              27000,
+              27000
+            ]
+          },
+          {
+            "name": "Conferences & Meetings",
+            "values": [
+              22357,
+              19957,
+              25000,
+              30000
+            ]
+          },
+          {
+            "name": "Membership Dues",
+            "values": [
+              4647,
+              5172,
+              5820,
+              6620
+            ]
+          },
+          {
+            "name": "Administrative Expense",
+            "values": [
+              2520,
+              6328,
+              4700,
+              4700
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "finance",
+    "name": "Finance",
+    "fy27Objectives": [
+      "Upgrade the City's financial software to the latest, cloud-based Enterprise Resource Planning (ERP) system to enhance financial transparency, improve data accessibility, strengthen internal controls, and increase operational efficiency across all departments.",
+      "Develop and deploy a meaningful, citywide performance measure system that aligns financial resources with strategic priorities, support data-driven decision-making, and improve accountability to the community.",
+      "Publish a comprehensive Revenue Manual to provide clear, organized, and accessible guidance on the City\u2019s revenue sources, policies, and processes, supporting consistency, training, and long-term financial planning.",
+      "Identify and implement process improvements within financial operations to reduce redundancies, enhance service delivery, and ensure compliance with evolving regulatory and reporting standards."
+    ],
+    "performance": [
+      {
+        "metric": "Percentage of payments made within 30 days of invoice date",
+        "values": [
+          "85%",
+          "90%",
+          "90%",
+          "90%"
+        ]
+      },
+      {
+        "metric": "Number of utility billing adjustments per 1,000 customer accounts",
+        "values": [
+          24,
+          23,
+          "< 10",
+          "< 10"
+        ]
+      },
+      {
+        "metric": "Average number of working days to issue monthly financial reports",
+        "values": [
+          15,
+          12,
+          "\u2264 10",
+          "\u2264 10"
+        ]
+      }
+    ],
+    "expenditures": [
+      {
+        "category": "Personal Services",
+        "values": [
+          1126984,
+          1185047,
+          1240595,
+          1281260
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              723372,
+              762429,
+              785250,
+              811000
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Overtime",
+            "values": [
+              0,
+              158,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              9700,
+              10168,
+              10545,
+              10815
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              54218,
+              57407,
+              59440,
+              61365
+            ]
+          },
+          {
+            "name": "Benefits-WC Insurance & Tax",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              199408,
+              204118,
+              236270,
+              243955
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              133182,
+              138523,
+              143090,
+              148125
+            ]
+          },
+          {
+            "name": "Benefits-TriMet Excise Tax",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Vacation Buy Back",
+            "values": [
+              3654,
+              9225,
+              6000,
+              6000
+            ]
+          },
+          {
+            "name": "Benefits-Comp Time Buy Back",
+            "values": [
+              592,
+              5,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Materials & Services",
+        "values": [
+          74654,
+          90816,
+          102785,
+          93365
+        ],
+        "lineItems": [
+          {
+            "name": "Printing & Postage",
+            "values": [
+              8581,
+              10311,
+              10000,
+              10500
+            ]
+          },
+          {
+            "name": "Office Equipment & Furniture",
+            "values": [
+              1893,
+              1296,
+              500,
+              500
+            ]
+          },
+          {
+            "name": "Audit",
+            "values": [
+              48748,
+              48911,
+              63785,
+              53740
+            ]
+          },
+          {
+            "name": "Consultants",
+            "values": [
+              0,
+              9071,
+              3000,
+              3000
+            ]
+          },
+          {
+            "name": "Conferences & Meetings",
+            "values": [
+              6782,
+              4740,
+              16000,
+              16000
+            ]
+          },
+          {
+            "name": "Membership Dues",
+            "values": [
+              4581,
+              4630,
+              5950,
+              6075
+            ]
+          },
+          {
+            "name": "Publication, Rpt, Ref Matl",
+            "values": [
+              348,
+              0,
+              500,
+              500
+            ]
+          },
+          {
+            "name": "Staff Training",
+            "values": [
+              85,
+              639,
+              1450,
+              1450
+            ]
+          },
+          {
+            "name": "Administrative Expense",
+            "values": [
+              1789,
+              1586,
+              1000,
+              1000
+            ]
+          },
+          {
+            "name": "Advertising - Legis/Judicial",
+            "values": [
+              877,
+              593,
+              600,
+              600
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "municipal-court",
+    "name": "Municipal Court",
+    "fy27Objectives": [
+      "Provide equitable service to all customers.",
+      "Follow and keep the City knowledgeable of current legislative issues related to State Municipal Courts.",
+      "Process the citation volume produced from the reinstallation of safety cameras at the intersection of SW Tualatin- Sherwood Road & SW Avery Street.",
+      "Update the Municipal Court webpages."
+    ],
+    "performance": [
+      {
+        "metric": "Percentage of suspended driver's license holders reinstated within 24 hours",
+        "values": [
+          "100%",
+          "100%",
+          "100%",
+          "100%"
+        ]
+      },
+      {
+        "metric": "Percentage of phone messages responded to within 24 hours",
+        "values": [
+          "100%",
+          "100%",
+          "100%",
+          "100%"
+        ]
+      }
+    ],
+    "expenditures": [
+      {
+        "category": "Personal Services",
+        "values": [
+          444264,
+          497689,
+          533895,
+          574360
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              243270,
+              278759,
+              297340,
+              309540
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Temporary",
+            "values": [
+              29079,
+              29778,
+              27985,
+              28965
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Overtime",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              2992,
+              2554,
+              2100,
+              2150
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              20272,
+              22609,
+              24130,
+              24950
+            ]
+          },
+          {
+            "name": "Benefits-WC Insurance & Tax",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              70790,
+              80853,
+              92580,
+              96360
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              73404,
+              81931,
+              89760,
+              112395
+            ]
+          },
+          {
+            "name": "Benefits-TriMet Excise Tax",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Vacation Buy Back",
+            "values": [
+              3165,
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Materials & Services",
+        "values": [
+          17412,
+          14631,
+          17600,
+          19370
+        ],
+        "lineItems": [
+          {
+            "name": "Office Supplies",
+            "values": [
+              606,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Printing & Postage",
+            "values": [
+              2184,
+              1966,
+              3300,
+              3500
+            ]
+          },
+          {
+            "name": "Office Equipment & Furniture",
+            "values": [
+              100,
+              539,
+              500,
+              1400
+            ]
+          },
+          {
+            "name": "Computer Equip & Software",
+            "values": [
+              272,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Court Costs",
+            "values": [
+              7661,
+              8135,
+              9000,
+              9000
+            ]
+          },
+          {
+            "name": "Conferences & Meetings",
+            "values": [
+              3806,
+              3154,
+              3500,
+              3900
+            ]
+          },
+          {
+            "name": "Membership Dues",
+            "values": [
+              309,
+              715,
+              500,
+              770
+            ]
+          },
+          {
+            "name": "Staff Training",
+            "values": [
+              0,
+              0,
+              400,
+              400
+            ]
+          },
+          {
+            "name": "Administrative Expense",
+            "values": [
+              715,
+              122,
+              400,
+              400
+            ]
+          },
+          {
+            "name": "Advertising - Recruitment",
+            "values": [
+              1759,
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "legal",
+    "name": "Legal",
+    "fy27Objectives": [
+      "Provide legal advice and support to City Council, Boards and Commissions, Departments, and City staff.",
+      "Continue to negotiate contracts, real estate transactions, intergovernmental agreements, and other legal documents.",
+      "Provide training to Council, Departments, and City staff on a wide variety of topics and issues."
+    ],
+    "performance": [],
+    "expenditures": [
+      {
+        "category": "Personal Services",
+        "values": [
+          443889,
+          543890,
+          575750,
+          624445
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              279943,
+              337777,
+              351435,
+              377940
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Overtime",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              10150,
+              9616,
+              9835,
+              10180
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              20845,
+              24165,
+              26185,
+              28110
+            ]
+          },
+          {
+            "name": "Benefits-WC Insurance & Tax",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              68239,
+              93597,
+              104940,
+              112850
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              63577,
+              77470,
+              83355,
+              95365
+            ]
+          },
+          {
+            "name": "Benefits-TriMet Excise Tax",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Vacation Buy Back",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Paid Leave OR Tax",
+            "values": [
+              1134,
+              1265,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Materials & Services",
+        "values": [
+          31778,
+          25666,
+          30140,
+          36140
+        ],
+        "lineItems": [
+          {
+            "name": "Printing & Postage",
+            "values": [
+              224,
+              66,
+              400,
+              400
+            ]
+          },
+          {
+            "name": "Office Equipment & Furniture",
+            "values": [
+              0,
+              1048,
+              1000,
+              1000
+            ]
+          },
+          {
+            "name": "Computer Equip & Software",
+            "values": [
+              212,
+              216,
+              500,
+              500
+            ]
+          },
+          {
+            "name": "Consultants",
+            "values": [
+              16128,
+              12705,
+              10000,
+              16000
+            ]
+          },
+          {
+            "name": "Court Costs",
+            "values": [
+              543,
+              0,
+              500,
+              500
+            ]
+          },
+          {
+            "name": "Conferences & Meetings",
+            "values": [
+              4352,
+              3185,
+              6000,
+              6000
+            ]
+          },
+          {
+            "name": "Membership Dues",
+            "values": [
+              1711,
+              1597,
+              1440,
+              1440
+            ]
+          },
+          {
+            "name": "Publication, Rpt, Ref Matl",
+            "values": [
+              5984,
+              5997,
+              7500,
+              7500
+            ]
+          },
+          {
+            "name": "Staff Training",
+            "values": [
+              1193,
+              644,
+              2000,
+              2000
+            ]
+          },
+          {
+            "name": "Administrative Expense",
+            "values": [
+              613,
+              208,
+              800,
+              800
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "information-services",
+    "name": "Information Services",
+    "fy27Objectives": [
+      "Replace and upgrade the core virtual server infrastructure.",
+      "Finish replacing the existing patron computers throughout the library with modern systems.",
+      "Continue to guide city staff through the shift to cloud-based collaboration tools and streamlined workflows.",
+      "Support departments as they evaluate and identify evolving software needs."
+    ],
+    "performance": [],
+    "expenditures": [
+      {
+        "category": "Personal Services",
+        "values": [
+          979216,
+          1023097,
+          1074460,
+          1129190
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              604813,
+              639873,
+              670320,
+              697925
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Temporary",
+            "values": [
+              0,
+              1090,
+              5565,
+              6405
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Overtime",
+            "values": [
+              462,
+              1127,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              7952,
+              8284,
+              8795,
+              9005
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              45845,
+              48523,
+              50910,
+              52955
+            ]
+          },
+          {
+            "name": "Benefits-WC Insurance & Tax",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              174148,
+              184663,
+              207345,
+              215810
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              135130,
+              129756,
+              128525,
+              144090
+            ]
+          },
+          {
+            "name": "Benefits-TriMet Excise Tax",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Vacation Buy Back",
+            "values": [
+              8417,
+              7036,
+              3000,
+              3000
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Materials & Services",
+        "values": [
+          668639,
+          836368,
+          882610,
+          901610
+        ],
+        "lineItems": [
+          {
+            "name": "Printing & Postage",
+            "values": [
+              1869,
+              2466,
+              3000,
+              3000
+            ]
+          },
+          {
+            "name": "Cell Phones",
+            "values": [
+              2995,
+              2115,
+              45165,
+              61200
+            ]
+          },
+          {
+            "name": "Network/Online",
+            "values": [
+              49943,
+              74971,
+              66700,
+              61000
+            ]
+          },
+          {
+            "name": "Computer Equip & Software",
+            "values": [
+              97485,
+              68419,
+              50475,
+              96000
+            ]
+          },
+          {
+            "name": "Conferences & Meetings",
+            "values": [
+              6250,
+              6594,
+              6500,
+              23000
+            ]
+          },
+          {
+            "name": "Staff Training",
+            "values": [
+              11880,
+              11363,
+              13500,
+              3000
+            ]
+          },
+          {
+            "name": "Administrative Expense",
+            "values": [
+              413,
+              551,
+              600,
+              600
+            ]
+          },
+          {
+            "name": "Equipment Rental",
+            "values": [
+              30333,
+              31548,
+              37000,
+              39000
+            ]
+          },
+          {
+            "name": "R&M - Equipment",
+            "values": [
+              19811,
+              16658,
+              23000,
+              50000
+            ]
+          },
+          {
+            "name": "R&M - Computers",
+            "values": [
+              424604,
+              473005,
+              553620,
+              564010
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Capital Outlay",
+        "values": [
+          104557,
+          0,
+          245000,
+          300000
+        ],
+        "lineItems": [
+          {
+            "name": "Equipment & Furnishings",
+            "values": [
+              104557,
+              0,
+              245000,
+              300000
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "community-development",
+    "name": "Community Development",
+    "fy27Objectives": [
+      "Ongoing work on a Housing Capacity Analysis which identifies housing types, characteristics, and locations needed to achieve housing choice and identify housing production targets.",
+      "Complete a Clear and Objective Code Update required to bring the Tualatin Development Code into compliance with state law as it relates to the development of housing.",
+      "Amend the Tualatin Development Code to expand the opportunities for food carts within the city including development of design standards related to food cart pods.",
+      "Implement an \u201cannual code clean-up\u201d process that will bring small-scale amendments to the Tualatin Development Code to Council on a regular basis.",
+      "Collaborate with the City\u2019s Urban Renewal and Economic Development Manager to support the Urban Design Plan and related Code amendments.",
+      "With the help of Thorn Run, track and respond to state legislation that may impact Tualatin\u2019s land use regulations and housing production and work to update the code as needed to respond to legislative changes from the 2025 session.",
+      "Begin work on a future update of the Comprehensive Plan by clarifying a scope of work, schedule, and budget."
+    ],
+    "performance": [
+      {
+        "metric": "Number of land use applications processed",
+        "values": [
+          175,
+          200,
+          178,
+          175
+        ]
+      }
+    ],
+    "expenditures": [
+      {
+        "category": "Personal Services",
+        "values": [
+          1074665,
+          1177089,
+          1281445,
+          1277010
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              714540,
+              755458,
+              809910,
+              830095
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Part Time",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Temporary",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Overtime",
+            "values": [
+              372,
+              1950,
+              500,
+              1500
+            ]
+          },
+          {
+            "name": "Salaries and Wages-On-Call",
+            "values": [
+              701,
+              70,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              10315,
+              10189,
+              10720,
+              10740
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              54145,
+              56946,
+              60720,
+              62830
+            ]
+          },
+          {
+            "name": "Benefits-WC Insurance & Tax",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              197184,
+              209169,
+              241990,
+              248315
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              88440,
+              132747,
+              157605,
+              123530
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Materials & Services",
+        "values": [
+          46896,
+          47582,
+          124550,
+          154400
+        ],
+        "lineItems": [
+          {
+            "name": "Office Supplies",
+            "values": [
+              4224,
+              5811,
+              5000,
+              5000
+            ]
+          },
+          {
+            "name": "Printing & Postage",
+            "values": [
+              1259,
+              4905,
+              6000,
+              7000
+            ]
+          },
+          {
+            "name": "Office Equipment & Furniture",
+            "values": [
+              745,
+              12620,
+              1000,
+              1000
+            ]
+          },
+          {
+            "name": "Computer Equip & Software",
+            "values": [
+              150,
+              815,
+              500,
+              500
+            ]
+          },
+          {
+            "name": "Consultants",
+            "values": [
+              17990,
+              494,
+              92050,
+              120000
+            ]
+          },
+          {
+            "name": "Community Engagement",
+            "values": [
+              0,
+              198,
+              800,
+              1300
+            ]
+          },
+          {
+            "name": "Conferences & Meetings",
+            "values": [
+              18881,
+              11485,
+              10000,
+              9700
+            ]
+          },
+          {
+            "name": "Membership Dues",
+            "values": [
+              2681,
+              2359,
+              4750,
+              5450
+            ]
+          },
+          {
+            "name": "Administrative Expense",
+            "values": [
+              213,
+              510,
+              2000,
+              2000
+            ]
+          },
+          {
+            "name": "Advertising - Legis/Judicial",
+            "values": [
+              241,
+              687,
+              900,
+              900
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "engineering",
+    "name": "Engineering",
+    "fy27Objectives": [
+      "Complete construction of the new reservoir and pump station near 108th Avenue in southern Tualatin.",
+      "Construct phases 3 and 4 of Martinazzi sewer trunk upsizing (from Dakota Street to Avery Street) and stormwater improvements in the Nyberg Creek/Martinazzi and Siuslaw Greenway areas.",
+      "Work with Washington County to begin installing a new real-time adaptive traffic signal control system in the downtown area, and to design improvements for the Herman Road / Cipole Road intersection area and Herman Road from Cipole Road to 124th Avenue.",
+      "Provide clear updated infrastructure design and construction standards and codes and protect Tualatin's interests through design review and inspection to ensure these codes are followed.",
+      "Oversee environmental protection of our natural resources through flood plain management and implementation of stormwater standards for quality and quantity.",
+      "Promote an efficient, accessible, and sustainable transportation system by implementing traffic improvements and coordinating projects with partner agencies to enhance design and provide better vehicle, bike, and pedestrian facilities, and develop ideas for improving transit service in our part of the region.",
+      "Plan infrastructure for multi-modal transportation supporting Tualatin's livability and economy and working with partners and developers planning Basalt Creek area systems (water, sewer, storm drainage, and transportation)."
+    ],
+    "performance": [
+      {
+        "metric": "Number of water quality facilities inspected",
+        "values": [
+          200,
+          250,
+          346,
+          350
+        ]
+      },
+      {
+        "metric": "Number of Public Works permits processed",
+        "values": [
+          200,
+          250,
+          360,
+          250
+        ]
+      }
+    ],
+    "expenditures": [
+      {
+        "category": "Personal Services",
+        "values": [
+          978309,
+          1084382,
+          1186820,
+          1200120
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              612605,
+              672461,
+              717310,
+              748500
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Temporary",
+            "values": [
+              0,
+              902,
+              13145,
+              13610
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Overtime",
+            "values": [
+              0,
+              0,
+              500,
+              500
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              4191,
+              3929,
+              4105,
+              4305
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              44927,
+              49344,
+              54455,
+              57240
+            ]
+          },
+          {
+            "name": "Benefits-WC Insurance & Tax",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              165778,
+              194451,
+              223020,
+              232635
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              146657,
+              158446,
+              174285,
+              143330
+            ]
+          },
+          {
+            "name": "Benefits-TriMet Excise Tax",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Vacation Buy Back",
+            "values": [
+              1653,
+              2214,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Materials & Services",
+        "values": [
+          29748,
+          89126,
+          98290,
+          99990
+        ],
+        "lineItems": [
+          {
+            "name": "Uniforms & Safety Equipment",
+            "values": [
+              1165,
+              495,
+              1250,
+              1250
+            ]
+          },
+          {
+            "name": "Office Equipment & Furniture",
+            "values": [
+              0,
+              12994,
+              1000,
+              1000
+            ]
+          },
+          {
+            "name": "Computer Equip & Software",
+            "values": [
+              81,
+              1054,
+              1000,
+              1000
+            ]
+          },
+          {
+            "name": "Erosion Fees to CWS",
+            "values": [
+              18955,
+              26492,
+              30000,
+              30000
+            ]
+          },
+          {
+            "name": "Consultants",
+            "values": [
+              -3970,
+              34550,
+              50000,
+              50000
+            ]
+          },
+          {
+            "name": "Conferences & Meetings",
+            "values": [
+              4653,
+              2214,
+              5700,
+              5700
+            ]
+          },
+          {
+            "name": "Membership Dues",
+            "values": [
+              330,
+              975,
+              1190,
+              2390
+            ]
+          },
+          {
+            "name": "Publication, Rpt, Ref Matl",
+            "values": [
+              0,
+              120,
+              250,
+              750
+            ]
+          },
+          {
+            "name": "Staff Training",
+            "values": [
+              1255,
+              4962,
+              6000,
+              6000
+            ]
+          },
+          {
+            "name": "Administrative Expense",
+            "values": [
+              58,
+              271,
+              1200,
+              1200
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Capital Outlay",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "lineItems": [
+          {
+            "name": "Equipment & Furnishings",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "building",
+    "name": "Building",
+    "fy27Objectives": [
+      "Concentrate on managing the rising volume of plan reviews and inspections while maintaining a strong commitment to providing excellent customer service.",
+      "Further develop our expertise, efficiency, and proficiency by participating in relevant training programs for both plan review and inspections.",
+      "Aim to expedite review timelines by implementing streamlined processes."
+    ],
+    "performance": [
+      {
+        "metric": "Number of permits processed",
+        "values": [
+          1500,
+          1600,
+          2605,
+          2100
+        ]
+      },
+      {
+        "metric": "Number of building inspections completed",
+        "values": [
+          5000,
+          5800,
+          8762,
+          6400
+        ]
+      }
+    ],
+    "expenditures": [
+      {
+        "category": "Personal Services",
+        "values": [
+          1197548,
+          945580,
+          1168585,
+          1238735
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              739126,
+              573794,
+              716080,
+              751915
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Temporary",
+            "values": [
+              0,
+              5054,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Overtime",
+            "values": [
+              2728,
+              7946,
+              3000,
+              3000
+            ]
+          },
+          {
+            "name": "Salaries and Wages-On-Call",
+            "values": [
+              43,
+              23,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              2320,
+              3904,
+              2035,
+              2260
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              55422,
+              45343,
+              53735,
+              56310
+            ]
+          },
+          {
+            "name": "Benefits-WC Insurance & Tax",
+            "values": [
+              5725,
+              4847,
+              5615,
+              5895
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              208004,
+              158359,
+              222515,
+              233730
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              163609,
+              115856,
+              159825,
+              179555
+            ]
+          },
+          {
+            "name": "Benefits-TriMet Excise Tax",
+            "values": [
+              6205,
+              5001,
+              5780,
+              6070
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Materials & Services",
+        "values": [
+          219189,
+          243157,
+          748775,
+          799710
+        ],
+        "lineItems": [
+          {
+            "name": "Uniforms & Safety Equipment",
+            "values": [
+              1018,
+              2125,
+              1000,
+              1900
+            ]
+          },
+          {
+            "name": "Office Equipment & Furniture",
+            "values": [
+              43,
+              302,
+              1000,
+              1000
+            ]
+          },
+          {
+            "name": "Computer Equip & Software",
+            "values": [
+              2868,
+              2148,
+              4000,
+              2000
+            ]
+          },
+          {
+            "name": "Consultants",
+            "values": [
+              8516,
+              9306,
+              600000,
+              655200
+            ]
+          },
+          {
+            "name": "Conferences & Meetings",
+            "values": [
+              6057,
+              9022,
+              9320,
+              9320
+            ]
+          },
+          {
+            "name": "Membership Dues",
+            "values": [
+              1420,
+              1155,
+              1810,
+              1810
+            ]
+          },
+          {
+            "name": "Staff Training",
+            "values": [
+              7368,
+              8072,
+              14160,
+              9310
+            ]
+          },
+          {
+            "name": "Administrative Expense",
+            "values": [
+              208,
+              165,
+              1400,
+              1400
+            ]
+          },
+          {
+            "name": "Merchant Discount Fees",
+            "values": [
+              182577,
+              199345,
+              100000,
+              100000
+            ]
+          },
+          {
+            "name": "Vehicle Replacement Expense",
+            "values": [
+              0,
+              0,
+              14385,
+              16070
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Capital Outlay",
+        "values": [
+          0,
+          0,
+          60000,
+          60000
+        ],
+        "lineItems": [
+          {
+            "name": "Equipment & Furnishings",
+            "values": [
+              0,
+              0,
+              60000,
+              60000
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Transfers Out",
+        "values": [
+          545500,
+          522642,
+          662700,
+          679240
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - General Fund",
+            "values": [
+              472720,
+              449860,
+              589920,
+              679240
+            ]
+          },
+          {
+            "name": "Transfers Out - Enterprise Bond",
+            "values": [
+              72780,
+              72782,
+              72780,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Contingency",
+        "values": [
+          0,
+          0,
+          396010,
+          416655
+        ],
+        "lineItems": []
+      },
+      {
+        "category": "Contingency",
+        "values": [
+          0,
+          0,
+          396010,
+          416655
+        ],
+        "lineItems": []
+      },
+      {
+        "category": "Reserves & Unappropriated",
+        "values": [
+          723379,
+          1472435,
+          140185,
+          479990
+        ],
+        "lineItems": [
+          {
+            "name": "General Account Reserve",
+            "values": [
+              723379,
+              1472435,
+              140185,
+              479990
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "library",
+    "name": "Library",
+    "fy27Objectives": [
+      "As part of the Library's new service area, begin promoting and providing library services to Durham residents and schools.",
+      "Work in partnership with WCCLS to implement new expectations in the countywide library service agreement, including planning centralization of the Library's collection.",
+      "Complete and begin realizing the Library's updated strategic plan, including developing an organizational change implementation plan.",
+      "Celebrate and commemorate the Tualatin Public Library's 50th anniversary.",
+      "Support the changing information and resource needs of vulnerable members of the community."
+    ],
+    "performance": [
+      {
+        "metric": "Library visits per capita",
+        "values": [
+          5.5,
+          5.5,
+          5.32,
+          5.6
+        ]
+      },
+      {
+        "metric": "Circulation per capita",
+        "values": [
+          16,
+          18.5,
+          18.9,
+          20
+        ]
+      },
+      {
+        "metric": "Total program attendance",
+        "values": [
+          21000,
+          25000,
+          26660,
+          27500
+        ]
+      }
+    ],
+    "expenditures": [
+      {
+        "category": "Personal Services",
+        "values": [
+          2192853,
+          2340899,
+          2488175,
+          2592075
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              1113795,
+              1217259,
+              1293280,
+              1334920
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Part Time",
+            "values": [
+              141425,
+              149912,
+              153230,
+              157285
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Temporary",
+            "values": [
+              189550,
+              172790,
+              175200,
+              181385
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Overtime",
+            "values": [
+              2583,
+              3377,
+              2500,
+              3000
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              11325,
+              12821,
+              12115,
+              12145
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              107275,
+              113765,
+              121955,
+              125680
+            ]
+          },
+          {
+            "name": "Benefits-WC Insurance & Tax",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              385965,
+              409090,
+              448495,
+              462840
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              225630,
+              255850,
+              281400,
+              314820
+            ]
+          },
+          {
+            "name": "Benefits-TriMet Excise Tax",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Materials & Services",
+        "values": [
+          317591,
+          338949,
+          385505,
+          381070
+        ],
+        "lineItems": [
+          {
+            "name": "Office Supplies",
+            "values": [
+              6029,
+              5002,
+              6500,
+              6000
+            ]
+          },
+          {
+            "name": "Collection Development",
+            "values": [
+              188399,
+              202532,
+              210000,
+              210000
+            ]
+          },
+          {
+            "name": "Office Equipment & Furniture",
+            "values": [
+              7895,
+              3955,
+              13100,
+              14100
+            ]
+          },
+          {
+            "name": "Computer Equip & Software",
+            "values": [
+              6106,
+              5626,
+              5875,
+              6700
+            ]
+          },
+          {
+            "name": "Library Tech - Public",
+            "values": [
+              4139,
+              10226,
+              16100,
+              7500
+            ]
+          },
+          {
+            "name": "Special Programs",
+            "values": [
+              62674,
+              67097,
+              61500,
+              68500
+            ]
+          },
+          {
+            "name": "Consultants",
+            "values": [
+              2300,
+              11900,
+              7500,
+              19500
+            ]
+          },
+          {
+            "name": "Conferences & Meetings",
+            "values": [
+              9686,
+              4797,
+              13260,
+              9860
+            ]
+          },
+          {
+            "name": "Advertising - Promotional",
+            "values": [
+              1440,
+              2439,
+              14950,
+              8000
+            ]
+          },
+          {
+            "name": "Equipment Rental",
+            "values": [
+              13424,
+              13822,
+              13430,
+              16500
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Capital Outlay",
+        "values": [
+          0,
+          0,
+          36500,
+          0
+        ],
+        "lineItems": [
+          {
+            "name": "Equipment & Furnishings",
+            "values": [
+              0,
+              0,
+              3650,
+              0
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "parks-maintenance",
+    "name": "Parks Maintenance",
+    "fy27Objectives": [
+      "Continue to provide appropriate resources to properly maintain valuable city assets.",
+      "Continue to provide support services to Community Events and Volunteer Programs to engage our community in valuable experiences.",
+      "Adapt and respond to Climate Action Plan recommendations that involve our work.",
+      "Continue to make water quality improvements at the Commons Lake that are environmentally practical and sound.",
+      "Implement a Resource Management Plan for new Las Casitas Parque and Nyberg Creek Trail Properties.",
+      "Continue to develop and train staff as more than half of our team has less than 5 years of tenure."
+    ],
+    "performance": [
+      {
+        "metric": "Number of community planting events held to help restore natural areas",
+        "values": [
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "metric": "Linear feet of gravel surfaces repaired and/or resurfaced",
+        "values": [
+          1390,
+          1530,
+          750,
+          750
+        ]
+      },
+      {
+        "metric": "Operating expenditures per acre of managed park land",
+        "values": [
+          "$5,210",
+          "$5,055",
+          "$5,210",
+          "$5,962"
+        ]
+      }
+    ],
+    "expenditures": [
+      {
+        "category": "Personal Services",
+        "values": [
+          1002349,
+          1130040,
+          1234625,
+          1257165
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              552609,
+              620616,
+              664220,
+              674545
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Part Time",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Temporary",
+            "values": [
+              70303,
+              92008,
+              115345,
+              108560
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Overtime",
+            "values": [
+              23623,
+              24433,
+              21000,
+              21000
+            ]
+          },
+          {
+            "name": "Salaries and Wages-On-Call",
+            "values": [
+              6716,
+              5541,
+              8585,
+              7750
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              3135,
+              2202,
+              2250,
+              2310
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              49387,
+              55474,
+              60690,
+              60760
+            ]
+          },
+          {
+            "name": "Benefits-WC Insurance & Tax",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              166662,
+              193295,
+              218110,
+              221300
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              115880,
+              131477,
+              144425,
+              160940
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Materials & Services",
+        "values": [
+          604017,
+          623902,
+          729165,
+          747665
+        ],
+        "lineItems": [
+          {
+            "name": "Botanical & Chem Supplies",
+            "values": [
+              33472,
+              28115,
+              34100,
+              34100
+            ]
+          },
+          {
+            "name": "Uniforms & Safety Equipment",
+            "values": [
+              10053,
+              10854,
+              7950,
+              7900
+            ]
+          },
+          {
+            "name": "Small Tools",
+            "values": [
+              11131,
+              6906,
+              0,
+              4000
+            ]
+          },
+          {
+            "name": "Consultants",
+            "values": [
+              0,
+              0,
+              16040,
+              20000
+            ]
+          },
+          {
+            "name": "Utilities",
+            "values": [
+              0,
+              0,
+              0,
+              94880
+            ]
+          },
+          {
+            "name": "Conferences & Meetings",
+            "values": [
+              50,
+              453,
+              3300,
+              3300
+            ]
+          },
+          {
+            "name": "Staff Training",
+            "values": [
+              5884,
+              3393,
+              5050,
+              10020
+            ]
+          },
+          {
+            "name": "Grounds & Landscaping",
+            "values": [
+              377300,
+              422668,
+              495660,
+              517080
+            ]
+          },
+          {
+            "name": "Equipment Rental",
+            "values": [
+              6796,
+              3845,
+              3500,
+              3500
+            ]
+          },
+          {
+            "name": "R&M - Equipment",
+            "values": [
+              47749,
+              35572,
+              56160,
+              48660
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Capital Outlay",
+        "values": [
+          45212,
+          0,
+          156550,
+          140000
+        ],
+        "lineItems": [
+          {
+            "name": "Equipment & Furnishings",
+            "values": [
+              45212,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "R&M - Major Projects",
+            "values": [
+              0,
+              0,
+              156550,
+              140000
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "police",
+    "name": "Police",
+    "fy27Objectives": [
+      "Recruit & Retain Top Talent: Implement innovative strategies to attract and retain high-quality officers in response to retirements and turnover.",
+      "Continue to expand Wellness Programs: Enhance officer wellness by improving access to fitness equipment and health programs.",
+      "Strengthen Community Engagement: Increase participation in neighborhood events and deepen relationships with local groups and Community Involvement Organizations (CIOs).",
+      "Technology advancements: Implement new evolving technology including body worn cameras with translation capabilities, and new analytics enhancements to our Records Management System for better data with crime statistics. Implement a new online reporting system that allows the community to report low level activity to the Police via the internet. The system will translate the information in over 100 languages allowing accessibility to anyone in the community.",
+      "The Tualatin Police Department remains dedicated to its mission of protecting and serving the community with professionalism, integrity, and a commitment to excellence."
+    ],
+    "performance": [
+      {
+        "metric": "Crimes Against Person (calendar year)",
+        "values": [
+          276,
+          246,
+          "< 225",
+          "< 225"
+        ]
+      },
+      {
+        "metric": "Crimes Against Property (calendar year)",
+        "values": [
+          1139,
+          1166,
+          "< 1,000",
+          "< 1,000"
+        ]
+      },
+      {
+        "metric": "Societal Crimes (calendar year)",
+        "values": [
+          270,
+          244,
+          300,
+          "< 300"
+        ]
+      }
+    ],
+    "expenditures": [
+      {
+        "category": "Personal Services",
+        "values": [
+          8429195,
+          8998088,
+          9315705,
+          9906655
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              4767985,
+              5072749,
+              5293235,
+              5450930
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Temporary",
+            "values": [
+              18535,
+              19275,
+              13980,
+              14475
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Overtime",
+            "values": [
+              313027,
+              271252,
+              250000,
+              350000
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              26934,
+              26084,
+              27750,
+              28395
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              393990,
+              417117,
+              431720,
+              452880
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              1628664,
+              1800130,
+              1976185,
+              2067780
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              1084421,
+              1147154,
+              1185025,
+              1402560
+            ]
+          },
+          {
+            "name": "Benefits-Vacation Buy Back",
+            "values": [
+              32945,
+              62178,
+              15000,
+              15000
+            ]
+          },
+          {
+            "name": "Benefits-Holiday Buy Back",
+            "values": [
+              96601,
+              118745,
+              80000,
+              80000
+            ]
+          },
+          {
+            "name": "ORPAT-Fitness Incentive",
+            "values": [
+              39525,
+              37740,
+              40800,
+              41820
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Materials & Services",
+        "values": [
+          984716,
+          1023504,
+          1067215,
+          1083190
+        ],
+        "lineItems": [
+          {
+            "name": "Office Supplies",
+            "values": [
+              10489,
+              7672,
+              12000,
+              12000
+            ]
+          },
+          {
+            "name": "Uniforms & Safety Equipment",
+            "values": [
+              138893,
+              132467,
+              60285,
+              62000
+            ]
+          },
+          {
+            "name": "Ammun & Defense Equip",
+            "values": [
+              49740,
+              54473,
+              55000,
+              55000
+            ]
+          },
+          {
+            "name": "HEROES Program",
+            "values": [
+              11286,
+              11601,
+              12000,
+              12000
+            ]
+          },
+          {
+            "name": "Community Engagement Supplies",
+            "values": [
+              8661,
+              9682,
+              10000,
+              10000
+            ]
+          },
+          {
+            "name": "Conferences & Meetings",
+            "values": [
+              7531,
+              9149,
+              10000,
+              10000
+            ]
+          },
+          {
+            "name": "Staff Training",
+            "values": [
+              58456,
+              81593,
+              158975,
+              85000
+            ]
+          },
+          {
+            "name": "Advertising - Recruitment",
+            "values": [
+              8785,
+              5983,
+              10000,
+              10000
+            ]
+          },
+          {
+            "name": "Contract Services",
+            "values": [
+              545348,
+              557118,
+              651705,
+              734190
+            ]
+          },
+          {
+            "name": "R&M - Equipment",
+            "values": [
+              14604,
+              6083,
+              9750,
+              12000
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Capital Outlay",
+        "values": [
+          0,
+          102879,
+          200000,
+          0
+        ],
+        "lineItems": [
+          {
+            "name": "Equipment & Furnishings",
+            "values": [
+              0,
+              910287,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "R&M - Major Projects",
+            "values": [
+              0,
+              0,
+              200000,
+              0
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "maintenance-services",
+    "name": "Maintenance Services",
+    "fy27Objectives": [
+      "Provide timely, cost-effective, and high-quality customer service for all internal customers to ensure essential facilities, vehicles, supplies, and equipment are available and optimally functional for the rest of the city.",
+      "Address and resolve emergent, unplanned, and non-routine vehicle and facility service and repair needs in a timely way.",
+      "Continue to support and implement climate action and sustainability goals in Maintenance Services operations. This includes participation in the Strategic Energy Management program and other related initiatives to reduce energy, resource consumption, and waste.",
+      "Wherever possible, support local businesses and vendors in purchasing supplies and completing contract work.",
+      "Stay within budget, promote efficient spending, and provide successful project management. Look at projects and tasks with a lens of continuous improvement. Complete capital projects successfully, including HVAC replacements, property renovations, ADA initiatives, parking lot improvements, and more."
+    ],
+    "performance": [
+      {
+        "metric": "Customer Satisfaction: Percentage of respondents who rate customer service as excellent",
+        "values": [
+          null,
+          null,
+          "90%",
+          "90%"
+        ]
+      },
+      {
+        "metric": "Timeliness: Percentage of maintenance requests that are acknowledged and responded to the same business day",
+        "values": [
+          null,
+          null,
+          "95%",
+          "95%"
+        ]
+      },
+      {
+        "metric": "Efficiency: Percentage of routine service/repair requests that are successfully resolved in less than 5 business days",
+        "values": [
+          null,
+          null,
+          "90%",
+          "90%"
+        ]
+      },
+      {
+        "metric": "Accuracy/Quality: Percentage of service or repair tasks completed with no defects in workmanship",
+        "values": [
+          null,
+          null,
+          "98%",
+          "98%"
+        ]
+      }
+    ],
+    "expenditures": [
+      {
+        "category": "Personal Services",
+        "values": [
+          864469,
+          919303,
+          1010510,
+          1109510
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              534474,
+              563712,
+              604200,
+              640750
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Temporary",
+            "values": [
+              0,
+              0,
+              9280,
+              10405
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Overtime",
+            "values": [
+              6472,
+              9559,
+              6000,
+              6000
+            ]
+          },
+          {
+            "name": "Salaries and Wages-On-Call",
+            "values": [
+              562,
+              1352,
+              0,
+              3635
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              2899,
+              2595,
+              2995,
+              3065
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              41143,
+              44349,
+              46190,
+              48935
+            ]
+          },
+          {
+            "name": "Benefits-WC Insurance & Tax",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              158668,
+              170466,
+              193190,
+              205610
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              116719,
+              113954,
+              148655,
+              191110
+            ]
+          },
+          {
+            "name": "Benefits-TriMet Excise Tax",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Materials & Services",
+        "values": [
+          1457975,
+          1509812,
+          1581210,
+          1796585
+        ],
+        "lineItems": [
+          {
+            "name": "Fuel Small Tools",
+            "values": [
+              122267,
+              112221,
+              160500,
+              162650
+            ]
+          },
+          {
+            "name": "Utilities - Police",
+            "values": [
+              70747,
+              74025,
+              83300,
+              369600
+            ]
+          },
+          {
+            "name": "Contr R&M - Systems",
+            "values": [
+              157707,
+              143817,
+              188770,
+              203800
+            ]
+          },
+          {
+            "name": "Contr R&M - Fleet",
+            "values": [
+              24369,
+              24567,
+              30000,
+              35000
+            ]
+          },
+          {
+            "name": "Building Cleaning",
+            "values": [
+              54507,
+              53553,
+              71625,
+              74025
+            ]
+          },
+          {
+            "name": "Equipment Rental",
+            "values": [
+              254027,
+              262138,
+              274125,
+              328150
+            ]
+          },
+          {
+            "name": "R&M - City Facilities",
+            "values": [
+              34874,
+              37955,
+              42625,
+              39100
+            ]
+          },
+          {
+            "name": "R&M - City Center",
+            "values": [
+              0,
+              0,
+              29650,
+              36500
+            ]
+          },
+          {
+            "name": "House R&M - Vehicles",
+            "values": [
+              57434,
+              57435,
+              63750,
+              70300
+            ]
+          },
+          {
+            "name": "Vehicle Replacement Expense",
+            "values": [
+              427375,
+              427375,
+              332800,
+              391510
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Capital Outlay",
+        "values": [
+          452625,
+          232999,
+          1784515,
+          780000
+        ],
+        "lineItems": [
+          {
+            "name": "Equipment & Furnishings",
+            "values": [
+              7578,
+              10217,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "R&M - Major Projects",
+            "values": [
+              445047,
+              222782,
+              1784515,
+              780000
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "water-operating",
+    "name": "Water Operating",
+    "fy27Objectives": [
+      "SCADA System Familiarization: Adjust and become continuously familiarized with our new SCADA system and utilize it as a tool to operate our system even more efficiently.",
+      "On-Boarding New Staff: With the new hires in the water department, training and investing in their development will be critical this upcoming year, as long-tenured staff will be transitioning into retirement.",
+      "Continue support with Engineering Department: Between the new reservoir and pump station, on-going capital improvement projects, and private development throughout the City, maintaining high levels of coordination with Engineering will be imperative to ensure high quality project delivery that is in consideration of long-term operations and maintenance.",
+      "Continue Regional Collaboration: Maintain and continue collaboration with regional water suppliers to strengthen our resiliency and network for planning and emergency response.",
+      "Installation of Seismic Valves:  With grant funding now awarded, ensuring the seismic valves are installed with minimal interruption at the reservoir sites will be critical throughout this project.",
+      "Martinazzi Pump Station:  In coordination with our consultant and contractor, we are replacing one of the faulty drives at the Martinazzi Pump Station to ensure it is operating at full capacity when called upon."
+    ],
+    "performance": [
+      {
+        "metric": "Non-revenue water as a percentage of total water use",
+        "values": [
+          "7.88%",
+          "8.56%",
+          "< 10%",
+          "< 10%"
+        ]
+      },
+      {
+        "metric": "Number of regulatory violations",
+        "values": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "expenditures": [
+      {
+        "category": "Personal Services",
+        "values": [
+          868639,
+          878112,
+          1067525,
+          991275
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              519891,
+              532711,
+              656065,
+              592545
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Temporary",
+            "values": [
+              0,
+              5147,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Overtime",
+            "values": [
+              14282,
+              16116,
+              15000,
+              15000
+            ]
+          },
+          {
+            "name": "Salaries and Wages-On-Call",
+            "values": [
+              8712,
+              9205,
+              9830,
+              9410
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              6078,
+              5442,
+              4920,
+              4315
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              41409,
+              42167,
+              50920,
+              45870
+            ]
+          },
+          {
+            "name": "Benefits-WC Insurance & Tax",
+            "values": [
+              8488,
+              6914,
+              9155,
+              9060
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              143179,
+              134231,
+              191075,
+              171095
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              112840,
+              114464,
+              125085,
+              139020
+            ]
+          },
+          {
+            "name": "Benefits-TriMet Excise Tax",
+            "values": [
+              4608,
+              4663,
+              5475,
+              4960
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Materials & Services",
+        "values": [
+          4407605,
+          4497210,
+          4999075,
+          7233630
+        ],
+        "lineItems": [
+          {
+            "name": "Water Purchases -For Tualatin Hydrants",
+            "values": [
+              3416434,
+              3572497,
+              3789940,
+              5732685
+            ]
+          },
+          {
+            "name": "Utilities",
+            "values": [
+              79774,
+              85601,
+              175000,
+              355000
+            ]
+          },
+          {
+            "name": "Conferences & Meetings",
+            "values": [
+              84477,
+              72189,
+              107500,
+              78000
+            ]
+          },
+          {
+            "name": "Publication, Rpt, Ref Matl",
+            "values": [
+              41247,
+              40442,
+              61405,
+              49810
+            ]
+          },
+          {
+            "name": "Meter Reading",
+            "values": [
+              154246,
+              170576,
+              165000,
+              200000
+            ]
+          },
+          {
+            "name": "Contr R&M - Systems",
+            "values": [
+              63630,
+              84349,
+              87000,
+              92000
+            ]
+          },
+          {
+            "name": "Equipment Rental",
+            "values": [
+              237770,
+              190025,
+              254860,
+              270260
+            ]
+          },
+          {
+            "name": "R&M - Lines",
+            "values": [
+              34644,
+              34897,
+              67255,
+              67255
+            ]
+          },
+          {
+            "name": "Vehicle Replacement Expense",
+            "values": [
+              0,
+              225,
+              1235,
+              96235
+            ]
+          },
+          {
+            "name": "R&M - Equipment",
+            "values": [
+              72930,
+              72930,
+              42925,
+              63930
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Capital Outlay",
+        "values": [
+          50,
+          156,
+          2150,
+          2150
+        ],
+        "lineItems": [
+          {
+            "name": "Equipment & Furnishings",
+            "values": [
+              2640027,
+              3665361,
+              8885585,
+              10200000
+            ]
+          },
+          {
+            "name": "Projects",
+            "values": [
+              7378,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Administration",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Projects Professional Svc",
+            "values": [
+              215271,
+              788064,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Projects",
+            "values": [
+              1988517,
+              2793469,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Construction Fund Projects",
+            "values": [
+              428862,
+              83829,
+              8885585,
+              10200000
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Transfers Out",
+        "values": [
+          1703269,
+          1835046,
+          2278380,
+          1959825
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - General Fund",
+            "values": [
+              1210420,
+              1386730,
+              1706940,
+              1959825
+            ]
+          },
+          {
+            "name": "Transfers Out - Enterprise Bond",
+            "values": [
+              492849,
+              448316,
+              571440,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Contingency",
+        "values": [
+          0,
+          0,
+          2584585,
+          3057710
+        ],
+        "lineItems": []
+      },
+      {
+        "category": "Contingency",
+        "values": [
+          0,
+          0,
+          2584585,
+          3057710
+        ],
+        "lineItems": []
+      },
+      {
+        "category": "Reserves & Unappropriated",
+        "values": [
+          11876357,
+          12429545,
+          10114395,
+          7619035
+        ],
+        "lineItems": [
+          {
+            "name": "Rate Stabilization Reserve",
+            "values": [
+              11876357,
+              12429545,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Future Years Projects",
+            "values": [
+              0,
+              0,
+              10114395,
+              7619035
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "sewer-operating",
+    "name": "Sewer Operating",
+    "fy27Objectives": [
+      "Meet or exceed Clean Water Service (CWS) and Environmental Protection Agency (EPA) performance standards by cleaning over 25% and video-inspecting 12.5% of the Sanitary Sewer system.",
+      "Clean, inspect, and repair the sanitary sewer system as needed to provide dependable service and to prevent harmful environmental impacts such as sanitary sewer overflows.",
+      "Integrate CCTV Inspection data into the GIS and Asset Management Software to help drive informed decisions and maintenance practices.",
+      "Continue a comprehensive sewer lining program which will reline pipe that is aged, experiencing inflow/root intrusion, or cracking. The relining process is a cost-effective rehabilitation method that can prolong the life of the pipe an estimated 50 years.",
+      "Continue educational campaigns utilizing existing Communications Team infrastructure related to best practices to prevent sewer issues. One campaign will focus on fat, oil, and grease (FOG) disposal and the other will focus on what not to flush down the toilet.",
+      "Repair pipe and manhole deficiencies identified during routine cleaning and CCTV inspection."
+    ],
+    "performance": [
+      {
+        "metric": "Sanitary sewer overflows",
+        "values": [
+          0,
+          3,
+          0,
+          0
+        ]
+      },
+      {
+        "metric": "Linear feet of sewer line cleaned",
+        "values": [
+          118068,
+          120154,
+          129320,
+          121416
+        ]
+      }
+    ],
+    "expenditures": [
+      {
+        "category": "Personal Services",
+        "values": [
+          577364,
+          589469,
+          682320,
+          531650
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              327214,
+              332113,
+              391960,
+              307195
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Temporary",
+            "values": [
+              11470,
+              16015,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Overtime",
+            "values": [
+              2750,
+              4665,
+              5000,
+              5000
+            ]
+          },
+          {
+            "name": "Salaries and Wages-On-Call",
+            "values": [
+              1536,
+              1227,
+              4295,
+              4445
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              3598,
+              3694,
+              3340,
+              3380
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              25305,
+              26242,
+              29665,
+              23530
+            ]
+          },
+          {
+            "name": "Benefits-WC Insurance & Tax",
+            "values": [
+              5542,
+              4675,
+              6540,
+              4005
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              90007,
+              90037,
+              115735,
+              94550
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              103417,
+              106451,
+              122560,
+              87000
+            ]
+          },
+          {
+            "name": "Benefits-TriMet Excise Tax",
+            "values": [
+              2851,
+              2939,
+              3225,
+              2545
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Materials & Services",
+        "values": [
+          568296,
+          470660,
+          560485,
+          637375
+        ],
+        "lineItems": [
+          {
+            "name": "Printing & Postage",
+            "values": [
+              10377,
+              9634,
+              10000,
+              12000
+            ]
+          },
+          {
+            "name": "Computer Equip & Software",
+            "values": [
+              171,
+              0,
+              500,
+              4900
+            ]
+          },
+          {
+            "name": "Special Programs",
+            "values": [
+              5892,
+              3085,
+              5000,
+              5000
+            ]
+          },
+          {
+            "name": "Consultants",
+            "values": [
+              9385,
+              2867,
+              25000,
+              45000
+            ]
+          },
+          {
+            "name": "Conferences & Meetings",
+            "values": [
+              1088,
+              2190,
+              6450,
+              6450
+            ]
+          },
+          {
+            "name": "Staff Training",
+            "values": [
+              1636,
+              3635,
+              2000,
+              4950
+            ]
+          },
+          {
+            "name": "Merchant Discount Fees",
+            "values": [
+              154246,
+              170576,
+              165000,
+              200000
+            ]
+          },
+          {
+            "name": "Contr R&M - Systems",
+            "values": [
+              160729,
+              140010,
+              174940,
+              178075
+            ]
+          },
+          {
+            "name": "R&M - Systems",
+            "values": [
+              82489,
+              14758,
+              100000,
+              100000
+            ]
+          },
+          {
+            "name": "Vehicle Replacement Expense",
+            "values": [
+              111190,
+              92460,
+              57180,
+              67410
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Capital Outlay",
+        "values": [
+          1337916,
+          2400551,
+          2206960,
+          8594000
+        ],
+        "lineItems": [
+          {
+            "name": "Projects Professional Svc",
+            "values": [
+              8992,
+              65,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Projects",
+            "values": [
+              1139315,
+              2121786,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Construction Fund Projects",
+            "values": [
+              189610,
+              278701,
+              2206960,
+              8594000
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Transfers Out",
+        "values": [
+          1091452,
+          1124043,
+          1296630,
+          2330400
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - General Fund",
+            "values": [
+              953150,
+              987900,
+              951750,
+              1335315
+            ]
+          },
+          {
+            "name": "Transfers Out - Building",
+            "values": [
+              48415,
+              77777,
+              24610,
+              37185
+            ]
+          },
+          {
+            "name": "Transfers Out - Sewer",
+            "values": [
+              0,
+              0,
+              261900,
+              957900
+            ]
+          },
+          {
+            "name": "Transfers Out - Enterprise Bond",
+            "values": [
+              89887,
+              58366,
+              58370,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Contingency",
+        "values": [
+          0,
+          0,
+          653005,
+          1664750
+        ],
+        "lineItems": []
+      },
+      {
+        "category": "Contingency",
+        "values": [
+          0,
+          0,
+          653005,
+          1664750
+        ],
+        "lineItems": []
+      },
+      {
+        "category": "Reserves & Unappropriated",
+        "values": [
+          8000390,
+          8854320,
+          8880380,
+          7882320
+        ],
+        "lineItems": [
+          {
+            "name": "Future Years Projects",
+            "values": [
+              8000390,
+              8854320,
+              8880380,
+              7882320
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "stormwater-operating",
+    "name": "Stormwater Operating",
+    "fy27Objectives": [
+      "Meet or exceed Clean Water Service (CWS) and Environmental Protection Agency (EPA) performance standards by cleaning over 16.66% and video-inspecting 12.5% of the stormwater system.",
+      "Continue to sweep City streets monthly to reduce pollutants entering local rivers and streams.",
+      "Maintain, clean, and upgrade the storm system to help minimize localized flooding, property damage, and environmental impacts.",
+      "Integrate CCTV Inspection data into the GIS and Asset Management Software to help drive informed decisions and maintenance practices.",
+      "Plan and construct capital projects, as identified in the Stormwater Master Plan to maintain water quality and plan for new growth. This includes a project in coordination with the Engineering team to replace deteriorated pipe, improve outfall, and to enhance the treatment aspect of the Indian Meadows greenway.",
+      "Address deferred water quality facility maintenance to improve treatment, better capture pollution, and to reduce replacement costs in the long term. Projects include sediment removal, replanting work, and structural asset repair.",
+      "In wetlands where beaver dams are causing flooding issues, continue to work with local property owners and invested parties to minimize flooding risk while preserving wetland habitats where possible.",
+      "Correct issues in existing water quality manholes to increase efficiency, enhance water quality capability, and aid in protection of local waterways.",
+      "Expand on the existing community engagement and outreach, including with the Backyard Habitat Certification Program.",
+      "Coordinate multiple volunteer events to assist with planting within designated vegetated water quality facilities."
+    ],
+    "performance": [
+      {
+        "metric": "Linear feet of stormwater line cleaned",
+        "values": [
+          44920,
+          84263,
+          79558,
+          81799
+        ]
+      },
+      {
+        "metric": "Catch basins cleaned (sumped & unsumped)",
+        "values": [
+          1473,
+          1650,
+          1586,
+          1722
+        ]
+      }
+    ],
+    "expenditures": [
+      {
+        "category": "Personal Services",
+        "values": [
+          0,
+          0,
+          0,
+          499160
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              0,
+              0,
+              0,
+              293500
+            ]
+          },
+          {
+            "name": "Salaries and Wages-On-Call",
+            "values": [
+              0,
+              0,
+              0,
+              4445
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              0,
+              0,
+              0,
+              3380
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              0,
+              0,
+              0,
+              22150
+            ]
+          },
+          {
+            "name": "Benefits-WC Insurance & Tax",
+            "values": [
+              0,
+              0,
+              0,
+              3695
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              0,
+              0,
+              0,
+              88970
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              0,
+              0,
+              0,
+              80625
+            ]
+          },
+          {
+            "name": "Benefits-TriMet Excise Tax",
+            "values": [
+              0,
+              0,
+              0,
+              2395
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Materials & Services",
+        "values": [
+          906945,
+          886058,
+          898245,
+          987190
+        ],
+        "lineItems": [
+          {
+            "name": "Printing & Postage",
+            "values": [
+              10785,
+              9611,
+              10500,
+              12000
+            ]
+          },
+          {
+            "name": "Consultants",
+            "values": [
+              1797,
+              6230,
+              18000,
+              18000
+            ]
+          },
+          {
+            "name": "Utilities",
+            "values": [
+              431,
+              0,
+              20000,
+              40000
+            ]
+          },
+          {
+            "name": "Gauge",
+            "values": [
+              5274,
+              5511,
+              5600,
+              6000
+            ]
+          },
+          {
+            "name": "Stream Shading",
+            "values": [
+              21218,
+              26530,
+              24000,
+              24000
+            ]
+          },
+          {
+            "name": "Contr R&M - Systems",
+            "values": [
+              514704,
+              450562,
+              260500,
+              263950
+            ]
+          },
+          {
+            "name": "Contr R&M - Water Quality",
+            "values": [
+              87079,
+              78701,
+              81000,
+              81000
+            ]
+          },
+          {
+            "name": "Grounds & Landscaping",
+            "values": [
+              131064,
+              182937,
+              150820,
+              176065
+            ]
+          },
+          {
+            "name": "Street Sweeping",
+            "values": [
+              0,
+              16030,
+              255000,
+              273000
+            ]
+          },
+          {
+            "name": "Vehicle Replacement Expense",
+            "values": [
+              110250,
+              91525,
+              56400,
+              66550
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Capital Outlay",
+        "values": [
+          58,
+          587139,
+          3400000,
+          4050000
+        ],
+        "lineItems": [
+          {
+            "name": "Projects Professional Svc",
+            "values": [
+              58,
+              333186,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Projects",
+            "values": [
+              0,
+              253953,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Construction Fund Projects",
+            "values": [
+              0,
+              0,
+              3400000,
+              4050000
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Transfers Out",
+        "values": [
+          1063977,
+          1215814,
+          1343975,
+          1093865
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - General Fund",
+            "values": [
+              707050,
+              877920,
+              983400,
+              1093865
+            ]
+          },
+          {
+            "name": "Transfers Out - Road Operating",
+            "values": [
+              102210,
+              83570,
+              89130,
+              0
+            ]
+          },
+          {
+            "name": "Transfers Out - Sewer",
+            "values": [
+              192030,
+              210550,
+              227670,
+              0
+            ]
+          },
+          {
+            "name": "Transfers Out - Enterprise Bond",
+            "values": [
+              62687,
+              43774,
+              43775,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Contingency",
+        "values": [
+          0,
+          0,
+          846335,
+          994530
+        ],
+        "lineItems": []
+      },
+      {
+        "category": "Contingency",
+        "values": [
+          0,
+          0,
+          846335,
+          994530
+        ],
+        "lineItems": []
+      },
+      {
+        "category": "Reserves & Unappropriated",
+        "values": [
+          9824856,
+          10804610,
+          6998620,
+          7842790
+        ],
+        "lineItems": [
+          {
+            "name": "Future Years Projects",
+            "values": [
+              9824856,
+              10804610,
+              6998620,
+              7842790
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "road-operating",
+    "name": "Road Operating",
+    "fy27Objectives": [
+      "Install, repair, and/or replace striping and pavement markings as needed to ensure visibility and safety for pedestrians, cyclists, and motorists.",
+      "Clean and repair or replace traffic control signage such as street and road symbol signs to comply with the Manual on Uniform Traffic Control Devices (MUTCD) and provide clear and distinguishable guidance to the traveling public.",
+      "Make pedestrian and Americans Disabilities Act (ADA) improvements as a part of the Neighborhood Transportation Safety Program. These improvements will involve repairing sidewalks, replacing existing ramps, and adding ramps to create a transportation system that's accessible to everyone in the community.",
+      "Construct two Rapid Flashing Rectangular Beacons in the Boones Ferry/Sagert Road area, as outlined in the Community Development Block Grant that was awarded to the City for FY 2026 - 2027.",
+      "Continue work with Portland General Electric (PGE) and Washington County to convert High Pressure Sodium (HPS) streetlights to high efficiency Light Emitting Diode (LED) fixtures in City intersections. In addition, exploration on how best to retrofit or replace decorative fixtures in the downtown core area.",
+      "Stay informed on winter weather conditions to promptly address road hazards and improve safety; build on the City\u2019s existing public-facing communication products and leverage the Communications Team\u2019s communications toolkit to keep the public informed during winter weather events.",
+      "Develop a more robust usage plan for the City's new mag chloride tank, installed during spring 2026. The new tank can lead to increased de-icer application on City roadways during adverse weather events, starting in winter 2026.",
+      "Look at our current street sweeping operation to explore options to reduce costs.",
+      "Continue to participate in community engagement and outreach, such as Big Truck Day and school educational events"
+    ],
+    "performance": [
+      {
+        "metric": "High-pressure sodium (HPS) lights converted to LED",
+        "values": [
+          132,
+          null,
+          68,
+          68
+        ]
+      },
+      {
+        "metric": "Laminated wood street light poles replaced",
+        "values": [
+          0,
+          null,
+          0,
+          0
+        ]
+      }
+    ],
+    "expenditures": [
+      {
+        "category": "Personal Services",
+        "values": [
+          531426,
+          530254,
+          586610,
+          723285
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              303908,
+              311014,
+              335975,
+              397610
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Temporary",
+            "values": [
+              5911,
+              3737,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Overtime",
+            "values": [
+              8628,
+              4650,
+              9000,
+              9000
+            ]
+          },
+          {
+            "name": "Salaries and Wages-On-Call",
+            "values": [
+              3115,
+              2571,
+              6395,
+              4965
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              3597,
+              3694,
+              3340,
+              3955
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              23961,
+              23801,
+              26145,
+              30405
+            ]
+          },
+          {
+            "name": "Benefits-WC Insurance & Tax",
+            "values": [
+              8854,
+              6554,
+              8815,
+              11130
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              91634,
+              91233,
+              106635,
+              133125
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              75560,
+              79094,
+              87485,
+              129790
+            ]
+          },
+          {
+            "name": "Benefits-TriMet Excise Tax",
+            "values": [
+              2673,
+              2645,
+              2820,
+              3305
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Materials & Services",
+        "values": [
+          1146780,
+          1044479,
+          1217630,
+          1299445
+        ],
+        "lineItems": [
+          {
+            "name": "Utilities",
+            "values": [
+              21369,
+              14506,
+              25000,
+              45000
+            ]
+          },
+          {
+            "name": "Street Lights",
+            "values": [
+              36258,
+              39590,
+              40065,
+              50000
+            ]
+          },
+          {
+            "name": "Conferences & Meetings",
+            "values": [
+              421323,
+              443518,
+              507110,
+              507110
+            ]
+          },
+          {
+            "name": "Contr R&M - Road Strip",
+            "values": [
+              26695,
+              18125,
+              20000,
+              65000
+            ]
+          },
+          {
+            "name": "Street Sweeping",
+            "values": [
+              75342,
+              84055,
+              80000,
+              80000
+            ]
+          },
+          {
+            "name": "Emergency Road Clean-up",
+            "values": [
+              259933,
+              251817,
+              255000,
+              273000
+            ]
+          },
+          {
+            "name": "Roadside",
+            "values": [
+              109806,
+              56899,
+              111380,
+              70000
+            ]
+          },
+          {
+            "name": "R&M - Guardrails, signs",
+            "values": [
+              38178,
+              30370,
+              48200,
+              52600
+            ]
+          },
+          {
+            "name": "R&M - Streets",
+            "values": [
+              35988,
+              4027,
+              53640,
+              50000
+            ]
+          },
+          {
+            "name": "Vehicle Replacement Expense",
+            "values": [
+              92810,
+              73510,
+              38145,
+              46530
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Capital Outlay",
+        "values": [
+          379350,
+          689143,
+          370000,
+          1075000
+        ],
+        "lineItems": [
+          {
+            "name": "Equipment & Furnishings",
+            "values": [
+              0,
+              0,
+              100000,
+              0
+            ]
+          },
+          {
+            "name": "Projects Professional Svc",
+            "values": [
+              332812,
+              304005,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Projects",
+            "values": [
+              0,
+              838513,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Construction Fund Projects",
+            "values": [
+              46538,
+              0,
+              270000,
+              1075000
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Transfers Out",
+        "values": [
+          1444409,
+          1517645,
+          1547070,
+          1538475
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - General Fund",
+            "values": [
+              855700,
+              988300,
+              930800,
+              1058075
+            ]
+          },
+          {
+            "name": "Transfers Out - Road Utility",
+            "values": [
+              511430,
+              470979,
+              557900,
+              480400
+            ]
+          },
+          {
+            "name": "Transfers Out - Enterprise Bond",
+            "values": [
+              77278,
+              58366,
+              58370,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Contingency",
+        "values": [
+          0,
+          0,
+          558195,
+          695430
+        ],
+        "lineItems": []
+      },
+      {
+        "category": "Contingency",
+        "values": [
+          0,
+          0,
+          558195,
+          695430
+        ],
+        "lineItems": []
+      },
+      {
+        "category": "Reserves & Unappropriated",
+        "values": [
+          3861064,
+          3718442,
+          2494245,
+          932370
+        ],
+        "lineItems": [
+          {
+            "name": "Future Years Projects",
+            "values": [
+              3861064,
+              3718442,
+              2471585,
+              910095
+            ]
+          },
+          {
+            "name": "Footpath/Biketrail Reserve",
+            "values": [
+              0,
+              0,
+              22660,
+              22275
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -9,13 +9,15 @@ from pathlib import Path
 SRC = Path('/home/hermes/projects/tualatin-budget-analysis/extracted/raw/fy2026-27_proposed.txt')
 OUT = Path('/home/hermes/projects/tualatin-budget-analysis/data/departments.json')
 
+# Maps slug to (Name, PDF page where 'FY 2026-2027 Personal Services: $X' marker appears).
+# These were verified by scanning the document for the marker.
 DEPARTMENTS = [
     ("city-council",          "City Council",          140),
     ("administration",        "Administration",        145),
-    ("finance",               "Finance",               156),
-    ("municipal-court",       "Municipal Court",       160),
-    ("legal",                 "Legal",                 165),
-    ("information-services",  "Information Services",  170),
+    ("finance",               "Finance",               151),
+    ("municipal-court",       "Municipal Court",       156),
+    ("legal",                 "Legal",                 160),
+    ("information-services",  "Information Services",  165),
     ("community-development", "Community Development", 181),
     ("engineering",           "Engineering",           187),
     ("building",              "Building",              192),
@@ -26,7 +28,7 @@ DEPARTMENTS = [
     ("water-operating",       "Water Operating",       254),
     ("sewer-operating",       "Sewer Operating",       265),
     ("stormwater-operating",  "Stormwater Operating",  275),
-    ("road-operating",        "Road Operating",        289),
+    ("road-operating",        "Road Operating",        288),
 ]
 
 CATEGORY_HEADERS = {
@@ -39,29 +41,46 @@ CATEGORY_HEADERS = {
     "Reserves & Unappropriated",
 }
 
-# Words that strongly indicate the line is a continuation of the previous name
-CONTINUATION_STARTERS = {
-    "Back", "Tax", "Time", "Engagement", "Expense", "Meetings",
-    "Furnishings", "Furniture", "Equipment", "Testing", "Program",
-    "Recognition", "Agency", "Benefits", "Supplies", "Matl",
-    "Computer/Laptop", "Tualatin", "OR Tax", "Loans", "Lines",
-    "Stations", "Mgmt", "Periodicals", "Subscriptions",
+# Exact strings (full-line, stripped) that strongly indicate the line is a continuation of the previous name.
+# These are short fragment lines that complete a wrapped phrase.
+# CAUTION: Don't include words that can also be standalone line items
+# (e.g., "Projects" is a sub-category in Capital Outlay, "Administration" is a dept name).
+CONTINUATION_EXACT = {
+    # Common wrapped continuations — short trailing words from chart-of-accounts names
+    "Benefits", "Engagement", "Meetings", "Expense",
+    "Furnishings", "Furniture", "Testing",
+    "Agency", "Supplies", "Matl",
+    "Computer/Laptop", "OR Tax", "Loans",
+    "Stations", "Mgmt", "Subscriptions",
     "Promotional", "Recruitment", "Informational", "Legis/Judicial",
-    "Refunds", "Insurance", "Fees", "Reserve",
-    "Defense", "Stabilization", "Projects", "Outside",
-    "Services", "Tower", "Building", "Hydrants", "Reservoir",
-    "Software", "Online", "Phones", "Postage", "Service",
-    "Mowing", "Cleaning", "Sweeping", "Maintenance", "Repairs",
-    "Lights", "Signs", "Markings", "Signal", "Operation",
-    "Account", "Years", "Pump", "Vehicle", "Replacement",
-    "Restitution", "Disposition", "Stormwater", "Inspection",
-    "Centrifuge", "Detective", "Specialist", "Operations",
-    "Liability", "Workers", "Marketing", "Communications",
-    "Fund", "Co-Op", "WW", "Major", "Computers",
-    "Plant", "Treatment", "Stormwater", "Materials",
-    "Charge", "Loan", "Disposal", "Bond", "Holiday",
-    "Fitness", "Council", "Mayor", "Police", "Court",
-    "Permits", "Manuals", "Wells", "Tx Ln", "Gilbert",
+    "Defense Fund", "Excise Tax",
+    "Services Building",
+    "Software",
+    "Sweeping",
+    "Lights", "Signs", "Markings", "Signal",
+    "Restitution", "Centrifuge", "Specialist",
+    "Liability",
+    "Co-Op", "WW",
+    "Tx Ln", "Gilbert",
+    "Back", "Buy Back",
+    "Insurance & Tax",
+    "Periodicals",
+    "Loan Refunds",
+    "Tualatin Library", "Major Projects",
+    "Replacement Expense",
+    "WW Plant",
+    "Body Cameras",
+    "& Mains",
+    "Recognition",
+    "Quality",
+    "Acquisition",
+    "Costs",
+}
+
+# Words that as first word of next line strongly indicate continuation.
+# Be careful: these words must NOT also start independent line items.
+SAFE_CONTINUATION_FIRST_WORDS = {
+    "Back", "Tax", "Time", "Matl", "OR",
 }
 
 def parse_num(s):
@@ -104,16 +123,23 @@ def should_merge_with_next(line, next_line):
     # Don't merge into a category header
     if nstrip in CATEGORY_HEADERS or nstrip == "Grand Total":
         return False
+    rstrip = line.rstrip()
     # 1. Trailing whitespace before newline indicates continuation
     if line.endswith(' '):
         return True
     # 2. Ends with "&"
-    if line.rstrip().endswith('&'):
+    if rstrip.endswith('&'):
         return True
     # 3. Ends with "and" (word)
-    if re.search(r'\band$', line.rstrip()):
+    if re.search(r'\band$', rstrip):
         return True
-    # 4. Next line starts with "-" (and isn't a number)
+    # 4. Ends with "-" (hyphen indicating continuation, e.g., "Advertising -")
+    if rstrip.endswith('-') and not rstrip.endswith('--'):
+        return True
+    # 5. Ends with "=" (PDF artifact for line wrap, e.g., "Benefits-Employee=")
+    if rstrip.endswith('='):
+        return True
+    # 6. Next line starts with "-" (and isn't a number)
     if nstrip.startswith('-') and not is_num_row(next_line):
         return True
     return False
@@ -125,61 +151,256 @@ def merge_name_fragments_strict(frags):
     while i < len(frags):
         cur = frags[i]
         while i + 1 < len(frags) and should_merge_with_next(cur, frags[i+1]):
-            cur = cur.rstrip() + ' ' + frags[i+1].lstrip()
+            # Strip trailing "=" or "-" artifact when concatenating
+            joiner_left = cur.rstrip()
+            if joiner_left.endswith('='):
+                joiner_left = joiner_left[:-1].rstrip()
+            cur = joiner_left + ' ' + frags[i+1].lstrip()
             i += 1
-        result.append(cur.strip())
+        cleaned = cur.strip()
+        # Strip trailing "=" if any leftover
+        if cleaned.endswith('='):
+            cleaned = cleaned[:-1].rstrip()
+        result.append(cleaned)
         i += 1
     return result
 
+# Specific (left, right) fragment pairs that should be merged.
+# These come from chart of accounts names that wrap in the PDF without a trailing-space marker.
+SPECIFIC_MERGE_PAIRS = {
+    ("Staff/Dept", "Recognition"),
+    ("Vehicle", "Replacement Expense"),
+    ("Vehicle Replacement", "Expense"),
+    ("Future Years", "Projects"),
+    ("Rate Stabilization", "Reserve"),
+    ("R&M - Pump", "Stations"),
+    ("Minor Vehicle", "Equipment"),
+    ("Ammun & Defense", "Equip"),
+    ("Community", "Engagement Supplies"),
+    ("Community", "Engagement"),
+    ("Body Worn", "Cameras"),
+    ("Benefits-TriMet", "Excise Tax"),
+    ("Community", "Engagement"),
+    ("Community", "Engagement Supplies"),
+    ("Administrative", "Expense"),
+    ("Vehicle", "Replacement"),
+    ("Vehicle Replacement", "Expense"),
+    ("Concerts on", "The Commons"),
+    ("Concerts on The", "Commons"),
+    ("Recreation Program", "Expend"),
+    ("Recreation Program", "Expend-JPC"),
+    ("Equipment &", "Furnishings"),
+    ("Land", "Acquisition"),
+    ("Issuance", "Costs"),
+    ("Capital", "Reserve"),
+    ("General Account", "Reserve"),
+    ("Rate Stabilization", "Reserve"),
+    ("Future Years", "Projects"),
+    ("Future Years", "Reserve"),
+    ("Construction", "Fund Projects"),
+    ("Professional Svc", "Projects"),
+    ("Administration", "Projects"),
+    ("Administration", "Projects="),
+    ("Construction Fund", "Projects"),
+    ("Projects=", "Professional Svc"),
+    ("Equipment", "Furnishings"),
+    ("Bank", "Fees"),
+    ("Special", "Programs"),
+    ("Special Investigative", "Fund"),
+    ("Donations - Outside", "Agency"),
+    ("HEROES", "Program"),
+    ("Special Investigative", "Fund"),
+    ("Canine", "Program"),
+    ("Mental Health", "Response"),
+    ("ORPAT-Fitness", "Incentive"),
+    ("PORAC-Legal", "Defense Fund"),
+    ("Benefits-Sick Leave", "Buy Back"),
+    ("Benefits-Holiday Buy", "Back"),
+    ("Benefits-WC", "Contra"),
+    ("Inventory", "Adjustment"),
+    ("Water", "Conservation"),
+    ("Water Purchases", "-For Tualatin"),
+    ("Water Purchases -For Tualatin", "Hydrants"),
+    ("Hydrant", "Meters"),
+    ("TVWD", "- Jointline"),
+    ("TVWD - Jointline", "TVWD"),
+    ("TVWD", "- WA CO"),
+    ("TVWD - WA CO", "Lines"),
+    ("Personal", "Computer/Laptop"),
+    ("Water System", "- Electricity"),
+    ("Merchant Discount", "Fees"),
+    ("Meter", "Reading"),
+    ("Contr R&M", "- Systems"),
+    ("R&M - Pump", "Stations"),
+    ("R&M -", "Hydrants"),
+    ("R&M - Major", "Projects"),
+    ("Transfers Out", "-"),
+    ("Transfers Out -", "General Fund"),
+    ("Transfers Out -", "Enterprise Bond"),
+    ("Transfers Out -", "Water Operating"),
+    ("Transfers Out -", "Sewer Operating"),
+    ("Transfers Out -", "Stormwater"),
+    ("Transfers Out -", "Stormwater Operating"),
+    ("Transfers Out -", "Building"),
+    ("Transfers Out -", "Road Operating"),
+    ("Transfers Out -", "Road Utility"),
+    ("Transfers Out -", "Tualatin City"),
+    ("Transfers Out - Tualatin City", "Services Building"),
+    ("Transfers Out -", "Vehicle"),
+    ("Transfers Out - Vehicle", "Replacement"),
+    ("Other Financing", "Uses"),
+    ("Property", "Restitution"),
+    ("Crash", "Disposition"),
+    ("Asset", "Disposition"),
+    ("Police K9", "Capital"),
+    ("Department", "Recognition"),
+    ("Major", "Investigation"),
+    ("Major", "Crime Unit"),
+    ("Tualatin", "Sherwood"),
+    ("Storm", "Water Quality"),
+    ("Storm Water", "Quality"),
+    ("Stormwater Quality", "Projects"),
+    ("Streetlight", "Maintenance"),
+    ("Street", "Sweeping"),
+    ("R&M - Street", "Sweeping"),
+    ("Street Lights", "Operation"),
+    ("Pavement", "Markings"),
+    ("Street", "Signs"),
+    ("Street", "Markings"),
+    ("R&M - Street", "Lights"),
+    ("Materials -", "Pavement"),
+    ("Snow", "Removal"),
+    ("Bond Registration &", "Exp"),
+    ("Safety/Risk Mgmt", "Program"),
+    ("Bond", "Principal"),
+    ("Bond", "Interest"),
+    ("Loan", "Refunds"),
+    ("Major Mtnc Wells &", "Mains"),
+    ("Mtnc Wells", "& Mains"),
+    ("Sanitary Sewer", "Maintenance"),
+    ("Sewer Co-Op", "WW Plant"),
+    ("Sewer Co-Op WW Plant", "Tx Ln"),
+    ("CWS", "Sewer"),
+    ("Mental Health", "Response Team"),
+    ("Body", "Cameras"),
+    ("Body Worn", "Cameras"),
+    ("Body Worn Cameras", "Program"),
+    ("Inventory", "Supplies"),
+    ("Periodicals &", "Subscriptions"),
+    ("Books, Periodicals &", "Subscriptions"),
+    ("Library Tech", "- Public"),
+    ("Library Tech -", "Public"),
+    ("Collection", "Development"),
+    ("Youth", "Development"),
+    ("Concerts on The", "Commons"),
+    ("Concerts on The Commons", "Arts Program"),
+    ("Arts", "Program"),
+    ("Tualatin", "Library"),
+    ("Library", "Foundation"),
+    ("Library", "District"),
+    ("Friends of", "Tualatin Library"),
+    ("Friends of Tualatin", "Library"),
+    ("Special", "Programs"),
+    ("Recreation Program", "Expend"),
+    ("Recreation Program Expend", "-JPC"),
+    ("Recreation Program Expend-JPC", "Consultants"),
+    ("Project", "Loans"),
+    ("Bond Project", "Loans"),
+    ("Conferences &", "Meetings"),
+    ("Conferences &", "Meetings -Mayor"),
+    ("Conferences &", "Meetings -Council"),
+    ("Publication, Rpt, Ref", "Matl"),
+    ("Publications, Rpt, Ref", "Matl"),
+    ("Network", "/Online"),
+    ("R&M", "- Lines"),
+    ("R&M", "- Systems"),
+    ("R&M", "- Equipment"),
+    ("R&M", "- Computers"),
+    ("R&M", "- Reservoir"),
+    ("R&M -", "Equipment"),
+    ("R&M -", "Computers"),
+    ("R&M -", "Lines"),
+    ("R&M -", "Systems"),
+    ("R&M -", "Reservoir"),
+    ("R&M -", "Hydrants"),
+    ("R&M -", "Pump Stations"),
+    ("Sewer", "Centrifuge"),
+    ("Major", "Investigations"),
+}
+
 def merge_with_count_match(names, target_count):
-    """Iteratively merge adjacent fragments using continuation-word heuristic to match target count."""
-    if len(names) <= target_count:
-        return names
-    # Identify mergeable pairs: (i, i+1) where names[i+1] starts with a continuation word
-    # and names[i] is not a category header.
-    while len(names) > target_count:
-        merged_any = False
-        for i in range(len(names) - 1):
+    """Iteratively merge adjacent fragments using continuation heuristics.
+
+    Multiple passes:
+    1. Merge specific known compound pairs (SPECIFIC_MERGE_PAIRS) - regardless of count.
+    2. Merge when next line is exactly in CONTINUATION_EXACT - regardless of count.
+    3. Merge when next line's first word is in SAFE_CONTINUATION_FIRST_WORDS - up to target only.
+    4. If still over target, do aggressive single-word merge - up to target only.
+    """
+    def try_merge(predicate, max_merges=None):
+        nonlocal names
+        merge_count = 0
+        i = 0
+        while i < len(names) - 1:
+            if max_merges is not None and merge_count >= max_merges:
+                break
             cur = names[i].strip()
             nxt = names[i+1].strip()
             if cur in CATEGORY_HEADERS or cur == "Grand Total":
+                i += 1
                 continue
             if nxt in CATEGORY_HEADERS or nxt == "Grand Total":
+                i += 1
                 continue
-            first_word = nxt.split()[0] if nxt else ""
-            # Continuation if next line starts with a word in our continuation set
-            if first_word in CONTINUATION_STARTERS:
+            if predicate(cur, nxt):
                 names[i] = cur + ' ' + nxt
                 del names[i+1]
-                merged_any = True
-                break
-            # Or if the current line is a single short word and the next is also short
-            # (common for wrapped 2-word names like "Community" + "Engagement")
-            if len(cur.split()) == 1 and len(nxt.split()) <= 3 and not cur.endswith(':'):
-                # Check if combination looks like a real budget line
-                # We'll merge if next starts with capital letter and current is a capitalized single word
-                if cur[:1].isupper() and nxt[:1].isupper():
-                    # Only do this conservatively - check it's not a category
-                    names[i] = cur + ' ' + nxt
-                    del names[i+1]
-                    merged_any = True
-                    break
-        if not merged_any:
-            break
+                merge_count += 1
+            else:
+                i += 1
+
+    # Pass 1: specific compound pairs (always merge regardless of count)
+    try_merge(lambda cur, nxt: (cur, nxt) in SPECIFIC_MERGE_PAIRS)
+    # Pass 2: exact continuation
+    try_merge(lambda cur, nxt: nxt in CONTINUATION_EXACT)
+    if len(names) <= target_count:
+        return names
+    # Pass 3: safe first-word continuation, bounded
+    try_merge(lambda cur, nxt: nxt.split() and nxt.split()[0] in SAFE_CONTINUATION_FIRST_WORDS,
+              max_merges=len(names) - target_count)
+    if len(names) <= target_count:
+        return names
+    # Pass 4: aggressive single-word merge as last resort, bounded
+    def aggressive(cur, nxt):
+        if len(cur.split()) == 1 and len(nxt.split()) <= 3 and cur[:1].isupper() and nxt[:1].isupper():
+            if '-' in cur or '&' in cur:
+                return False
+            # Don't merge if next starts with an all-caps acronym (like "HEROES", "ORPAT", "PORAC", "TVWD")
+            first_word = nxt.split()[0]
+            if first_word.isupper() and len(first_word) >= 2 and first_word.isalpha():
+                return False
+            return True
+        return False
+    try_merge(aggressive, max_merges=len(names) - target_count)
     return names
 
 def extract_block(lines, page_starts, start_page, end_page):
-    """Extract numeric rows and name fragments from pages [start_page, end_page)."""
+    """Extract numeric rows and name fragments from pages [start_page, end_page).
+    Stops once 'Grand Total' has been seen in the names AND a subsequent page has no more table data.
+    """
     section_numbers = []
     section_names = []
     page_keys = sorted([p for p in page_starts if start_page <= p < end_page])
+    grand_total_seen = False
     for p in page_keys:
         p_start = page_starts[p]
         p_end = page_starts.get(p + 1, len(lines))
         i = p_start + 1
         page_nums = []
         page_names = []
-        # Phase 1: collect numbers (skip blanks)
+        # Phase 1: collect numbers, skipping captions/short text at the top
+        # Look ahead: are there number rows in the next ~20 lines?
+        has_numbers = any(is_num_row(lines[j]) for j in range(i, min(i + 30, p_end)))
         while i < p_end:
             line = lines[i]
             if is_num_row(line):
@@ -188,6 +409,9 @@ def extract_block(lines, page_starts, start_page, end_page):
             elif line.strip() == '':
                 i += 1
             elif re.match(r'^===== PAGE', line):
+                i += 1
+            elif has_numbers and len(page_nums) == 0 and len(line.strip()) < 60:
+                # Skip a leading caption-like line if numbers are still coming
                 i += 1
             else:
                 break
@@ -201,136 +425,143 @@ def extract_block(lines, page_starts, start_page, end_page):
             if 'Actual FY' in line and 'Adopted' in line and 'Proposed' in line:
                 i += 1
                 continue
-            if re.match(r'^\d+$', stripped):  # page number
+            if re.match(r'^\d+$', stripped):
                 i += 1
                 continue
             if re.match(r'^===== PAGE', line):
                 break
             if is_num_row(line):
-                # Stragglers - rare
                 page_nums.append([parse_num(x) for x in line.strip().split()])
+                i += 1
+                continue
+            # Skip lines that look like photo captions or descriptive text
+            # Budget line items are short (< 60 chars) and don't contain long sentences
+            if len(stripped) > 60 and ' ' in stripped:
                 i += 1
                 continue
             page_names.append(line)
             i += 1
+
+        # If grand_total_seen already, stop - we're past the dept's table
+        if grand_total_seen:
+            break
+
         section_numbers.extend(page_nums)
         section_names.extend(page_names)
+
+        # Check if 'Grand Total' is in this page's names
+        for name in page_names:
+            if name.strip() == 'Grand Total':
+                grand_total_seen = True
+                break
     return section_numbers, section_names
 
-def find_expenditure_start_page(lines, page_starts, approx_page):
-    """Find page with 'FY 2026 - 2027 Personal Services: $X' marker near approx_page.
-    Returns the page number where the numeric expenditure table begins (typically approx_page+1).
+def find_expenditure_start_page(lines, page_starts, marker_page):
+    """Given the marker page (where 'FY 2026 - 2027 Personal Services: $X' appears),
+    return the page number where the numeric expenditure table begins (marker_page + 1).
     """
-    # Look for the marker in pages [approx_page-2, approx_page+3]
-    for p in range(approx_page - 2, approx_page + 4):
-        if p not in page_starts:
-            continue
-        p_start = page_starts[p]
-        p_end = page_starts.get(p + 1, len(lines))
-        for i in range(p_start, p_end):
-            if 'FY 2026 - 2027 Personal Services' in lines[i] or 'FY 2025 - 2026 Personal Services' in lines[i]:
-                # Numeric table starts on next page
-                return p + 1
-    return approx_page + 1
+    return marker_page + 1
 
-def find_objectives_and_metrics(lines, page_starts, start_page, end_page):
-    """Find objectives list and performance metrics in the descriptive pages BEFORE the expenditure table."""
-    # Look in pages [start_page-N, expenditure_start_page]
+def find_objectives_and_metrics(lines, page_starts, exp_start_page):
+    """Find objectives list and performance metrics in the descriptive pages BEFORE the expenditure table.
+    The expenditure table starts on page `exp_start_page`. The 'FY 2026 - 2027 Personal Services: $X'
+    marker is on page exp_start_page - 1 (or exp_start_page - 2). Look BACKWARD for the most recent
+    'Objectives for FY 2026' header, and use it.
+    """
     objectives = []
     metrics = []
-    # Find page where "Objectives for FY 2026 - 2027" appears
+
+    p_end = page_starts.get(exp_start_page, len(lines))
+
+    # Walk backward to find the most recent 'Objectives for FY 2026' before exp_start_page
+    # First marker we hit is this dept's own; we want to find Objectives BEFORE that marker.
     obj_start_line = None
-    obj_end_line = None
-    perf_start_line = None
-    perf_end_line = None
-
-    p_search_start = page_starts.get(start_page - 10, 0)
-    p_search_end = page_starts.get(end_page, len(lines))
-
-    for i in range(p_search_start, p_search_end):
+    seen_own_marker = False
+    for i in range(p_end - 1, -1, -1):
         line = lines[i].strip()
-        if 'Objectives for FY 2026' in line or 'Objectives for FY 2026 - 2027' in line:
+        if 'Objectives for FY 2026' in line:
             obj_start_line = i + 1
-        elif obj_start_line is not None and obj_end_line is None:
-            if 'Performance Measures' in line:
-                obj_end_line = i
-                perf_start_line = i + 1
-            elif 'FY 2026 - 2027 Personal Services' in line or 'FY 2025 - 2026 Personal Services' in line:
-                obj_end_line = i
-                break
-        elif perf_start_line is not None and perf_end_line is None:
-            if 'FY 2026 - 2027 Personal Services' in line or 'FY 2025 - 2026 Personal Services' in line:
+            break
+        # Stop if we hit a previous department's expenditure marker (going too far back)
+        if 'FY 2026 - 2027 Personal Services:' in line or 'FY 2025 - 2026 Personal Services:' in line:
+            if not seen_own_marker:
+                seen_own_marker = True
+                continue
+            # Second marker = previous dept's
+            break
+
+    if obj_start_line is None:
+        return [], []
+
+    # Find Performance Measures or Personal Services marker after obj_start
+    obj_end_line = p_end
+    perf_start_line = None
+    perf_end_line = p_end
+    for i in range(obj_start_line, p_end):
+        line = lines[i].strip()
+        if 'Performance Measures' in line:
+            obj_end_line = i
+            perf_start_line = i + 1
+            break
+        if 'FY 2026 - 2027 Personal Services:' in line or 'FY 2025 - 2026 Personal Services:' in line:
+            obj_end_line = i
+            break
+
+    if perf_start_line is not None:
+        for i in range(perf_start_line, p_end):
+            line = lines[i].strip()
+            if 'FY 2026 - 2027 Personal Services:' in line or 'FY 2025 - 2026 Personal Services:' in line:
                 perf_end_line = i
                 break
 
-    if obj_start_line is not None and obj_end_line is None:
-        # If no perf measures, end at expenditure table
-        obj_end_line = perf_start_line or p_search_end
-    if perf_start_line is not None and perf_end_line is None:
-        perf_end_line = p_search_end
-
-    # Extract objectives: each bullet/paragraph between obj_start and obj_end
-    if obj_start_line is not None:
-        objectives = extract_objectives(lines, obj_start_line, obj_end_line)
-
-    # Extract performance metrics
+    objectives = extract_objectives(lines, obj_start_line, obj_end_line)
     if perf_start_line is not None:
         metrics = extract_metrics(lines, perf_start_line, perf_end_line)
 
     return objectives, metrics
 
 def extract_objectives(lines, start, end):
-    """Extract list of objectives between line indices [start, end)."""
-    # Objectives are paragraphs of text separated by page markers, page numbers, blank lines
+    """Extract list of objectives between line indices [start, end).
+    Each objective is a sentence (or run of sentences) ending with period.
+    Page markers, page numbers, and blank lines are NOT paragraph breaks; objectives
+    can span page breaks. The only delimiter is "ends in period/colon".
+    """
     objectives = []
     current = []
     for i in range(start, end):
         line = lines[i].rstrip('\n')
         stripped = line.strip()
         if not stripped:
-            if current:
-                # End of paragraph
-                text = ' '.join(current).strip()
-                if len(text) > 5:
-                    objectives.append(text)
-                current = []
             continue
         if re.match(r'^===== PAGE', line):
-            if current:
-                text = ' '.join(current).strip()
-                if len(text) > 5:
-                    objectives.append(text)
-                current = []
             continue
-        if re.match(r'^\d+$', stripped):  # page number
-            if current:
-                text = ' '.join(current).strip()
-                if len(text) > 5:
-                    objectives.append(text)
-                current = []
+        if re.match(r'^\d{1,3}$', stripped):  # page number
             continue
-        # Heuristic: each objective is one sentence/paragraph ending with period.
-        # Lines wrap, so accumulate then split.
         current.append(stripped)
         # If line ends with sentence-ending punctuation, treat as end of one objective
-        if stripped.endswith('.') or stripped.endswith(':'):
+        if stripped.endswith('.') or stripped.endswith(':') or stripped.endswith('?'):
             text = ' '.join(current).strip()
-            if len(text) > 5:
+            if len(text) > 10:
                 objectives.append(text)
             current = []
     if current:
         text = ' '.join(current).strip()
-        if len(text) > 5:
+        if len(text) > 10:
             objectives.append(text)
-    # Clean up: filter out anything that looks like noise
-    objectives = [o for o in objectives if not re.match(r'^\d+$', o) and len(o) > 10]
     return objectives
 
 def extract_metrics(lines, start, end):
     """Extract performance metrics between line indices [start, end).
-    Metric rows look like: metric name then 4 values, possibly wrapped.
+    Each metric: name (possibly spanning multiple lines), then 4 value tokens.
+    The values appear at the END of the LAST name line (or on the next line).
+
+    Strategy:
+    - Process content lines as a stream.
+    - For each line, look at TRAILING tokens that are values (numbers/percentages/N/A/<X).
+    - If a line has 4 trailing values, the leading tokens are the tail of the name; combine with
+      previously accumulated name fragments.
+    - If a line has trailing values but fewer than 4, look at the next line(s) to complete.
     """
-    # Collect all non-empty content lines
     content = []
     for i in range(start, end):
         line = lines[i].rstrip('\n')
@@ -339,106 +570,114 @@ def extract_metrics(lines, start, end):
             continue
         if re.match(r'^===== PAGE', line):
             continue
-        if re.match(r'^\d+$', stripped) and len(stripped) <= 3:
-            # Could be a page number; but could be a metric value. Skip if it's a small standalone integer in a position that looks like a page number
-            # Use threshold: page numbers are usually 100-300 and standalone. Metric values can also be like 0 or 1.
-            # We'll trust other context: if it appears between metric blocks, may be page num
-            # For safety, only skip 3-digit numbers >= 100 that appear alone
-            if int(stripped) >= 100:
-                continue
         if 'Actual' in stripped and 'Adopted' in stripped:
             continue
-        if re.match(r'^FY \d{4} - \d{4}', stripped):
-            # Header row "FY 2023 - 2024 ... FY 2026 - 2027"
+        if re.match(r'^FY \d{4} - \d{4}( FY \d{4} - \d{4})*$', stripped):
+            continue
+        # Skip pure page-number lines (3-digit standalone, between 100-300)
+        if re.match(r'^\d{3}$', stripped) and 100 <= int(stripped) <= 400:
             continue
         content.append(stripped)
 
-    # Now parse content. Each metric is: name line(s) followed by 4 value tokens.
-    # Values can be: numbers (with commas), percentages, "N/A", "≤ 10", "< 10", etc.
-    # Strategy: group tokens. A value is something like a number, percentage, or "N/A".
+    def line_tokens_with_combiners(line):
+        """Split line into tokens, combining < N / > N / ≤ N / ≥ N pairs."""
+        toks = line.split()
+        out = []
+        j = 0
+        while j < len(toks):
+            if toks[j] in ('<', '>', '≤', '≥') and j + 1 < len(toks):
+                out.append(toks[j] + ' ' + toks[j+1])
+                j += 2
+            else:
+                out.append(toks[j])
+                j += 1
+        return out
+
+    def trailing_value_count(tokens):
+        """Count how many trailing tokens are value-like."""
+        c = 0
+        for tok in reversed(tokens):
+            if is_value_token(tok):
+                c += 1
+            else:
+                break
+        return c
 
     metrics = []
+    name_acc = []  # accumulated name tokens
     i = 0
     while i < len(content):
-        # Accumulate name lines until we find a line that looks like values
-        name_parts = []
-        while i < len(content):
-            line = content[i]
-            # Check if this line has the value pattern: 4 tokens of numbers/percentages/N/A
-            if looks_like_value_line(line):
-                break
-            # Sometimes the name and first values are on same line
-            tokens = line.split()
-            # Heuristic: if the line ends with what looks like values
-            tail_values = extract_trailing_values(line)
-            if tail_values is not None and len(tail_values) > 0:
-                # Take the leading text as name and trailing tokens as values
-                name_part_count = len(tokens) - len(tail_values)
-                name_part = ' '.join(tokens[:name_part_count])
-                if name_part:
-                    name_parts.append(name_part)
-                # Accumulate values across following lines if needed
-                values = tail_values
-                # Are there more values needed? We need 4
-                j = i + 1
-                while len(values) < 4 and j < len(content):
-                    nxt = content[j]
-                    if looks_like_value_line(nxt):
-                        values.extend(nxt.split())
-                        j += 1
-                    else:
-                        # Could be partial values
-                        nxt_vals = extract_all_value_tokens(nxt)
-                        if nxt_vals and len(nxt_vals) == len(nxt.split()):
-                            values.extend(nxt_vals)
-                            j += 1
-                        else:
-                            break
-                if len(values) >= 4:
-                    metric_name = ' '.join(name_parts).strip()
+        line = content[i]
+        tokens = line_tokens_with_combiners(line)
+        tv = trailing_value_count(tokens)
+        if tv >= 4:
+            # Last 4 tokens are values; prefix tokens are tail of name
+            name_part = tokens[:-4]
+            value_toks = tokens[-4:]
+            if name_part:
+                name_acc.extend(name_part)
+            metric_name = ' '.join(name_acc).strip()
+            if metric_name and not all(is_value_token(t) for t in line_tokens_with_combiners(metric_name)):
+                metric_values = [parse_metric_value(v) for v in value_toks]
+                metrics.append({"metric": metric_name, "values": metric_values})
+            name_acc = []
+            i += 1
+        elif tv > 0 and tv < 4:
+            # Partial trailing values. Look at next line(s) to complete.
+            # Two scenarios:
+            # (A) Name continues with embedded numeric (e.g., "per 1,000" then next line "customer accounts ..." would be unusual)
+            # (B) Values are split across 2 lines (rare in this PDF)
+            # Try scenario B: see if next line is all values
+            if i + 1 < len(content):
+                next_tokens = line_tokens_with_combiners(content[i+1])
+                next_tv = trailing_value_count(next_tokens)
+                if all(is_value_token(t) for t in next_tokens) and tv + len(next_tokens) >= 4:
+                    # Combine
+                    needed = 4 - tv
+                    value_toks = tokens[-tv:] + next_tokens[:needed]
+                    name_part = tokens[:-tv]
+                    if name_part:
+                        name_acc.extend(name_part)
+                    metric_name = ' '.join(name_acc).strip()
                     if metric_name:
-                        metric_values = []
-                        for v in values[:4]:
-                            metric_values.append(parse_metric_value(v))
+                        metric_values = [parse_metric_value(v) for v in value_toks]
                         metrics.append({"metric": metric_name, "values": metric_values})
-                    i = j
-                    name_parts = []
-                    break
-                else:
-                    # Couldn't find 4 values; skip this name
-                    i += 1
-                    name_parts = []
-                    break
-            else:
-                # All text is name
-                name_parts.append(line)
-                i += 1
-        else:
-            # Reached end without finding value line
-            break
-        if name_parts and i < len(content):
-            # name_parts had pure-text lines; now i should be at a value line
-            line = content[i]
-            tokens = line.split()
-            values = tokens[:]
+                    name_acc = []
+                    i += 2
+                    continue
+            # Scenario A: treat trailing as part of name (it's like "85%" being part of a name? rare)
+            # OR: trailing values are the START of a 4-value group, with rest on next line(s)
+            # Try aggregation
+            agg = list(tokens)
             j = i + 1
-            while len(values) < 4 and j < len(content):
-                nxt = content[j]
-                if looks_like_value_line(nxt):
-                    values.extend(nxt.split())
+            while trailing_value_count(agg) < 4 and j < len(content):
+                next_tokens = line_tokens_with_combiners(content[j])
+                next_tv = trailing_value_count(next_tokens)
+                if next_tv == len(next_tokens):
+                    # All values
+                    agg.extend(next_tokens)
                     j += 1
                 else:
                     break
-            if len(values) >= 4:
-                metric_name = ' '.join(name_parts).strip()
-                metric_values = []
-                for v in values[:4]:
-                    metric_values.append(parse_metric_value(v))
+            if trailing_value_count(agg) >= 4:
+                value_toks = agg[-4:]
+                name_part = agg[:-4]
+                if name_part:
+                    name_acc.extend(name_part)
+                metric_name = ' '.join(name_acc).strip()
                 if metric_name:
+                    metric_values = [parse_metric_value(v) for v in value_toks]
                     metrics.append({"metric": metric_name, "values": metric_values})
+                name_acc = []
                 i = j
-            else:
-                i += 1
+                continue
+            # Couldn't resolve; treat whole line as name
+            name_acc.extend(tokens)
+            i += 1
+        else:
+            # No trailing values; entire line is part of name
+            name_acc.extend(tokens)
+            i += 1
     return metrics
 
 VAL_TOKEN_RE = re.compile(r'^(N/A|n/a|[<>≤≥]?\s*[\d,.\$]+%?|\d+%|\$[\d,]+)$')
@@ -642,16 +881,8 @@ def main():
         # Build expenditures
         expenditures = build_expenditures(numbers, merged_names)
 
-        # Objectives & metrics
-        # Search starts from a few pages before this dept's exp_start
-        obj_search_start = exp_start - 8
-        # Find previous dept's exp_start to bound the search
-        if idx > 0:
-            prev_exp_end_page = find_expenditure_start_page(lines, page_starts, DEPARTMENTS[idx-1][2]) + 5
-            obj_search_start = max(obj_search_start, prev_exp_end_page)
-        objectives, metrics = find_objectives_and_metrics(
-            lines, page_starts, obj_search_start, exp_start + 1
-        )
+        # Objectives & metrics: look backward from exp_start
+        objectives, metrics = find_objectives_and_metrics(lines, page_starts, exp_start)
 
         # Sanity: numbers count vs names count mismatch
         mismatch = len(numbers) != len(merged_names)

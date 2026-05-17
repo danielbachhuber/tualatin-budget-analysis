@@ -320,37 +320,219 @@ const fmtUSDshort = (n) => {
   return `$${n}`;
 };
 
-function deptPage(d) {
+// ---------- Rich section renderers ----------
+// These mirror the structure of departments/parks-and-recreation.html so that
+// any department with extracted data renders the same six-section layout.
+
+const YEAR_LABELS = ["FY 23-24", "FY 24-25", "FY 25-26", "FY 26-27"];
+
+function fmtUSD(n) {
+  if (n == null) return "—";
+  return "$" + n.toLocaleString("en-US", { maximumFractionDigits: 0 });
+}
+function fmtNum(n) {
+  if (n == null) return "—";
+  return n.toLocaleString("en-US");
+}
+
+function categoryTotals(expenditures) {
+  const totals = [0, 0, 0, 0];
+  for (const cat of expenditures || []) {
+    (cat.values || []).forEach((v, i) => { if (v != null) totals[i] += v; });
+  }
+  return totals;
+}
+
+function renderTrends(extra, pdfPage, printedPage) {
+  if (!extra.expenditures || !extra.expenditures.length) return "";
+  const totals = categoryTotals(extra.expenditures);
+  const ps = extra.expenditures.find((e) => /^Personal Services/i.test(e.category))?.values || [0, 0, 0, 0];
+  const ms = extra.expenditures.find((e) => /^Materials/i.test(e.category))?.values || [0, 0, 0, 0];
+  const series = [
+    { title: "Total expenditures", values: totals, note: "All categories combined." },
+    { title: "Personal Services", values: ps, note: "Salaries, wages, benefits." },
+    { title: "Materials & Services", values: ms, note: "Supplies, contracts, programming." },
+  ];
+  const cards = series.map((t) => {
+    const max = Math.max(...t.values);
+    const bars = t.values.map((v, i) => {
+      const h = max ? (v / max) * 100 : 0;
+      const cls = i === t.values.length - 1 ? " trend__bar--current" : "";
+      return `<div class="trend__bar${cls}" style="height: ${h.toFixed(1)}%;" title="${YEAR_LABELS[i]}: ${fmtUSD(v)}"></div>`;
+    }).join("");
+    const labels = YEAR_LABELS.map((l) => `<span>${l.replace("FY ", "")}</span>`).join("");
+    const values = t.values.map((v) => `<span>${fmtUSDshort(v).replace("$", "")}</span>`).join("");
+    return `
+      <div class="trend">
+        <div class="trend__title">${t.title}</div>
+        <div class="trend__note">${t.note}</div>
+        <div class="trend__bars">${bars}</div>
+        <div class="trend__labels">${labels}</div>
+        <div class="trend__labels" style="margin-top: 2px; color: var(--ink-2); font-weight: 500;">${values}</div>
+      </div>`;
+  }).join("");
+  return `
+  <section class="subsection" id="trends" style="margin-top: 48px;">
+    <h3>Multi-year trends <span class="eyebrow">FY 23-24 → FY 26-27</span> <a class="cite" href="${pdfBase}#page=${pdfPage}" target="_blank" rel="noopener">p. ${printedPage}</a></h3>
+    <div class="trend-bars">${cards}</div>
+  </section>`;
+}
+
+function renderObjectives(extra, pdfPage, printedPage) {
+  if (!extra.fy27Objectives || !extra.fy27Objectives.length) return "";
+  const items = extra.fy27Objectives.map((o) => `<li>${escapeHTML(o)}</li>`).join("\n        ");
+  return `
+  <section class="subsection" id="fy27" style="margin-top: 48px;">
+    <h3>Objectives for FY 26-27 <a class="cite" href="${pdfBase}#page=${pdfPage}" target="_blank" rel="noopener">p. ${printedPage}</a></h3>
+    <ul class="bullets">
+      ${items}
+    </ul>
+  </section>`;
+}
+
+function renderPerformance(extra, pdfPage, printedPage) {
+  if (!extra.performance || !extra.performance.length) return "";
+  const rows = extra.performance.map((m) => `
+    <tr>
+      <td>${escapeHTML(m.metric)}</td>
+      ${(m.values || []).map((v) => `<td class="col-num">${fmtNum(v)}</td>`).join("")}
+    </tr>`).join("");
+  return `
+  <section class="subsection" id="performance" style="margin-top: 48px;">
+    <h3>Performance measures <a class="cite" href="${pdfBase}#page=${pdfPage}" target="_blank" rel="noopener">p. ${printedPage}</a></h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th class="col-num">FY 23-24 actual</th>
+            <th class="col-num">FY 24-25 actual</th>
+            <th class="col-num">FY 25-26 adopted</th>
+            <th class="col-num">FY 26-27 proposed</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+  </section>`;
+}
+
+function renderExpenditures(extra, pdfPage, printedPage) {
+  if (!extra.expenditures || !extra.expenditures.length) return "";
+  const totals = categoryTotals(extra.expenditures);
+  const body = extra.expenditures.map((cat) => {
+    let html = `
+      <tr class="row-total">
+        <td>${escapeHTML(cat.category)}</td>
+        ${(cat.values || []).map((v) => `<td class="col-num">${fmtUSD(v)}</td>`).join("")}
+      </tr>`;
+    for (const li of cat.lineItems || []) {
+      html += `
+        <tr class="row-sub">
+          <td>${escapeHTML(li.name)}</td>
+          ${(li.values || []).map((v) => `<td class="col-num">${v != null ? fmtUSD(v) : "—"}</td>`).join("")}
+        </tr>`;
+    }
+    return html;
+  }).join("");
+  return `
+  <section class="subsection" id="expenditures" style="margin-top: 48px;">
+    <h3>Line-item detail <a class="cite" href="${pdfBase}#page=${pdfPage}" target="_blank" rel="noopener">p. ${printedPage}</a></h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Category / Line item</th>
+            <th class="col-num">FY 23-24 actual</th>
+            <th class="col-num">FY 24-25 actual</th>
+            <th class="col-num">FY 25-26 adopted</th>
+            <th class="col-num">FY 26-27 proposed</th>
+          </tr>
+        </thead>
+        <tbody>${body}</tbody>
+        <tfoot>
+          <tr class="row-total">
+            <td>Grand Total</td>
+            ${totals.map((v) => `<td class="col-num">${fmtUSD(v)}</td>`).join("")}
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </section>`;
+}
+
+function escapeHTML(s) {
+  return String(s)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function deptPage(d, extra) {
   const fundedBy = d.fundedBy.map((f) => `<span class="tag">${f}</span>`).join(" ");
-  const ps = d.personalServices;
+  // Prefer extracted total from data; fall back to manifest personalServices.
+  const expenditureTotals = extra?.expenditures ? categoryTotals(extra.expenditures) : null;
+  const totalBudget = expenditureTotals ? expenditureTotals[3] : null;
+  const psFromExtra = extra?.expenditures?.find((e) => /^Personal Services/i.test(e.category))?.values?.[3];
+  const ps = psFromExtra ?? d.personalServices;
+  const psPrior = extra?.expenditures?.find((e) => /^Personal Services/i.test(e.category))?.values?.[2];
+  const msNow = extra?.expenditures?.find((e) => /^Materials/i.test(e.category))?.values?.[3];
+
   const kpiBlocks = [];
-  if (ps != null) {
+  if (totalBudget != null) {
+    const priorTotal = expenditureTotals[2];
+    const pct = priorTotal ? (((totalBudget - priorTotal) / priorTotal) * 100).toFixed(1) : null;
     kpiBlocks.push(`
       <div class="kpi">
-        <div class="kpi__label">Personal Services FY 26-27</div>
+        <div class="kpi__label">Total budget FY 26-27</div>
+        <div class="kpi__value">${fmtUSDshort(totalBudget)}</div>
+        <div class="kpi__sub">${pct != null ? `<span class="delta ${pct >= 0 ? "delta--up" : "delta--down"}">${pct >= 0 ? "▲" : "▼"} ${Math.abs(pct)}%</span>` : ""} vs FY 25-26 <a class="cite" href="${pdfBase}#page=${d.pdfPage}" target="_blank" rel="noopener">p. ${d.printedPage}</a></div>
+      </div>`);
+  }
+  if (ps != null) {
+    const pct = psPrior ? (((ps - psPrior) / psPrior) * 100).toFixed(1) : null;
+    kpiBlocks.push(`
+      <div class="kpi">
+        <div class="kpi__label">Personal Services</div>
         <div class="kpi__value">${fmtUSDshort(ps)}</div>
-        <div class="kpi__sub">proposed budget <a class="cite" href="${pdfBase}#page=${d.pdfPage}" target="_blank" rel="noopener">↗ p. ${d.printedPage}</a></div>
+        <div class="kpi__sub">${pct != null ? `<span class="delta ${pct >= 0 ? "delta--up" : "delta--down"}">${pct >= 0 ? "▲" : "▼"} ${Math.abs(pct)}%</span> vs FY 25-26` : "FY 26-27 proposed"}</div>
+      </div>`);
+  }
+  if (msNow != null) {
+    kpiBlocks.push(`
+      <div class="kpi">
+        <div class="kpi__label">Materials &amp; Services</div>
+        <div class="kpi__value">${fmtUSDshort(msNow)}</div>
+        <div class="kpi__sub">FY 26-27 proposed</div>
       </div>`);
   }
   kpiBlocks.push(`
     <div class="kpi">
       <div class="kpi__label">Program area</div>
       <div class="kpi__value" style="font-family: var(--font-serif); font-size: 1.2rem;">${d.programArea}</div>
-      <div class="kpi__sub">one of six budget program areas</div>
+      <div class="kpi__sub">Funded by ${d.fundedBy.join(" + ")}</div>
     </div>`);
-  kpiBlocks.push(`
-    <div class="kpi">
-      <div class="kpi__label">Funded by</div>
-      <div class="kpi__value" style="font-family: var(--font-serif); font-size: 1rem; line-height: 1.3;">${d.fundedBy.join(" + ")}</div>
-      <div class="kpi__sub">primary funding source(s)</div>
-    </div>`);
-  kpiBlocks.push(`
-    <div class="kpi">
-      <div class="kpi__label">Source pages</div>
-      <div class="kpi__value" style="font-family: var(--font-serif); font-size: 1.2rem;">PDF p. ${d.printedPage}</div>
-      <div class="kpi__sub"><a class="cite" href="${pdfBase}#page=${d.pdfPage}" target="_blank" rel="noopener">↗ Open in PDF</a></div>
-    </div>`);
-  const context = d.contextSentences.map((s) => `<li>${s}</li>`).join("\n        ");
+  while (kpiBlocks.length < 4) {
+    kpiBlocks.push(`
+      <div class="kpi">
+        <div class="kpi__label">Source pages</div>
+        <div class="kpi__value" style="font-family: var(--font-serif); font-size: 1.2rem;">PDF p. ${d.printedPage}</div>
+        <div class="kpi__sub"><a class="cite" href="${pdfBase}#page=${d.pdfPage}" target="_blank" rel="noopener">Open in PDF</a></div>
+      </div>`);
+  }
+
+  // Rich content sections, conditional on extracted data.
+  const richContent = extra ? [
+    renderTrends(extra, d.pdfPage, d.printedPage),
+    renderObjectives(extra, d.pdfPage, d.printedPage),
+    renderPerformance(extra, d.pdfPage, d.printedPage),
+    renderExpenditures(extra, d.pdfPage, d.printedPage),
+  ].filter(Boolean).join("") : "";
+
+  // Lightweight context list still appears when we have no extracted data.
+  const context = !extra && d.contextSentences ? d.contextSentences.map((s) => `<li>${s}</li>`).join("\n        ") : "";
+
   return template({
     title: `${d.name} · Tualatin FY 2026–27`,
     crumb: `<a href="../index.html">Overview</a> · <a href="index.html">Departments</a> · ${d.programArea}`,
@@ -359,6 +541,7 @@ function deptPage(d) {
     tags: `${fundedBy} <span class="tag">${d.programArea}</span> <a class="tag" href="${pdfBase}#page=${d.pdfPage}" target="_blank" rel="noopener">↗ PDF p. ${d.printedPage}</a>`,
     kpis: kpiBlocks.join(""),
     contextList: context,
+    richContent,
     activeNav: "Departments",
     upPath: "..",
     pageType: "department",
@@ -427,7 +610,7 @@ function nameFromSlug(slug) {
   return slug.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
 }
 
-function template({ title, crumb, h1, sub, tags, kpis, contextList, activeNav, upPath }) {
+function template({ title, crumb, h1, sub, tags, kpis, contextList, richContent, activeNav, upPath }) {
   const navFunds       = activeNav === "Funds"       ? `<a class="is-active" href="${activeNav === "Funds" ? "index.html" : `${upPath}/funds/index.html`}">Funds</a>` : `<a href="${upPath}/funds/index.html">Funds</a>`;
   const navDepartments = activeNav === "Departments" ? `<a class="is-active" href="${activeNav === "Departments" ? "index.html" : `${upPath}/departments/index.html`}">Departments</a>` : `<a href="${upPath}/departments/index.html">Departments</a>`;
   const navMeetings    = `<a href="${upPath}/meetings/index.html">Meetings</a>`;
@@ -484,6 +667,9 @@ function template({ title, crumb, h1, sub, tags, kpis, contextList, activeNav, u
     </ul>
   </section>` : ""}
 
+  ${richContent || ""}
+
+  ${!richContent ? `
   <section class="subsection" style="margin-top: 48px;">
     <div class="callout callout--accent">
       <div class="callout__title">Source-of-truth: the proposed budget</div>
@@ -492,7 +678,7 @@ function template({ title, crumb, h1, sub, tags, kpis, contextList, activeNav, u
       </div>
     </div>
     <p class="note" style="margin-top: 12px;">A fuller deep-dive page like <a href="${upPath}/departments/parks-and-recreation.html">Parks and Recreation</a> or <a href="${upPath}/funds/parks-utility-fee.html">Parks Utility Fee Fund</a> is planned for this entry; until then, the PDF link above is the most complete source.</p>
-  </section>
+  </section>` : ""}
 </div>
 </main>
 
@@ -528,11 +714,20 @@ function loadFundBalances() {
 const fundBalances = loadFundBalances();
 const bySlug = Object.fromEntries(fundBalances.map((f) => [f.slug, f]));
 
+// Optional per-department extracted data (objectives, performance, expenditures).
+let deptExtras = {};
+const deptDataPath = path.join(ROOT, "data", "departments.json");
+if (fs.existsSync(deptDataPath)) {
+  const arr = JSON.parse(fs.readFileSync(deptDataPath, "utf8"));
+  deptExtras = Object.fromEntries(arr.map((x) => [x.slug, x]));
+  console.log(`  loaded extracted data for ${Object.keys(deptExtras).length} departments`);
+}
+
 let written = 0, skipped = 0;
 for (const d of DEPARTMENTS) {
   const rel = `departments/${d.slug}.html`;
   if (SKIP.has(rel)) { skipped++; continue; }
-  fs.writeFileSync(path.join(ROOT, rel), deptPage(d));
+  fs.writeFileSync(path.join(ROOT, rel), deptPage(d, deptExtras[d.slug]));
   written++;
   console.log(`  wrote ${rel}`);
 }
