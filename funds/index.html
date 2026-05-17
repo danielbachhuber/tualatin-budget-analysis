@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="../assets/css/site.css?v=1779048901">
+<link rel="stylesheet" href="../assets/css/site.css?v=1779049200">
 </head>
 <body>
 
@@ -24,6 +24,7 @@
       <a href="../index.html">Overview</a>
       <a class="is-active" href="index.html">Funds</a>
       <a href="../departments/index.html">Departments</a>
+      <a href="../meetings/index.html">Meetings</a>
     </nav>
   </div>
 </header>
@@ -99,8 +100,8 @@
   </div>
 </footer>
 
-<script src="../assets/js/data.js?v=1779048901"></script>
-<script src="../assets/js/format.js?v=1779048901"></script>
+<script src="../assets/js/data.js?v=1779049200"></script>
+<script src="../assets/js/format.js?v=1779049200"></script>
 <script>
 (function () {
   const B = window.BUDGET;
@@ -154,18 +155,16 @@
       const isExemplar = exemplarSlugs.has(slug);
       const pageNum = FUND_PAGES[slug];
       const cite = pageNum ? fmt.cite(pageNum) : "";
-      // Use <div> not <a> so nested <a class="cite"> doesn't get split by the
-      // HTML parser (anchors cannot nest). Exemplars get a "Deep dive →" link
-      // inside the card to its detail page.
-      const deepDive = isExemplar
-        ? `<a href="${slug}.html" class="fund-card__cta">Deep dive →</a>`
-        : "";
+      const href = `${slug}.html`;
+      const cta = isExemplar ? "Deep dive →" : "Open page →";
+      // Stretched-link pattern: <a> overlay covers the card, cite stays on top.
       target.insertAdjacentHTML("beforeend", `
-        <div class="fund-card${isExemplar ? " fund-card--exemplar" : ""}">
+        <div class="fund-card fund-card--linked${isExemplar ? " fund-card--exemplar" : ""}">
+          <a class="fund-card__stretch" href="${href}" aria-label="${f.name}"></a>
           <div class="fund-card__name">${f.name} ${cite}</div>
           <div class="fund-card__balance">${fmt.currency(f.end, { short: true })}</div>
           <div class="fund-card__delta ${deltaCls}">${sign}${fmt.currency(Math.abs(f.change), { short: true })} change · begin ${fmt.currency(f.begin, { short: true })}</div>
-          ${deepDive}
+          <a href="${href}" class="fund-card__cta">${cta}</a>
         </div>
       `);
     });
@@ -187,6 +186,15 @@
     { name: "Southwest Urban Renewal District Project",        begin: null,    change: null,     end: null,    page: 329 },
   ];
   const tdcTarget = document.getElementById("fund-grid-tdc");
+  // TDC fund slugs in the per-fund stubs use a "tdc-" prefix.
+  const TDC_SLUGS = {
+    "TDC Administration": "tdc-admin",
+    "Southwest Urban Renewal District Bond": "tdc-sw-bond",
+    "Core Opportunity & Reinvestment Area Bond": "tdc-cora-bond",
+    "Core Opportunity & Reinvestment Area Project": "tdc-cora-project",
+    "Leveton Projects": "tdc-leveton",
+    "Southwest Urban Renewal District Project": "tdc-sw-project",
+  };
   TDC_FUNDS.forEach((f) => {
     const deltaCls = f.change > 0 ? "fund-card__delta--up" : f.change < 0 ? "fund-card__delta--down" : "fund-card__delta--flat";
     const sign = f.change > 0 ? "+" : f.change < 0 ? "−" : "";
@@ -195,11 +203,15 @@
     const deltaStr = f.change == null
       ? "See PDF for current balances"
       : `${sign}${fmt.currency(Math.abs(f.change), { short: true })} change · begin ${fmt.currency(f.begin, { short: true })}`;
+    const slug = TDC_SLUGS[f.name];
+    const href = slug ? `${slug}.html` : null;
     tdcTarget.insertAdjacentHTML("beforeend", `
-      <div class="fund-card">
+      <div class="fund-card${href ? " fund-card--linked" : ""}">
+        ${href ? `<a class="fund-card__stretch" href="${href}" aria-label="${f.name}"></a>` : ""}
         <div class="fund-card__name">${f.name} ${cite}</div>
         <div class="fund-card__balance">${endStr}</div>
         <div class="fund-card__delta ${deltaCls}">${deltaStr}</div>
+        ${href ? `<a href="${href}" class="fund-card__cta">Open page →</a>` : ""}
       </div>
     `);
   });

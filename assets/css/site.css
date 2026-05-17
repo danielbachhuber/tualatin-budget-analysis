@@ -546,6 +546,42 @@ tr.row-total td { font-weight: 600; background: var(--surface-2); }
 .callout--good { border-left-color: var(--good); }
 .callout--bad { border-left-color: var(--bad); }
 
+/* Linked callouts: entire card is clickable via a stretched <a> overlay so
+   the inner cite link can still capture its own clicks (using z-index). */
+.callout--linked {
+  position: relative;
+  transition: background 120ms ease, border-color 120ms ease, transform 120ms ease, box-shadow 120ms ease;
+}
+.callout--linked:hover {
+  background: var(--surface-2);
+  border-color: var(--rule-strong);
+  border-left-color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+.callout--linked.callout--accent:hover { border-left-color: var(--accent); }
+.callout__stretch {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border: none;
+}
+.callout__stretch:hover { border: none; }
+.callout--linked .cite { position: relative; z-index: 2; }
+.callout--linked .callout__title { position: relative; z-index: 2; }
+.callout--linked .callout__title-name { color: var(--ink); }
+.callout--linked:hover .callout__title-name { color: var(--primary); }
+.callout--linked .callout__cta {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--primary);
+  border-bottom: none;
+  position: relative;
+  z-index: 2;
+}
+
 /* ============================================================
    Fund balance grid (sparklines)
    ============================================================ */
@@ -600,9 +636,32 @@ tr.row-total td { font-weight: 600; background: var(--surface-2); }
   font-weight: 600;
   color: var(--primary);
   border-bottom: none;
+  position: relative;
+  z-index: 2;
 }
 .fund-card__cta:hover { color: var(--primary-2); border-bottom: none; }
 .fund-card--exemplar:hover { border-left-color: var(--primary); transform: translateY(-1px); box-shadow: var(--shadow); }
+
+/* Linked fund-card: stretched <a> overlay so the entire card is clickable
+   while the inner cite + CTA stay separately clickable via z-index. */
+.fund-card--linked { position: relative; }
+.fund-card--linked .fund-card__name,
+.fund-card--linked .fund-card__balance,
+.fund-card--linked .fund-card__delta { position: relative; z-index: 2; pointer-events: none; }
+.fund-card--linked .fund-card__name .cite,
+.fund-card--linked .fund-card__cta { pointer-events: auto; }
+.fund-card__stretch {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border: none;
+}
+.fund-card__stretch:hover { border: none; }
+.fund-card--linked:hover {
+  border-left-color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
 
 /* ============================================================
    Page header (for detail pages)
