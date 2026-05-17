@@ -19,7 +19,6 @@ const MEETINGS = {
     cycle: "FY 2026-27",
     purpose: "Kickoff / FY 25-26 follow-up",
     uuid: "71a5f4edf4854e3a93d88975cbfdd364",
-    isUpcoming: false,
   },
   "2025-05-12": {
     label: "May 12, 2025",
@@ -27,7 +26,6 @@ const MEETINGS = {
     cycle: "FY 2025-26",
     purpose: "Kickoff — chair election &amp; budget overview",
     uuid: "e206efae0b4b4cdfb0000484395dbe1d",
-    isUpcoming: false,
   },
   "2025-05-28": {
     label: "May 28, 2025",
@@ -35,7 +33,36 @@ const MEETINGS = {
     cycle: "FY 2025-26",
     purpose: "Public hearing &amp; adoption",
     uuid: "b210c61eea204e94a9df0129d5a544d8",
-    isUpcoming: false,
+  },
+  "2022-05-16": {
+    label: "May 16, 2022",
+    time: "evening",
+    cycle: "FY 2022-23",
+    purpose: "Kickoff — chair election &amp; budget message",
+    uuid: "4a44e9345df54b7eb7b3e3a6fa9f7f2b",
+  },
+  "2022-05-31": {
+    label: "May 31, 2022",
+    time: "evening",
+    cycle: "FY 2022-23",
+    purpose: "Public hearing &amp; budget recommendation",
+    uuid: "b09bd60932b3403c9e497b4002a4513b",
+  },
+  // The May 25, 2021 page hosts the minutes of the May 10, 2021 meeting.
+  "2021-05-10": {
+    label: "May 10, 2021",
+    time: "evening",
+    cycle: "FY 2021-22",
+    purpose: "Kickoff — chair election &amp; budget overview (COVID era)",
+    uuid: "7828f35a4b5e44059a291dec99414863",
+    minutesNote: "Minutes hosted on the May 25, 2021 meeting page.",
+  },
+  "2020-05-20": {
+    label: "May 20, 2020",
+    time: "evening",
+    cycle: "FY 2020-21",
+    purpose: "Public hearing &amp; budget recommendation",
+    uuid: "26d8e775ce2041d59d1dd5cace3eb5a7",
   },
 };
 
