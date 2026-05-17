@@ -7,12 +7,15 @@ const fs = require("fs");
 const path = require("path");
 
 const BASE = process.env.BASE_URL || "http://127.0.0.1:8765";
+// PREFIX lets us run against either the local dev server (repo at /) or the
+// public deployment under /tualatin-budget-analysis/.
+const PREFIX = process.env.URL_PREFIX || "";
 const OUT = path.resolve(__dirname, "..", ".screenshots");
 fs.mkdirSync(OUT, { recursive: true });
 
 const targets = [
-  { name: "civic",   url: `${BASE}/` },
-  { name: "almanac", url: `${BASE}/variants/frontend-design/` },
+  { name: "civic",   url: `${BASE}${PREFIX}/` },
+  { name: "almanac", url: `${BASE}${PREFIX}/variants/frontend-design/` },
 ];
 
 const viewports = [
