@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parks and Recreation · Tualatin FY 2026–27</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css?v=1779048901">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="../index.html">
+      <span class="brand__seal">T</span>
+      <span class="brand__text">
+        <span class="brand__name">Tualatin Budget Explorer</span>
+        <span class="brand__sub">FY 2026–2027 PROPOSED</span>
+      </span>
+    </a>
+    <nav class="site-nav">
+      <a href="../index.html">Overview</a>
+      <a href="../funds/index.html">Funds</a>
+      <a class="is-active" href="index.html">Departments</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-header">
+  <div class="container">
+    <div class="page-header__crumbs">
+      <a href="../index.html">Overview</a> · Departments · Culture &amp; Recreation
+    </div>
+    <h1>Parks and Recreation</h1>
+    <p class="page-header__sub" id="dept-desc">—</p>
+    <div class="tag-row">
+      <span class="tag tag--primary">General Fund</span>
+      <span class="tag">Culture &amp; Recreation</span>
+      <a class="tag" href="https://www.tualatinoregon.gov/sites/default/files/fileattachments/finance/page/6486/final_proposed_budget_fy2026-27-compressed.pdf#page=208" target="_blank" rel="noopener">↗ PDF pp. 186–191</a>
+      <a class="tag" href="../funds/parks-utility-fee.html">→ Parks Utility Fee Fund</a>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<div class="container">
+  <div class="kpi-strip">
+    <div class="kpi">
+      <div class="kpi__label">Total Budget FY 26-27</div>
+      <div class="kpi__value" id="kpi-total">—</div>
+      <div class="kpi__sub"><span id="kpi-total-delta"></span> vs FY 25-26 <span id="kpi-total-cite"></span></div>
+    </div>
+    <div class="kpi">
+      <div class="kpi__label">Personal Services</div>
+      <div class="kpi__value" id="kpi-ps">—</div>
+      <div class="kpi__sub" id="kpi-ps-sub">—</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi__label">Materials &amp; Services</div>
+      <div class="kpi__value" id="kpi-ms">—</div>
+      <div class="kpi__sub" id="kpi-ms-sub">—</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi__label">New FTE this year</div>
+      <div class="kpi__value">+1</div>
+      <div class="kpi__sub">Recreation Supervisor <span id="kpi-fte-cite"></span></div>
+    </div>
+  </div>
+
+  <div class="detail-layout">
+    <aside class="detail-nav">
+      <div class="detail-nav__title">On this page</div>
+      <ul>
+        <li><a href="#trends">Multi-year trends</a></li>
+        <li><a href="#fy25">FY 25-26 highlights</a></li>
+        <li><a href="#fy27">FY 26-27 objectives</a></li>
+        <li><a href="#performance">Performance measures</a></li>
+        <li><a href="#org">Org chart</a></li>
+        <li><a href="#expenditures">Line-item detail</a></li>
+      </ul>
+    </aside>
+
+    <div>
+      <section class="subsection" id="trends">
+        <h3>Multi-year trends <span class="eyebrow">FY 23-24 → FY 26-27</span> <span id="trends-cite"></span></h3>
+        <div class="trend-bars" id="trends-grid"></div>
+      </section>
+
+      <section class="subsection" id="fy25">
+        <h3>FY 25-26 highlights <span id="fy25-cite"></span></h3>
+        <ul class="bullets" id="fy25-list"></ul>
+      </section>
+
+      <section class="subsection" id="fy27">
+        <h3>Objectives for FY 26-27 <span id="fy27-cite"></span></h3>
+        <ul class="bullets" id="fy27-list"></ul>
+      </section>
+
+      <section class="subsection" id="performance">
+        <h3>Performance measures <span id="perf-cite"></span></h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th class="col-num">FY 23-24 actual</th>
+                <th class="col-num">FY 24-25 actual</th>
+                <th class="col-num">FY 25-26 adopted</th>
+                <th class="col-num">FY 26-27 proposed</th>
+              </tr>
+            </thead>
+            <tbody id="performance-tbody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="subsection" id="org">
+        <h3>Organization <span id="org-cite"></span></h3>
+        <p style="color: var(--ink-2); font-size: 0.95rem; max-width: 720px; margin-bottom: 16px;">FY 2026–2027 Personal Services budget: <strong class="num" id="org-ps">—</strong>. The Recreation Supervisor is a new position this fiscal year, addressing the Council priority of increased access to recreational programs.</p>
+        <div class="orgchart" id="orgchart"></div>
+      </section>
+
+      <section class="subsection" id="expenditures">
+        <h3>Line-item detail <span id="expenditures-cite"></span></h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Category / Line item</th>
+                <th class="col-num">FY 23-24 actual</th>
+                <th class="col-num">FY 24-25 actual</th>
+                <th class="col-num">FY 25-26 adopted</th>
+                <th class="col-num">FY 26-27 proposed</th>
+              </tr>
+            </thead>
+            <tbody id="expenditures-tbody"></tbody>
+            <tfoot id="expenditures-foot"></tfoot>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div>
+      Source: <a href="https://www.tualatinoregon.gov/sites/default/files/fileattachments/finance/page/6486/final_proposed_budget_fy2026-27-compressed.pdf#page=208" target="_blank" rel="noopener">FY 2026–2027 Proposed Budget</a>, printed pages 186–191.
+    </div>
+    <div><a href="../index.html">← Back to overview</a></div>
+  </div>
+</footer>
+
+<script src="../assets/js/data.js?v=1779048901"></script>
+<script src="../assets/js/format.js?v=1779048901"></script>
+<script>
+(function () {
+  const D = window.BUDGET.departments["parks-and-recreation"];
+  const yearLabels = ["FY 23-24", "FY 24-25", "FY 25-26", "FY 26-27"];
+
+  document.getElementById("dept-desc").textContent = D.description;
+
+  // Citations
+  document.getElementById("kpi-total-cite").innerHTML = fmt.cite(190);
+  document.getElementById("kpi-fte-cite").innerHTML = fmt.cite(53);
+  document.getElementById("trends-cite").innerHTML = fmt.cite(190);
+  document.getElementById("fy25-cite").innerHTML = fmt.cite(186);
+  document.getElementById("fy27-cite").innerHTML = fmt.cite(186, "pp. 186–187");
+  document.getElementById("perf-cite").innerHTML = fmt.cite(187);
+  document.getElementById("org-cite").innerHTML = fmt.cite(188);
+  document.getElementById("expenditures-cite").innerHTML = fmt.cite(189, "pp. 189–190");
+
+  // KPIs
+  const ps = D.expenditures.find(e => e.category === "Personal Services").values;
+  const ms = D.expenditures.find(e => e.category === "Materials & Services").values;
+  const totals = [0, 0, 0, 0];
+  D.expenditures.forEach(cat => cat.values.forEach((v, i) => (totals[i] += v)));
+  document.getElementById("kpi-total").textContent = fmt.currency(totals[3], { short: true });
+  document.getElementById("kpi-total-delta").innerHTML = fmt.delta(totals[3] - totals[2], ((totals[3] - totals[2]) / totals[2]) * 100);
+
+  document.getElementById("kpi-ps").textContent = fmt.currency(ps[3], { short: true });
+  document.getElementById("kpi-ps-sub").innerHTML = fmt.delta(ps[3] - ps[2], ((ps[3] - ps[2]) / ps[2]) * 100) + ` vs prior`;
+
+  document.getElementById("kpi-ms").textContent = fmt.currency(ms[3], { short: true });
+  document.getElementById("kpi-ms-sub").innerHTML = fmt.delta(ms[3] - ms[2], ((ms[3] - ms[2]) / ms[2]) * 100) + ` vs prior`;
+
+  document.getElementById("org-ps").textContent = fmt.currency(D.fteBudget);
+
+  // Trends
+  const trendsGrid = document.getElementById("trends-grid");
+  const trendDefs = [
+    { title: "Total expenditures", values: totals, note: "All categories combined." },
+    { title: "Personal Services", values: ps, note: "Salaries, wages, benefits." },
+    { title: "Materials & Services", values: ms, note: "Programming, JPC meals, special events." }
+  ];
+  trendDefs.forEach(t => {
+    const max = Math.max(...t.values);
+    const bars = t.values.map((v, i) => {
+      const h = max ? (v / max) * 100 : 0;
+      const cls = i === t.values.length - 1 ? "trend__bar--current" : "";
+      return `<div class="trend__bar ${cls}" style="height: ${h}%;" title="${yearLabels[i]}: ${fmt.currency(v)}"></div>`;
+    }).join("");
+    const labels = yearLabels.map(l => `<span>${l.replace("FY ", "")}</span>`).join("");
+    const values = t.values.map(v => `<span>${fmt.currency(v, { short: true }).replace("$", "")}</span>`).join("");
+    trendsGrid.insertAdjacentHTML("beforeend", `
+      <div class="trend">
+        <div class="trend__title">${t.title}</div>
+        <div class="trend__note">${t.note}</div>
+        <div class="trend__bars">${bars}</div>
+        <div class="trend__labels">${labels}</div>
+        <div class="trend__labels" style="margin-top: 2px; color: var(--ink-2); font-weight: 500;">${values}</div>
+      </div>
+    `);
+  });
+
+  // FY25 highlights
+  const fy25list = document.getElementById("fy25-list");
+  D.fy25Highlights.forEach(h => fy25list.insertAdjacentHTML("beforeend", `<li>${h}</li>`));
+
+  // FY27 objectives
+  const fy27list = document.getElementById("fy27-list");
+  D.fy27Objectives.forEach(o => fy27list.insertAdjacentHTML("beforeend", `<li>${o}</li>`));
+
+  // Performance
+  const perfBody = document.getElementById("performance-tbody");
+  D.performance.forEach(m => {
+    perfBody.insertAdjacentHTML("beforeend", `
+      <tr>
+        <td>${m.metric}</td>
+        ${m.values.map(v => `<td class="col-num">${fmt.number(v)}</td>`).join("")}
+      </tr>
+    `);
+  });
+
+  // Org chart
+  const oc = document.getElementById("orgchart");
+  oc.insertAdjacentHTML("beforeend", `<div class="org-head">${D.orgChart.head}</div>`);
+  let branchesHtml = '<div class="org-branches">';
+  D.orgChart.reports.forEach(branch => {
+    branchesHtml += `<div class="org-branch">`;
+    branchesHtml += `<div class="org-branch__manager">${branch.name}</div>`;
+    branchesHtml += `<div class="org-branch__reports">`;
+    branch.subReports.forEach(r => {
+      const isNew = r.includes("NEW");
+      branchesHtml += `<div class="org-report ${isNew ? "org-report--new" : ""}">${r.replace(" (NEW FY 26-27)", " · NEW FY 26-27")}</div>`;
+    });
+    branchesHtml += `</div></div>`;
+  });
+  branchesHtml += '</div>';
+  oc.insertAdjacentHTML("beforeend", branchesHtml);
+
+  // Expenditures table
+  const expBody = document.getElementById("expenditures-tbody");
+  D.expenditures.forEach(cat => {
+    expBody.insertAdjacentHTML("beforeend", `
+      <tr class="row-total">
+        <td>${cat.category}</td>
+        ${cat.values.map(v => `<td class="col-num">${fmt.currency(v)}</td>`).join("")}
+      </tr>
+    `);
+    (cat.lineItems || []).forEach(li => {
+      expBody.insertAdjacentHTML("beforeend", `
+        <tr class="row-sub">
+          <td>${li.name}</td>
+          ${li.values.map(v => `<td class="col-num">${v ? fmt.currency(v) : "—"}</td>`).join("")}
+        </tr>
+      `);
+    });
+  });
+  document.getElementById("expenditures-foot").innerHTML = `
+    <tr class="row-total">
+      <td>Grand Total</td>
+      ${totals.map(v => `<td class="col-num">${fmt.currency(v)}</td>`).join("")}
+    </tr>
+  `;
+})();
+</script>
+</body>
+</html>

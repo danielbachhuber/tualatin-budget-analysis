@@ -14,8 +14,9 @@ const OUT = path.resolve(__dirname, "..", ".screenshots");
 fs.mkdirSync(OUT, { recursive: true });
 
 const targets = [
-  { name: "civic",   url: `${BASE}${PREFIX}/` },
-  { name: "almanac", url: `${BASE}${PREFIX}/variants/frontend-design/` },
+  { name: "overview",         url: `${BASE}${PREFIX}/` },
+  { name: "dept-parks-rec",   url: `${BASE}${PREFIX}/departments/parks-and-recreation.html` },
+  { name: "fund-parks-util",  url: `${BASE}${PREFIX}/funds/parks-utility-fee.html` },
 ];
 
 const viewports = [
