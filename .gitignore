@@ -1,8 +1,9 @@
 pdfs/
-extracted/raw/
+extracted/
 .DS_Store
 *.log
 node_modules/
 __pycache__/
 *.pyc
 .venv/
+.claude/
