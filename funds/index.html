@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="../assets/css/site.css?v=1779050820">
+<link rel="stylesheet" href="../assets/css/site.css?v=1779053588">
 </head>
 <body>
 
@@ -100,8 +100,8 @@
   </div>
 </footer>
 
-<script src="../assets/js/data.js?v=1779050820"></script>
-<script src="../assets/js/format.js?v=1779050820"></script>
+<script src="../assets/js/data.js?v=1779053588"></script>
+<script src="../assets/js/format.js?v=1779053588"></script>
 <script>
 (function () {
   const B = window.BUDGET;
@@ -156,7 +156,7 @@
       const pageNum = FUND_PAGES[slug];
       const cite = pageNum ? fmt.cite(pageNum) : "";
       const href = `${slug}.html`;
-      const cta = isExemplar ? "Deep dive →" : "Open page →";
+      const cta = isExemplar ? "See breakdown" : "See breakdown";
       // Stretched-link pattern: <a> overlay covers the card, cite stays on top.
       target.insertAdjacentHTML("beforeend", `
         <div class="fund-card fund-card--linked${isExemplar ? " fund-card--exemplar" : ""}">
@@ -211,7 +211,7 @@
         <div class="fund-card__name">${f.name} ${cite}</div>
         <div class="fund-card__balance">${endStr}</div>
         <div class="fund-card__delta ${deltaCls}">${deltaStr}</div>
-        ${href ? `<a href="${href}" class="fund-card__cta">Open page →</a>` : ""}
+        ${href ? `<a href="${href}" class="fund-card__cta">See breakdown</a>` : ""}
       </div>
     `);
   });

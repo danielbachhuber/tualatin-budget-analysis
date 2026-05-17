@@ -547,9 +547,13 @@ tr.row-total td { font-weight: 600; background: var(--surface-2); }
 .callout--bad { border-left-color: var(--bad); }
 
 /* Linked callouts: entire card is clickable via a stretched <a> overlay so
-   the inner cite link can still capture its own clicks (using z-index). */
+   the inner cite link can still capture its own clicks (using z-index).
+   Card uses flex-column so the CTA can sit at the bottom regardless of
+   description height — cards in the same row end up with aligned buttons. */
 .callout--linked {
   position: relative;
+  display: flex;
+  flex-direction: column;
   transition: background 120ms ease, border-color 120ms ease, transform 120ms ease, box-shadow 120ms ease;
 }
 .callout--linked:hover {
@@ -569,17 +573,43 @@ tr.row-total td { font-weight: 600; background: var(--surface-2); }
 .callout__stretch:hover { border: none; }
 .callout--linked .cite { position: relative; z-index: 2; }
 .callout--linked .callout__title { position: relative; z-index: 2; }
+.callout--linked .callout__detail { position: relative; z-index: 2; flex: 1; }
 .callout--linked .callout__title-name { color: var(--ink); }
 .callout--linked:hover .callout__title-name { color: var(--primary); }
-.callout--linked .callout__cta {
-  display: inline-block;
-  margin-top: 8px;
-  font-size: 0.8125rem;
+
+/* "See breakdown" button — anchored to the bottom of the card via margin-top:
+   auto inside the flex column. Same treatment for callouts and fund-cards. */
+.callout__cta, .fund-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  /* margin-top: auto pushes the button to the bottom of the flex column,
+     so cards in the same row end up with aligned CTAs even when their
+     descriptions vary in length. */
+  margin-top: auto;
+  padding: 7px 14px 8px;
+  background: var(--primary);
+  color: var(--surface);
+  border-radius: var(--radius);
+  font-size: 0.825rem;
   font-weight: 600;
-  color: var(--primary);
+  letter-spacing: 0.01em;
+  text-decoration: none;
   border-bottom: none;
   position: relative;
   z-index: 2;
+  transition: background 120ms ease, transform 120ms ease;
+}
+.callout__cta:hover, .fund-card__cta:hover {
+  background: var(--primary-2);
+  color: var(--surface);
+  border-bottom: none;
+  transform: translateY(-1px);
+}
+.callout__cta:focus-visible, .fund-card__cta:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 /* ============================================================
@@ -629,22 +659,18 @@ tr.row-total td { font-weight: 600; background: var(--surface-2); }
 .fund-card__delta--down { color: var(--bad); }
 .fund-card__delta--up { color: var(--good); }
 .fund-card__delta--flat { color: var(--ink-3); }
-.fund-card__cta {
-  display: inline-block;
-  margin-top: 8px;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--primary);
-  border-bottom: none;
-  position: relative;
-  z-index: 2;
-}
-.fund-card__cta:hover { color: var(--primary-2); border-bottom: none; }
+/* .fund-card__cta styling is defined alongside .callout__cta above so the two
+   share the same "See breakdown" button treatment. */
 .fund-card--exemplar:hover { border-left-color: var(--primary); transform: translateY(-1px); box-shadow: var(--shadow); }
 
 /* Linked fund-card: stretched <a> overlay so the entire card is clickable
-   while the inner cite + CTA stay separately clickable via z-index. */
-.fund-card--linked { position: relative; }
+   while the inner cite + CTA stay separately clickable via z-index. The card
+   is flex-column so the CTA can sit at the bottom regardless of body height. */
+.fund-card--linked {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
 .fund-card--linked .fund-card__name,
 .fund-card--linked .fund-card__balance,
 .fund-card--linked .fund-card__delta { position: relative; z-index: 2; pointer-events: none; }
