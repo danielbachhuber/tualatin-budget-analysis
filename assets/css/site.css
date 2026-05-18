@@ -1044,6 +1044,89 @@ tr.row-total td { font-weight: 600; background: var(--surface-2); }
 }
 
 /* ============================================================
+   Legal-framework banner (homepage)
+   ============================================================ */
+
+.legal-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 22px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-lg);
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: background 120ms ease, border-color 120ms ease, transform 120ms ease, box-shadow 120ms ease;
+}
+.legal-banner:hover {
+  background: var(--surface-2);
+  border-color: var(--rule-strong);
+  border-left-color: var(--accent);
+  color: var(--ink-2);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+.legal-banner__main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.legal-banner__eyebrow {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-3);
+  font-weight: 600;
+}
+.legal-banner__text {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--ink);
+  line-height: 1.5;
+}
+.legal-banner__text strong { color: var(--ink); font-weight: 600; }
+.legal-banner__cta {
+  flex: 0 0 auto;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary);
+  white-space: nowrap;
+}
+@media (max-width: 720px) {
+  .legal-banner { flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px 16px; }
+  .legal-banner__cta { color: var(--primary); }
+}
+
+/* "Legal framework" header note used at the top of the Meetings + Funds indexes */
+.framework-note {
+  background: var(--surface-2);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  margin: 0 0 24px;
+  font-size: 0.95rem;
+  color: var(--ink-2);
+  line-height: 1.55;
+  max-width: 880px;
+}
+.framework-note__label {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-3);
+  font-weight: 600;
+  margin-right: 8px;
+}
+.framework-note strong { color: var(--ink); }
+
+/* ============================================================
    Print styles
    ============================================================ */
 

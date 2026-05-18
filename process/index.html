@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Oregon's local budget law works · Tualatin FY 2026–27</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css?v=1779053588">
+<style>
+  /* Step list for the nine-step cycle */
+  .steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 20px 0 8px;
+    counter-reset: step;
+  }
+  .steps__group {
+    margin-top: 18px;
+  }
+  .steps__group:first-child { margin-top: 0; }
+  .steps__group-label {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-3);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .step {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--primary);
+    border-radius: var(--radius);
+    padding: 14px 18px 14px 56px;
+    position: relative;
+  }
+  .step__num {
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--bg);
+    display: grid;
+    place-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 600;
+  }
+  .step__title {
+    font-family: var(--font-serif);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .step__detail {
+    font-size: 0.9rem;
+    color: var(--ink-2);
+    line-height: 1.55;
+  }
+  /* Primer prose: a touch wider than .prose and uses serif headings inline */
+  .primer-prose {
+    max-width: 760px;
+    color: var(--ink-2);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  .primer-prose p + p { margin-top: 1em; }
+  .primer-prose ul { margin: 8px 0 0; padding-left: 22px; }
+  .primer-prose ul li { margin-bottom: 4px; color: var(--ink-2); }
+  .primer-prose strong { color: var(--ink); }
+  .primer-section { margin-bottom: 56px; scroll-margin-top: 80px; }
+  .primer-section > h2 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .primer-section > .eyebrow { display: block; margin-bottom: 14px; }
+  /* "In Tualatin: ..." pointer card at the end of a primer section */
+  .here-in-tualatin {
+    margin-top: 18px;
+    background: var(--surface-2);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    font-size: 0.9rem;
+    color: var(--ink-2);
+    line-height: 1.55;
+  }
+  .here-in-tualatin__label {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-3);
+    font-weight: 600;
+    margin-right: 8px;
+  }
+  .limit-table {
+    margin: 16px 0 6px;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .limit-table table { margin: 0; }
+  .limit-row td { font-size: 0.95rem; color: var(--ink-2); }
+  .limit-row td:first-child { font-weight: 600; color: var(--ink); width: 50%; }
+  .limit-row td:last-child {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="../index.html">
+      <span class="brand__seal">T</span>
+      <span class="brand__text">
+        <span class="brand__name">Tualatin Budget Explorer</span>
+        <span class="brand__sub">FY 2026–2027 PROPOSED</span>
+      </span>
+    </a>
+    <nav class="site-nav">
+      <a href="../index.html">Overview</a>
+      <a href="../funds/index.html">Funds</a>
+      <a href="../departments/index.html">Departments</a>
+      <a href="../meetings/index.html">Meetings</a>
+      <a class="is-active" href="index.html">Process</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-header">
+  <div class="container">
+    <div class="page-header__crumbs">
+      <a href="../index.html">Overview</a> · How Oregon's local budget law works
+    </div>
+    <h1>How Oregon's local budget law works</h1>
+    <p class="page-header__sub">A plain-English summary of the state law that governs every local budget in Oregon — from the smallest cemetery district to the City of Tualatin. Every step shown on this site (the Budget Advisory Committee, the budget message, the public hearing, the June adoption, the tax certification to Washington County) is required by this law.</p>
+    <div class="tag-row">
+      <span class="tag tag--primary">ORS Chapter 294</span>
+      <span class="tag">Oregon Local Budget Law</span>
+      <span class="tag">Source: OR DoR Pub. 150-504-400 (Rev. 02-14)</span>
+    </div>
+  </div>
+</div>
+
+<main>
+<div class="container" style="padding-top: 40px;">
+
+  <div class="detail-layout">
+
+    <aside class="detail-nav">
+      <div class="detail-nav__title">Contents</div>
+      <ul>
+        <li><a href="#the-law">The law</a></li>
+        <li><a href="#budget-committee">Budget committee</a></li>
+        <li><a href="#nine-steps">The nine-step cycle</a></li>
+        <li><a href="#budget-document">The budget document</a></li>
+        <li><a href="#taxes">Taxes &amp; tax limits</a></li>
+        <li><a href="#elections">Elections</a></li>
+        <li><a href="#appropriations">Appropriations</a></li>
+        <li><a href="#audits-biennial">Audits &amp; biennial budgeting</a></li>
+      </ul>
+    </aside>
+
+    <div>
+
+      <!-- ============================================================
+           1. The law
+           ============================================================ -->
+      <section class="primer-section" id="the-law">
+        <span class="eyebrow">§ 1</span>
+        <h2>The law</h2>
+        <div class="primer-prose">
+          <p>Almost every local government in Oregon — counties, cities, school districts, ports, fire-protection districts, water districts, urban renewal agencies, and special districts — must prepare and adopt an annual (or biennial) budget. The rules are set out in <strong>Chapter 294 of the Oregon Revised Statutes</strong>, commonly called <strong>Oregon Local Budget Law</strong>. A handful of small local governments are statutorily exempted; everyone else follows the same framework.</p>
+          <p>The law does two things. <strong>First,</strong> it establishes standard procedures for preparing, presenting, and administering a public budget — so a citizen reading Tualatin's budget book sees roughly the same structure they would in Beaverton or Bend. <strong>Second,</strong> it requires citizen involvement in the preparation of the budget and public disclosure of the budget before its formal adoption. That second piece is why Oregon's system is unusual among states: the public must have meaningful access to the budget <em>before</em> the elected body votes on it.</p>
+          <p>To make that participation real, the law requires every local government to appoint a <strong>budget officer</strong>, who drafts a proposed budget, and to convene a <strong>budget committee</strong>, which reviews and revises that proposal in public before passing it on to the governing body. At least two opportunities for public comment must be provided along the way.</p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           2. Budget committee
+           ============================================================ -->
+      <section class="primer-section" id="budget-committee">
+        <span class="eyebrow">§ 2</span>
+        <h2>Who's on the budget committee</h2>
+        <div class="primer-prose">
+          <p>The budget committee is made up of <strong>the members of the local governing body</strong> (in a city, that's the City Council; in a school district, the school board) <strong>and an equal number of citizens at large</strong>. The citizens are appointed by the governing body and serve <strong>three-year staggered terms</strong>, so roughly one-third of the appointed seats turn over each year. For local governments on a biennial (24-month) budget cycle, the appointed terms are four years instead of three.</p>
+          <p>The committee operates under Oregon public-meeting law. Members <strong>cannot get together — in person, by telephone, or by email — to discuss the budget outside of an advertised public meeting</strong>. Once the budget officer hands the proposed budget to the committee, it becomes a public record and must be made available to the public.</p>
+          <p>(A special case: in most of Multnomah County, the Tax Supervising and Conservation Commission holds the budget hearing, so the governing body itself acts as the budget committee with no appointed citizen members. Tualatin is in Washington County and follows the general rule.)</p>
+        </div>
+        <div class="here-in-tualatin">
+          <span class="here-in-tualatin__label">On this site</span>
+          Tualatin's committee is the City Council plus seven citizens appointed to three-year staggered terms. See its activity on the <a href="../meetings/index.html">Budget Advisory Committee meetings page</a>.
+        </div>
+      </section>
+
+      <!-- ============================================================
+           3. The nine-step cycle
+           ============================================================ -->
+      <section class="primer-section" id="nine-steps">
+        <span class="eyebrow">§ 3</span>
+        <h2>The nine-step cycle</h2>
+        <div class="primer-prose">
+          <p>Budgeting in Oregon is a 12-month process that the state booklet divides into nine steps, grouped into three phases: <strong>preparing</strong> the budget, <strong>approving</strong> it through the budget committee, and <strong>adopting</strong> it through the governing body. Every step must be complete by June 30 — the start of the new fiscal year.</p>
+        </div>
+
+        <div class="steps">
+
+          <div class="steps__group">
+            <div class="steps__group-label">Preparing</div>
+            <div class="step">
+              <div class="step__num">1</div>
+              <div class="step__title">Budget officer appointed</div>
+              <div class="step__detail">Every local government must have a budget officer, either appointed by the governing body or designated in the local charter. The officer works under either the executive officer or the governing body.</div>
+            </div>
+            <div class="step">
+              <div class="step__num">2</div>
+              <div class="step__title">Proposed budget prepared</div>
+              <div class="step__detail">The budget officer prepares (or supervises the preparation of) the proposed budget to present to the budget committee, along with a budget message explaining significant changes in the local government's financial position.</div>
+            </div>
+          </div>
+
+          <div class="steps__group">
+            <div class="steps__group-label">Approving</div>
+            <div class="step">
+              <div class="step__num">3</div>
+              <div class="step__title">Notice of budget-committee meeting published</div>
+              <div class="step__detail">The budget officer publishes a Notice of Budget Committee Meeting. If notice is in a newspaper only, it must be published <strong>twice, 5–30 days before</strong> the meeting. A single newspaper notice is allowed if the notice is also posted on the local government's website at least 10 days in advance. Mailed or hand-delivered notice requires only one delivery, at least 10 days before the meeting.</div>
+            </div>
+            <div class="step">
+              <div class="step__num">4</div>
+              <div class="step__title">Budget committee meets</div>
+              <div class="step__detail">At least one meeting is held to (1) receive the budget message and document, and (2) hear from the public. The committee may meet as many additional times as needed; only the first public-comment meeting requires full publication notice. <strong>All discussions must happen in public.</strong></div>
+            </div>
+            <div class="step">
+              <div class="step__num">5</div>
+              <div class="step__title">Committee approves the budget</div>
+              <div class="step__detail">When satisfied, the committee approves the budget — with any additions or deletions it has made. If the budget needs property taxes to balance, the committee must also approve the amount or rate of ad valorem taxes to be certified to the county assessor.</div>
+            </div>
+          </div>
+
+          <div class="steps__group">
+            <div class="steps__group-label">Advertising &amp; hearings</div>
+            <div class="step">
+              <div class="step__num">6</div>
+              <div class="step__title">Budget summary &amp; hearing notice published</div>
+              <div class="step__detail">The budget officer publishes a summary of the approved budget and notice of the budget hearing <strong>5–30 days before</strong> the scheduled hearing — in a newspaper of general circulation, by mail, or by hand delivery. Very small districts without a local newspaper may post the notice in three conspicuous places for at least 20 days.</div>
+            </div>
+            <div class="step">
+              <div class="step__num">7</div>
+              <div class="step__title">Budget hearing held</div>
+              <div class="step__detail">The governing body holds a public hearing on the date in the notice to receive citizens' testimony on the budget approved by the committee. Additional hearings may be held; all are open to the public.</div>
+            </div>
+          </div>
+
+          <div class="steps__group">
+            <div class="steps__group-label">Adopting</div>
+            <div class="step">
+              <div class="step__num">8</div>
+              <div class="step__title">Budget adopted, appropriations made, tax levy declared</div>
+              <div class="step__detail">The governing body adopts the budget by resolution or ordinance — no later than June 30. The same enactment makes appropriations and, if needed, declares and categorizes the tax levy. Changes can be made before or after adoption, but <strong>without a revised summary and a new hearing</strong>, taxes cannot be raised above the committee-approved amount and expenditures in a fund cannot be increased by more than <strong>$5,000 or 10%, whichever is greater</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step__num">9</div>
+              <div class="step__title">Budget filed and levy certified</div>
+              <div class="step__detail">Districts that levy property taxes submit two copies of the notice of levy, the categorization certification, and the budget resolution to the county assessor <strong>on or before July 15</strong>. Districts that don't levy taxes send their adopting resolution to the Department of Revenue by the same date. Every district sends a complete copy of the budget to the county clerk by September 30.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="here-in-tualatin">
+          <span class="here-in-tualatin__label">On this site</span>
+          Step 4 happened at the May 11, 2026 BAC meeting; step 7 is the City Council public hearing scheduled in June. See the <a href="../meetings/index.html">Meetings index</a> for the current cycle.
+        </div>
+      </section>
+
+      <!-- ============================================================
+           4. The budget document
+           ============================================================ -->
+      <section class="primer-section" id="budget-document">
+        <span class="eyebrow">§ 4</span>
+        <h2>The budget document</h2>
+        <div class="primer-prose">
+          <p>State law dictates a basic structure for every Oregon budget. Expenditures are broken down <strong>first by fund</strong>, then by organizational unit or program, and then by object classification and object. Revenues are broken down at least by fund.</p>
+          <p><strong>A fund</strong> is a fiscal and accounting entity with self-balancing accounts, set aside to carry on a specific activity or to meet certain objectives under a specific regulation. Requirements and resources within a fund must always balance. Every budget has at least one fund — usually called the General Fund — used for everyday operation. Bigger or more complex governments use additional special funds when a revenue source is restricted to a particular kind of expenditure: debt-service funds, construction funds, reserve funds, street funds, water and sewer funds, and so on.</p>
+          <p><strong>An organizational unit</strong> is a subdivision within a fund — a department, office, or division. <strong>A program</strong> is a group of activities that together deliver a major service or function. Schools, for example, budget by program.</p>
+          <p>The detail sheets for both revenues and expenditures must show <strong>parallel columns</strong>: actual amounts for the two years before the current year, the current year's budgeted amounts, and the upcoming year's estimates — broken into <em>proposed</em>, <em>approved</em>, and <em>adopted</em> columns showing how the figures move through the process.</p>
+          <p>Within a fund, every expenditure must be itemized and put into one of three major object classifications — <strong>personnel services</strong> (salaries, benefits, related costs), <strong>materials and services</strong> (contracts, supplies, audit and legal services), or <strong>capital outlay</strong> (land, buildings, machinery, equipment) — plus special categories for <strong>debt service</strong>, <strong>transfers</strong> to other funds, <strong>operating contingencies</strong> for unforeseen expenses, and an <strong>unappropriated ending fund balance</strong> set aside as a resource for the start of the following year.</p>
+        </div>
+        <div class="here-in-tualatin">
+          <span class="here-in-tualatin__label">On this site</span>
+          See <a href="../funds/index.html">all 19 City of Tualatin funds</a> grouped by purpose, and the <a href="../departments/index.html">Departments index</a> for organizational units.
+        </div>
+      </section>
+
+      <!-- ============================================================
+           5. Taxes & tax limits
+           ============================================================ -->
+      <section class="primer-section" id="taxes">
+        <span class="eyebrow">§ 5</span>
+        <h2>Taxes &amp; tax limits</h2>
+        <div class="primer-prose">
+          <p>Most local governments rely heavily on property taxes. The amount and type of tax that can be levied is constrained at three layers:</p>
+          <p><strong>The permanent rate limit.</strong> The Oregon Constitution gives each local government a permanent rate (set when the rate system was established in 1997). The government may levy that rate annually <strong>without further voter approval</strong>, and the revenue can be used for any purpose. The rate, multiplied by the district's assessed value, gives the amount that can be raised from this source.</p>
+          <p><strong>Local option levies.</strong> When the permanent rate isn't enough, a government can ask voters for a local option levy on top of it. A local option can be stated as a dollar amount or a uniform rate. Operating-purpose levies cannot exceed <strong>5 years</strong>; capital-project levies cannot exceed <strong>10 years</strong> or the life of the capital asset, whichever is less. (Education Service Districts can't use local option levies at all; school districts and community colleges can, but with a cap.)</p>
+          <p><strong>Bond / debt-service levies.</strong> A debt-service levy pays only the principal and interest on voter-approved general-obligation bonds. The constitution does <em>not</em> require voters to re-approve this levy each year — voter approval of the bond is considered approval of the levies needed to repay it.</p>
+          <p>On top of those, since 1991 the Oregon Constitution has capped <strong>the total taxes that may be imposed on any single property</strong> for operating purposes. If the rates of all the local governments stacked together exceed these caps on a given parcel, the levies are compressed downward to fit:</p>
+        </div>
+
+        <div class="limit-table">
+          <table>
+            <tbody>
+              <tr class="limit-row">
+                <td>Schools (K-12 + community colleges + ESDs)</td>
+                <td>$5 per $1,000 of real market value</td>
+              </tr>
+              <tr class="limit-row">
+                <td>All other government operations</td>
+                <td>$10 per $1,000 of real market value</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="primer-prose">
+          <p>Bonded-debt levies and a few other specific categories are exempt from these constitutional limits. The amount of tax revenue a district actually receives is always less than the amount levied — because of discounts for timely payment, uncollected taxes, and "loss due to constitutional limit" (compression). A levy not made according to law can be voided by appeal to the Oregon Tax Court within 30 days of certification, by parties including the county assessor, the Department of Revenue, or 10 or more interested taxpayers.</p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           6. Elections
+           ============================================================ -->
+      <section class="primer-section" id="elections">
+        <span class="eyebrow">§ 6</span>
+        <h2>Elections &amp; budgeting</h2>
+        <div class="primer-prose">
+          <p>If proposed expenditures exceed what the permanent rate can raise, a local government has two choices: lower the proposed expenditures, or schedule a tax-levy election asking voters to approve a local option (or a new bond). Levy elections are restricted to <strong>four dates each year</strong>:</p>
+          <ul>
+            <li>Second Tuesday in <strong>March</strong></li>
+            <li>Third Tuesday in <strong>May</strong></li>
+            <li>Third Tuesday in <strong>September</strong></li>
+            <li>First Tuesday after the first Monday in <strong>November</strong></li>
+          </ul>
+          <p>Even if a tax election hasn't been decided by June 30, the governing body must still adopt the budget and make appropriations on time. If the district is counting on a September election, it must ask the county assessor in writing for an extension to certify the levy. If the levy fails, appropriations must be reduced to match the taxes the district actually has authority to levy.</p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           7. Appropriations
+           ============================================================ -->
+      <section class="primer-section" id="appropriations">
+        <span class="eyebrow">§ 7</span>
+        <h2>Appropriations and their use</h2>
+        <div class="primer-prose">
+          <p>Once the fiscal year begins, the governing body operates from <strong>appropriations</strong> — the line items in the adopting resolution that authorize spending for the next 12 months. Appropriations can be made in broader categories than the detail shown in the budget document. Spending is limited to those amounts; overspending is unlawful.</p>
+          <p>When circumstances change, there are two ways to adjust:</p>
+          <p><strong>Appropriation transfers.</strong> The governing body may move spending authority between existing appropriations in the same fund, or from one fund's existing appropriation to another's. This requires a resolution or ordinance, which must be enacted <strong>before</strong> any over-expenditure happens.</p>
+          <p><strong>Supplemental budgets.</strong> When the adopted budget gives no authority for a particular expenditure, or when unanticipated revenue arrives, a supplemental budget can authorize new spending mid-year. A small supplemental (≤ 10% of the affected fund's budget) can be adopted at a regular public meeting with prior notice. A larger supplemental requires publishing a summary of the changes and holding a special hearing. <strong>Supplemental budgets cannot be used to authorize a tax levy.</strong></p>
+          <p>Public officials who spend money unlawfully — in excess of appropriations or for purposes not provided by law — are <strong>civilly liable</strong>. The district attorney or a taxpayer can sue for return of the money. (See ORS 294.471.)</p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           8. Audits & biennial budgeting
+           ============================================================ -->
+      <section class="primer-section" id="audits-biennial">
+        <span class="eyebrow">§ 8</span>
+        <h2>Audits &amp; biennial budgeting</h2>
+        <div class="primer-prose">
+          <p><strong>Audits.</strong> After the fiscal year closes, most local governments subject to Local Budget Law are also required to have their accounts and fiscal affairs audited annually. The audit must be done by the <strong>Oregon Secretary of State</strong> or by an auditor certified by the <strong>Oregon State Board of Accountancy</strong> to perform municipal audits. The auditor examines financial statements, books, and records, plus any activity related to the collection, custody, handling, or disbursement of public funds. Questions go to the Secretary of State's Audits Division.</p>
+          <p><strong>Biennial budgeting.</strong> Local governments may, by ordinance, resolution, or charter, choose a <strong>24-month</strong> budget period instead of a one-year fiscal-year cycle. The biennial period still begins July 1 and ends June 30 — just two years later. Two things change with a biennial budget: appointed budget-committee members serve four-year staggered terms instead of three, and the estimate sheets show actuals for the two prior <em>biennia</em> rather than two prior fiscal years. Tualatin uses the annual fiscal-year cycle.</p>
+        </div>
+      </section>
+
+      <div class="card card--inset" style="margin-top: 32px;">
+        <p style="margin: 0; font-size: 0.9rem; color: var(--ink-2); line-height: 1.6;">
+          <strong style="color: var(--ink); font-family: var(--font-serif);">Source.</strong>
+          This summary is drawn from <em>Local Budgeting in Oregon</em> (Oregon Department of Revenue, Publication 150-504-400, Rev. 02-14), the state's official introductory booklet to ORS Chapter 294. The booklet is a supplement to the more detailed <em>Local Budgeting Manual</em> (150-504-420), which districts and budget officers consult before taking formal action. Statutory and constitutional references should be checked against the current text of ORS Chapter 294 and the Oregon Constitution before being relied on for any formal purpose.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div>
+      Source: <a href="https://www.tualatinoregon.gov/sites/default/files/fileattachments/finance/page/6486/final_proposed_budget_fy2026-27-compressed.pdf" target="_blank" rel="noopener">FY 2026–2027 Proposed Budget</a> (City of Tualatin, OR · 405pp · PDF).<br>
+      Historical budgets: <a href="https://www.tualatinoregon.gov/finance/adopted-budget-and-budget-brief">tualatinoregon.gov</a>.
+    </div>
+    <div>Built as a personal study tool by Daniel Bachhuber, Budget Advisory Committee member.</div>
+  </div>
+</footer>
+
+</body>
+</html>
