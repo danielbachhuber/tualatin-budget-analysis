@@ -10,6 +10,12 @@
 <link rel="stylesheet" href="assets/css/site.css?v=1779053588">
 </head>
 <body>
+<div class="ai-disclaimer" role="note">
+  <div class="ai-disclaimer__inner">
+    <span class="ai-disclaimer__icon" aria-hidden="true">⚠</span>
+    <span class="ai-disclaimer__text"><strong>This isn't an official city publication.</strong> It was generated in a few hours with a large language model. Please click through and verify facts and figures on the associated PDFs.</span>
+  </div>
+</div>
 
 <header class="site-header">
   <div class="container site-header__inner">
@@ -22,10 +28,10 @@
     </a>
     <nav class="site-nav">
       <a class="is-active" href="index.html">Overview</a>
+      <a href="process/index.html">Process</a>
       <a href="funds/index.html">Funds</a>
       <a href="departments/index.html">Departments</a>
       <a href="meetings/index.html">Meetings</a>
-      <a href="process/index.html">Process</a>
     </nav>
   </div>
 </header>
@@ -44,24 +50,24 @@
   <div class="container">
     <div class="kpi-strip">
       <div class="kpi">
-        <div class="kpi__label">Total Proposed Budget</div>
+        <div class="kpi__label">Total Proposed Budget <span id="kpi-total-cite"></span></div>
         <div class="kpi__value" id="kpi-total">—</div>
-        <div class="kpi__sub"><span id="kpi-total-delta"></span> vs FY 25-26 adopted <span id="kpi-total-cite"></span></div>
+        <div class="kpi__sub"><span id="kpi-total-delta"></span> vs FY 25-26 adopted</div>
       </div>
       <div class="kpi">
-        <div class="kpi__label">Tualatin Development Commission</div>
+        <div class="kpi__label">Tualatin Development Commission <span id="kpi-tdc-cite"></span></div>
         <div class="kpi__value" id="kpi-tdc">—</div>
-        <div class="kpi__sub"><span id="kpi-tdc-delta"></span> separate budget <span id="kpi-tdc-cite"></span></div>
+        <div class="kpi__sub"><span id="kpi-tdc-delta"></span> separate budget</div>
       </div>
       <div class="kpi">
-        <div class="kpi__label">Total FTE</div>
+        <div class="kpi__label">Total FTE <span id="kpi-fte-cite"></span></div>
         <div class="kpi__value" id="kpi-fte">—</div>
-        <div class="kpi__sub"><span class="delta delta--up">▲ 3 FTE</span> Rec Sup, Sewer Tech, PW Mgr <span id="kpi-fte-cite"></span></div>
+        <div class="kpi__sub"><span class="delta delta--up">▲ 3 FTE</span> Rec Sup, Sewer Tech, PW Mgr</div>
       </div>
       <div class="kpi">
-        <div class="kpi__label">Active Funds</div>
+        <div class="kpi__label">Active Funds <span id="kpi-funds-cite"></span></div>
         <div class="kpi__value" id="kpi-funds">—</div>
-        <div class="kpi__sub">across 33 expenditure budgets <span id="kpi-funds-cite"></span></div>
+        <div class="kpi__sub">across 33 expenditure budgets</div>
       </div>
     </div>
   </div>
@@ -84,11 +90,7 @@
     <div class="section__head">
       <div>
         <span class="eyebrow">From the Budget Message</span>
-        <h2>What's driving this year's budget</h2>
-      </div>
-      <div class="section__head__right">
-        Budget Message<br>
-        <span id="bm-cite"></span>
+        <h2>What's driving this year's budget <span id="bm-cite"></span></h2>
       </div>
     </div>
     <p class="prose">Tualatin remains fiscally stable, but the budget is tightening — expenditure growth is outpacing revenue growth. Executive Team conversations resulted in not funding every departmental need, but maintained organizational stability. Capital Outlay is the largest expenditure line this year (34.4% of the budget), driven by water and sewer infrastructure.</p>
@@ -102,11 +104,10 @@
     <div class="section__head">
       <div>
         <span class="eyebrow">Revenue</span>
-        <h2>Where the money comes from</h2>
+        <h2>Where the money comes from <span id="moneyin-cite"></span></h2>
       </div>
       <div class="section__head__right">
-        <span class="num">$176.95M</span> total inflows<br>
-        <span id="moneyin-cite"></span>
+        <span class="num">$176.95M</span> total inflows
       </div>
     </div>
     <div class="grid-2">
@@ -120,8 +121,8 @@
       </div>
       <div class="card">
         <div class="card__head">
-          <div class="card__title">By category, by year</div>
-          <div class="card__note">FY 23-24 actual → FY 26-27 proposed</div>
+          <div class="card__title">By category</div>
+          <div class="card__note">FY 26-27 proposed, largest first</div>
         </div>
         <div class="barchart" id="moneyin-bars"></div>
       </div>
@@ -134,11 +135,10 @@
     <div class="section__head">
       <div>
         <span class="eyebrow">Expenditures</span>
-        <h2>Where the money goes</h2>
+        <h2>Where the money goes <span id="moneyout-cite"></span></h2>
       </div>
       <div class="section__head__right">
-        <span class="num">$176.95M</span> total outflows<br>
-        <span id="moneyout-cite"></span>
+        <span class="num">$176.95M</span> total outflows
       </div>
     </div>
 
@@ -154,7 +154,7 @@
       <div class="card">
         <div class="card__head">
           <div class="card__title">By expenditure category</div>
-          <div class="card__note">Personal Services, Materials, Capital, &c.</div>
+          <div class="card__note">FY 26-27 proposed · Personal Services, Materials, Capital, &amp;c.</div>
         </div>
         <div class="barchart" id="moneyout-bars"></div>
       </div>
@@ -167,11 +167,10 @@
     <div class="section__head">
       <div>
         <span class="eyebrow">By fund</span>
-        <h2>Fund balances</h2>
+        <h2>Fund balances <span id="fundbal-cite"></span></h2>
       </div>
       <div class="section__head__right">
-        Beginning <span class="num">$103.9M</span> → Ending <span class="num">$83.6M</span><br>
-        <span id="fundbal-cite"></span>
+        Beginning <span class="num">$103.9M</span> → Ending <span class="num">$83.6M</span>
       </div>
     </div>
     <p class="prose">The City's $176.95M budget is spread across 19 active funds. The General Fund is the only unrestricted fund (~27% of the total budget); the rest have legal restrictions on how their revenues can be spent. Beginning balances minus FY 26-27 spending and reserves yields ending balances:</p>
@@ -327,10 +326,8 @@
   B.fundBalances.slice().sort((a, b) => b.end - a.end).forEach(f => {
     const deltaCls = f.change > 0 ? "fund-card__delta--up" : f.change < 0 ? "fund-card__delta--down" : "fund-card__delta--flat";
     const sign = f.change > 0 ? "+" : f.change < 0 ? "−" : "";
-    const isExemplar = f.slug === "parks-utility-fee";
-    const href = isExemplar ? `funds/${f.slug}.html` : "#";
     fg.insertAdjacentHTML("beforeend", `
-      <a class="fund-card" href="${href}" ${isExemplar ? "" : 'style="cursor: default; opacity: 0.75;"'}>
+      <a class="fund-card" href="funds/${f.slug}.html">
         <div class="fund-card__name">${f.name}</div>
         <div class="fund-card__balance">${fmt.currency(f.end, { short: true })}</div>
         <div class="fund-card__delta ${deltaCls}">${sign}${fmt.currency(Math.abs(f.change), { short: true })} change</div>

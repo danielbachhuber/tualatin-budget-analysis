@@ -1044,6 +1044,36 @@ tr.row-total td { font-weight: 600; background: var(--surface-2); }
 }
 
 /* ============================================================
+   AI-disclaimer banner (every page)
+   ============================================================ */
+
+.ai-disclaimer {
+  background: #fef6dc;
+  border-bottom: 1px solid #e8d28a;
+  color: #5b4a1c;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+.ai-disclaimer__inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 10px 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.ai-disclaimer__icon {
+  flex: 0 0 auto;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: #a87a18;
+}
+.ai-disclaimer__text strong { color: #3d320f; font-weight: 600; }
+@media (max-width: 720px) {
+  .ai-disclaimer__inner { padding: 10px 20px; }
+}
+
+/* ============================================================
    Legal-framework banner (homepage)
    ============================================================ */
 
