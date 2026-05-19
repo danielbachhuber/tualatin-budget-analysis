@@ -17,9 +17,10 @@ const path = require("path");
 const ROOT = path.resolve(__dirname, "..");
 const VER = String(Date.now());
 
+// Hand-built deep-dives we don't want to overwrite. (Fund deep-dives are now
+// fully data-driven, so parks-utility-fee no longer needs to be hand-curated.)
 const SKIP = new Set([
   "departments/parks-and-recreation.html",
-  "funds/parks-utility-fee.html",
 ]);
 
 // ---------- DEPARTMENTS ----------
@@ -280,6 +281,7 @@ const FUNDS = [
   { slug: "core-area-parking",       group: "Transportation", type: "Special Revenue",     printedPage: 101, description: "Funds parking facilities and management in the Core Opportunity & Reinvestment Area (CORA). Small fund relative to the rest of the transportation portfolio." },
 
   // Parks
+  { slug: "parks-utility-fee",       group: "Parks",          type: "Special Revenue",     printedPage: 103, description: "Special revenue fund for replacing aging parks infrastructure. Funded by a Parks Utility Fee on every utility account; identified projects are reviewed annually by the Parks and Recreation Advisory Committee, included in the budget for Budget Committee approval, then adopted by Council." },
   { slug: "park-development",        group: "Parks",          type: "Capital Projects",    printedPage: 107, description: "Parks system-development charges (SDCs) collected from new development. Restricted to capacity-adding parks improvements and acquisition." },
   { slug: "parks-project",           group: "Parks",          type: "Capital Projects",    printedPage: 108, description: "Bond-financed parks capital fund. Houses spending from the 2022 voter-approved $25M Parks and Trails Bond — $15M sold in 2023, remaining $10M projected to sell in 2027." },
 
@@ -548,61 +550,297 @@ function deptPage(d, extra) {
   });
 }
 
-function fundPage(f, bal) {
+// Render bar-chart rows from a 4-year-values array; pulls FY 26-27 (index 3).
+function renderBars(rows, fillClass) {
+  const active = rows.filter((r) => (r.values || [])[3] > 0);
+  if (!active.length) return `<div style="color: var(--ink-3); font-size: 0.85rem; font-style: italic;">No FY 26-27 entries.</div>`;
+  const max = Math.max(...active.map((r) => r.values[3]));
+  return active.slice().sort((a, b) => b.values[3] - a.values[3]).map((r) => {
+    const w = (r.values[3] / max) * 100;
+    return `
+      <div class="bar-row">
+        <div class="bar-row__label">${escapeHTML(r.name)}</div>
+        <div class="bar-row__bar"><div class="bar-row__fill ${fillClass}" style="width: ${w.toFixed(1)}%"></div></div>
+        <div class="bar-row__value">${fmtUSDshort(r.values[3])}</div>
+      </div>`;
+  }).join("");
+}
+
+// Render a multi-year line-item table (revenues or expenditures).
+function renderMultiYearTable(rows, totalsLabel) {
+  if (!rows || !rows.length) return "";
+  const totals = [0, 0, 0, 0];
+  for (const r of rows) (r.values || []).forEach((v, i) => { if (v != null) totals[i] += v; });
+  const body = rows.map((r) => `
+        <tr>
+          <td>${escapeHTML(r.name)}</td>
+          ${(r.values || [null, null, null, null]).map((v) => `<td class="col-num">${v ? fmtUSD(v) : "—"}</td>`).join("")}
+        </tr>`).join("");
+  return `
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>${escapeHTML(totalsLabel.split("Total ")[1] ? "Category" : "Source")}</th>
+            <th class="col-num">FY 23-24 actual</th>
+            <th class="col-num">FY 24-25 actual</th>
+            <th class="col-num">FY 25-26 adopted</th>
+            <th class="col-num">FY 26-27 proposed</th>
+          </tr>
+        </thead>
+        <tbody>${body}</tbody>
+        <tfoot>
+          <tr class="row-total">
+            <td>${escapeHTML(totalsLabel)}</td>
+            ${totals.map((v) => `<td class="col-num">${fmtUSD(v)}</td>`).join("")}
+          </tr>
+        </tfoot>
+      </table>
+    </div>`;
+}
+
+// Deep-dive fund page, modeled on funds/parks-utility-fee.html.
+function fundPage(f, bal, extra) {
   const change = bal?.change;
   const begin  = bal?.begin;
   const end    = bal?.end;
-  const sign   = change == null ? "" : change > 0 ? "+" : change < 0 ? "−" : "";
   const deltaCls = change == null ? "delta--neutral" : change > 0 ? "delta--up" : change < 0 ? "delta--down" : "delta--neutral";
   const arrow  = change == null ? "—" : change > 0 ? "▲" : change < 0 ? "▼" : "—";
+  const pdfPg  = printedToPdf(f.printedPage);
+  const balPdfPg = printedToPdf(58);
+
+  // Compute FY26-27 totals from extra (preferred over manifest values).
+  const expTotal = extra?.expenditures
+    ? extra.expenditures.reduce((s, e) => s + ((e.values || [])[3] || 0), 0)
+    : null;
+  const revTotal = extra?.revenues
+    ? extra.revenues.reduce((s, r) => s + ((r.values || [])[3] || 0), 0)
+    : null;
+  // FY 25-26 expenditure total for YoY
+  const expTotalPrior = extra?.expenditures
+    ? extra.expenditures.reduce((s, e) => s + ((e.values || [])[2] || 0), 0)
+    : null;
+  const yoyPct = expTotal != null && expTotalPrior ? ((expTotal - expTotalPrior) / expTotalPrior) * 100 : null;
+  const yoyCls = yoyPct == null ? "delta--neutral" : yoyPct > 0 ? "delta--up" : yoyPct < 0 ? "delta--down" : "delta--neutral";
+  const yoyArrow = yoyPct == null ? "" : yoyPct > 0 ? "▲" : yoyPct < 0 ? "▼" : "";
+
+  // Capital outlay this year (from expenditures).
+  const capRow = extra?.expenditures?.find((e) => /^Capital Outlay/i.test(e.name));
+  const capValue = capRow ? capRow.values?.[3] || 0 : null;
+  const capShare = capValue && expTotal ? ((capValue / expTotal) * 100) : null;
+
+  // KPI strip (4 cards).
   const kpiBlocks = [
     `
     <div class="kpi">
-      <div class="kpi__label">Ending balance FY 26-27</div>
-      <div class="kpi__value">${end == null ? "—" : fmtUSDshort(end)}</div>
-      <div class="kpi__sub">proposed end-of-year <a class="cite" href="${pdfBase}#page=67" target="_blank" rel="noopener">↗ p. 58</a></div>
+      <div class="kpi__label">Total budget FY 26-27 <a class="cite" href="${pdfBase}#page=${pdfPg}" target="_blank" rel="noopener">↗ p. ${f.printedPage}</a></div>
+      <div class="kpi__value">${expTotal != null ? fmtUSDshort(expTotal) : "—"}</div>
+      <div class="kpi__sub">${yoyPct != null ? `<span class="delta ${yoyCls}">${yoyArrow} ${Math.abs(yoyPct).toFixed(1)}%</span> vs FY 25-26` : "FY 26-27 proposed"}</div>
     </div>`,
     `
     <div class="kpi">
-      <div class="kpi__label">Beginning balance</div>
+      <div class="kpi__label">Beginning balance <a class="cite" href="${pdfBase}#page=${balPdfPg}" target="_blank" rel="noopener">↗ p. 58</a></div>
       <div class="kpi__value">${begin == null ? "—" : fmtUSDshort(begin)}</div>
       <div class="kpi__sub">July 1, 2026</div>
     </div>`,
     `
     <div class="kpi">
-      <div class="kpi__label">Net change</div>
-      <div class="kpi__value" style="font-size: 1.6rem;">${change == null ? "—" : `<span class="delta ${deltaCls}">${arrow} ${fmtUSDshort(Math.abs(change))}</span>`}</div>
-      <div class="kpi__sub">${change != null && change < 0 ? "spending down accumulated reserves" : change != null && change > 0 ? "growing reserves this year" : "see PDF for current values"}</div>
+      <div class="kpi__label">Ending balance <a class="cite" href="${pdfBase}#page=${balPdfPg}" target="_blank" rel="noopener">↗ p. 58</a></div>
+      <div class="kpi__value">${end == null ? "—" : fmtUSDshort(end)}</div>
+      <div class="kpi__sub">${change == null ? "see PDF" : `<span class="delta ${deltaCls}">${arrow} ${fmtUSDshort(Math.abs(change))}</span> change`}</div>
     </div>`,
-    `
+    capValue != null && capShare != null && capValue > 0 ? `
+    <div class="kpi">
+      <div class="kpi__label">Capital Outlay <a class="cite" href="${pdfBase}#page=${pdfPg}" target="_blank" rel="noopener">↗ p. ${f.printedPage}</a></div>
+      <div class="kpi__value">${fmtUSDshort(capValue)}</div>
+      <div class="kpi__sub">${capShare.toFixed(0)}% of total budget</div>
+    </div>` : `
     <div class="kpi">
       <div class="kpi__label">Fund type</div>
-      <div class="kpi__value" style="font-family: var(--font-serif); font-size: 1.2rem;">${f.type}</div>
-      <div class="kpi__sub"><a class="cite" href="${pdfBase}#page=${printedToPdf(f.printedPage)}" target="_blank" rel="noopener">↗ p. ${f.printedPage}</a></div>
+      <div class="kpi__value" style="font-family: var(--font-serif); font-size: 1.2rem;">${escapeHTML(f.type)}</div>
+      <div class="kpi__sub"><a class="cite" href="${pdfBase}#page=${pdfPg}" target="_blank" rel="noopener">↗ p. ${f.printedPage}</a></div>
     </div>`,
   ];
+
+  // Build sidebar TOC + sections based on what data the fund has.
+  const sections = [];
+  const tocItems = [];
+
+  // Flow card (revenue + expenditure bars). Always present if we have data.
+  if (extra?.revenues?.length || extra?.expenditures?.length) {
+    tocItems.push(`<li><a href="#flow">Revenue → expenditure flow</a></li>`);
+    sections.push(`
+      <section class="subsection" id="flow">
+        <h3>How the fund flows <span class="eyebrow">FY 26-27</span> <a class="cite" href="${pdfBase}#page=${pdfPg}" target="_blank" rel="noopener">p. ${f.printedPage}</a></h3>
+        <div class="grid-2">
+          <div class="card">
+            <div class="card__head">
+              <div class="card__title">Revenue sources</div>
+              <div class="card__note">${revTotal != null ? fmtUSDshort(revTotal) : "—"} total inflows</div>
+            </div>
+            <div class="barchart">${renderBars((extra.revenues || []).filter((r) => !/^Beginning Fund Balance$/i.test(r.name)), "bar-row__fill--good")}</div>
+          </div>
+          <div class="card">
+            <div class="card__head">
+              <div class="card__title">Expenditure categories</div>
+              <div class="card__note">${expTotal != null ? fmtUSDshort(expTotal) : "—"} total outflows</div>
+            </div>
+            <div class="barchart">${renderBars(extra.expenditures || [], "bar-row__fill--alt")}</div>
+          </div>
+        </div>
+      </section>`);
+  }
+
+  // Objectives
+  if (extra?.fy27Objectives?.length) {
+    tocItems.push(`<li><a href="#objectives">FY 26-27 objectives</a></li>`);
+    const items = extra.fy27Objectives.map((o) => `<li>${escapeHTML(o)}</li>`).join("\n          ");
+    sections.push(`
+      <section class="subsection" id="objectives" style="margin-top: 48px;">
+        <h3>Objectives for FY 26-27 <a class="cite" href="${pdfBase}#page=${pdfPg}" target="_blank" rel="noopener">p. ${f.printedPage}</a></h3>
+        <ul class="bullets">
+          ${items}
+        </ul>
+      </section>`);
+  }
+
+  // CIP
+  if (extra?.cipProjects?.length) {
+    tocItems.push(`<li><a href="#cip">Capital projects</a></li>`);
+    const cipTotal = extra.cipProjects.reduce((s, p) => s + (p.amount || 0), 0);
+    const rows = extra.cipProjects.map((p) => `
+          <tr>
+            <td>${escapeHTML(p.name)}</td>
+            <td class="col-num">${fmtUSD(p.amount)}</td>
+          </tr>`).join("");
+    sections.push(`
+      <section class="subsection" id="cip" style="margin-top: 48px;">
+        <h3>Capital projects this year <span class="eyebrow">${fmtUSDshort(cipTotal)} total</span></h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Project</th>
+                <th class="col-num" style="width: 180px;">Budget</th>
+              </tr>
+            </thead>
+            <tbody>${rows}</tbody>
+            <tfoot>
+              <tr class="row-total">
+                <td>Total</td>
+                <td class="col-num">${fmtUSD(cipTotal)}</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>`);
+  }
+
+  // Performance
+  if (extra?.performance?.length) {
+    tocItems.push(`<li><a href="#performance">Performance measures</a></li>`);
+    const rows = extra.performance.map((m) => `
+          <tr>
+            <td>${escapeHTML(m.metric)}</td>
+            ${(m.values || []).map((v) => `<td class="col-num">${v != null ? fmtNum(v) : "—"}</td>`).join("")}
+          </tr>`).join("");
+    sections.push(`
+      <section class="subsection" id="performance" style="margin-top: 48px;">
+        <h3>Performance measures <a class="cite" href="${pdfBase}#page=${pdfPg}" target="_blank" rel="noopener">p. ${f.printedPage}</a></h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th class="col-num">FY 23-24 actual</th>
+                <th class="col-num">FY 24-25 actual</th>
+                <th class="col-num">FY 25-26 adopted</th>
+                <th class="col-num">FY 26-27 proposed</th>
+              </tr>
+            </thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
+      </section>`);
+  }
+
+  // Multi-year revenue table
+  if (extra?.revenues?.length) {
+    tocItems.push(`<li><a href="#revenue-trend">Revenue history</a></li>`);
+    sections.push(`
+      <section class="subsection" id="revenue-trend" style="margin-top: 48px;">
+        <h3>Revenue line items <span class="eyebrow">FY 23-24 → FY 26-27</span> <a class="cite" href="${pdfBase}#page=${pdfPg}" target="_blank" rel="noopener">p. ${f.printedPage}</a></h3>
+        ${renderMultiYearTable(extra.revenues, "Total revenues + beginning balance")}
+      </section>`);
+  }
+
+  // Multi-year expenditure table
+  if (extra?.expenditures?.length) {
+    tocItems.push(`<li><a href="#exp-trend">Expenditure history</a></li>`);
+    sections.push(`
+      <section class="subsection" id="exp-trend" style="margin-top: 48px;">
+        <h3>Expenditure line items <span class="eyebrow">FY 23-24 → FY 26-27</span> <a class="cite" href="${pdfBase}#page=${pdfPg}" target="_blank" rel="noopener">p. ${f.printedPage}</a></h3>
+        ${renderMultiYearTable(extra.expenditures, "Total expenditures + reserves")}
+      </section>`);
+  }
+
+  // Source-of-truth callout (only when no extracted data — graceful fallback).
+  const hasData = extra && (extra.revenues?.length || extra.expenditures?.length);
+  if (!hasData) {
+    sections.push(`
+      <section class="subsection" style="margin-top: 48px;">
+        <div class="callout callout--accent">
+          <div class="callout__title">Source-of-truth: the proposed budget</div>
+          <div class="callout__detail">
+            Line-item budget tables for this fund are in the FY 2026–27 Proposed Budget document.
+            <a href="${pdfBase}#page=${pdfPg}" target="_blank" rel="noopener">Open this section in the PDF →</a>
+          </div>
+        </div>
+      </section>`);
+  }
+
+  const sidebar = tocItems.length ? `
+    <aside class="detail-nav">
+      <div class="detail-nav__title">On this page</div>
+      <ul>
+        ${tocItems.join("\n        ")}
+      </ul>
+    </aside>` : "";
+
+  const richContent = `
+  <div class="detail-layout">
+    ${sidebar}
+    <div>
+      ${sections.join("")}
+    </div>
+  </div>`;
+
+  // Compose the page using the shared template (which provides nav + ai-disclaimer + footer).
   return template({
     title: `${f.name || nameFromSlug(f.slug)} · Tualatin FY 2026–27`,
-    crumb: `<a href="../index.html">Overview</a> · <a href="index.html">Funds</a> · ${f.type}`,
+    crumb: `<a href="../index.html">Overview</a> · <a href="index.html">Funds</a> · ${escapeHTML(f.type)}`,
     h1: f.name || nameFromSlug(f.slug),
-    sub: f.description,
-    tags: `<span class="tag tag--primary">${f.type}</span> <a class="tag" href="${pdfBase}#page=${printedToPdf(f.printedPage)}" target="_blank" rel="noopener">↗ PDF p. ${f.printedPage}</a>`,
+    sub: extra?.purpose && extra.purpose.length > 0 ? extra.purpose : f.description,
+    tags: `<span class="tag tag--primary">${escapeHTML(f.type)}</span> <a class="tag" href="${pdfBase}#page=${pdfPg}" target="_blank" rel="noopener">↗ PDF p. ${f.printedPage}</a>`,
     kpis: kpiBlocks.join(""),
     contextList: "",
+    richContent,
     activeNav: "Funds",
     upPath: "..",
     pageType: "fund",
   });
 }
 
-// Map printed → PDF page using the pageMap in data.js (best-effort).
+// Map printed → PDF page. Verified by scanning each PDF page and reading the
+// printed page number from its tail line (scripts/build-page-map.py).
 const PAGE_MAP = {
-  91: 113, 96: 119, 98: 121, 99: 122, 101: 124, 102: 125, 103: 126, 104: 127,
-  105: 128, 106: 129, 107: 130, 108: 131, 110: 133, 111: 134, 113: 136,
-  114: 137, 116: 139, 117: 140, 118: 141, 120: 143,
-  // TDC
-  314: 337, 315: 338, 321: 344, 325: 348, 329: 352, 332: 355, 336: 359,
+  // Funds section: offset +12
   58: 67,
+  91: 103, 96: 108, 98: 110, 99: 111, 101: 113, 102: 114, 103: 115, 104: 116,
+  105: 117, 106: 118, 107: 119, 108: 120, 110: 122, 111: 123, 113: 125,
+  114: 126, 116: 128, 117: 129, 118: 130, 120: 132,
+  // TDC funds + appendix: offset +36
+  314: 350, 315: 351, 321: 357, 325: 361, 329: 365, 332: 368, 336: 372,
 };
 function printedToPdf(p) { return PAGE_MAP[p] || p; }
 
@@ -627,6 +865,12 @@ function template({ title, crumb, h1, sub, tags, kpis, contextList, richContent,
 <link rel="stylesheet" href="${upPath}/assets/css/site.css?v=${VER}">
 </head>
 <body>
+<div class="ai-disclaimer" role="note">
+  <div class="ai-disclaimer__inner">
+    <span class="ai-disclaimer__icon" aria-hidden="true">⚠</span>
+    <span class="ai-disclaimer__text"><strong>This isn't an official city publication.</strong> It was generated in a few hours with a large language model. Please click through and verify facts and figures on the associated PDFs.</span>
+  </div>
+</div>
 
 <header class="site-header">
   <div class="container site-header__inner">
@@ -639,6 +883,7 @@ function template({ title, crumb, h1, sub, tags, kpis, contextList, richContent,
     </a>
     <nav class="site-nav">
       <a href="${upPath}/index.html">Overview</a>
+      <a href="${upPath}/process/index.html">Process</a>
       ${navFunds}
       ${navDepartments}
       ${navMeetings}
@@ -723,6 +968,15 @@ if (fs.existsSync(deptDataPath)) {
   console.log(`  loaded extracted data for ${Object.keys(deptExtras).length} departments`);
 }
 
+// Per-fund extracted data (purpose, objectives, CIP, performance, revenues, expenditures).
+let fundExtras = {};
+const fundDataPath = path.join(ROOT, "data", "funds.json");
+if (fs.existsSync(fundDataPath)) {
+  const arr = JSON.parse(fs.readFileSync(fundDataPath, "utf8"));
+  fundExtras = Object.fromEntries(arr.map((x) => [x.slug, x]));
+  console.log(`  loaded extracted data for ${Object.keys(fundExtras).length} funds`);
+}
+
 let written = 0, skipped = 0;
 for (const d of DEPARTMENTS) {
   const rel = `departments/${d.slug}.html`;
@@ -734,14 +988,15 @@ for (const d of DEPARTMENTS) {
 for (const f of FUNDS) {
   const rel = `funds/${f.slug}.html`;
   if (SKIP.has(rel)) { skipped++; continue; }
-  fs.writeFileSync(path.join(ROOT, rel), fundPage({ ...f, name: bySlug[f.slug]?.name || nameFromSlug(f.slug) }, bySlug[f.slug]));
+  const name = fundExtras[f.slug]?.name || bySlug[f.slug]?.name || nameFromSlug(f.slug);
+  fs.writeFileSync(path.join(ROOT, rel), fundPage({ ...f, name }, bySlug[f.slug], fundExtras[f.slug]));
   written++;
   console.log(`  wrote ${rel}`);
 }
 for (const t of TDC_FUNDS) {
   const rel = `funds/${t.slug}.html`;
   if (SKIP.has(rel)) { skipped++; continue; }
-  fs.writeFileSync(path.join(ROOT, rel), fundPage(t, t));
+  fs.writeFileSync(path.join(ROOT, rel), fundPage({ ...t, printedPage: t.printedPage }, t, fundExtras[t.slug]));
   written++;
   console.log(`  wrote ${rel}`);
 }
