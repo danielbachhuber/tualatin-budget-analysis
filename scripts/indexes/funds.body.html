@@ -66,6 +66,7 @@
 
 <script src="../assets/js/data.js?v=1779053588"></script>
 <script src="../assets/js/format.js?v=1779053588"></script>
+<script src="../assets/js/fund-card.js?v=1779053588"></script>
 <script>
 (function () {
   const B = window.BUDGET;
@@ -105,8 +106,6 @@
     special:    ["arp", "go-bond", "vehicle-replacement", "scholarship"],
   };
 
-  const exemplarSlugs = new Set(["parks-utility-fee"]);
-
   function renderGroup(targetId, slugs) {
     const target = document.getElementById(targetId);
     if (!target) return;
@@ -114,23 +113,15 @@
     slugs.forEach((slug) => {
       const f = bySlug[slug];
       if (!f) return;
-      const deltaCls = f.change > 0 ? "fund-card__delta--up" : f.change < 0 ? "fund-card__delta--down" : "fund-card__delta--flat";
-      const sign = f.change > 0 ? "+" : f.change < 0 ? "−" : "";
-      const isExemplar = exemplarSlugs.has(slug);
-      const pageNum = FUND_PAGES[slug];
-      const cite = pageNum ? fmt.cite(pageNum) : "";
-      const href = `${slug}.html`;
-      const cta = isExemplar ? "See breakdown" : "See breakdown";
-      // Stretched-link pattern: <a> overlay covers the card, cite stays on top.
-      target.insertAdjacentHTML("beforeend", `
-        <div class="fund-card fund-card--linked${isExemplar ? " fund-card--exemplar" : ""}">
-          <a class="fund-card__stretch" href="${href}" aria-label="${f.name}"></a>
-          <div class="fund-card__name">${f.name} ${cite}</div>
-          <div class="fund-card__balance">${fmt.currency(f.end, { short: true })}</div>
-          <div class="fund-card__delta ${deltaCls}">${sign}${fmt.currency(Math.abs(f.change), { short: true })} change · begin ${fmt.currency(f.begin, { short: true })}</div>
-          <a href="${href}" class="fund-card__cta">${cta}</a>
-        </div>
-      `);
+      target.insertAdjacentHTML("beforeend", FundCard.render({
+        name:   f.name,
+        end:    f.end,
+        begin:  f.begin,
+        change: f.change,
+        page:   FUND_PAGES[slug],
+        href:   `${slug}.html`,
+        showCta: true,
+      }));
     });
   }
 
@@ -160,24 +151,16 @@
     "Southwest Urban Renewal District Project": "tdc-sw-project",
   };
   TDC_FUNDS.forEach((f) => {
-    const deltaCls = f.change > 0 ? "fund-card__delta--up" : f.change < 0 ? "fund-card__delta--down" : "fund-card__delta--flat";
-    const sign = f.change > 0 ? "+" : f.change < 0 ? "−" : "";
-    const cite = fmt.cite(f.page);
-    const endStr = f.end == null ? "—" : fmt.currency(f.end, { short: true });
-    const deltaStr = f.change == null
-      ? "See PDF for current balances"
-      : `${sign}${fmt.currency(Math.abs(f.change), { short: true })} change · begin ${fmt.currency(f.begin, { short: true })}`;
     const slug = TDC_SLUGS[f.name];
-    const href = slug ? `${slug}.html` : null;
-    tdcTarget.insertAdjacentHTML("beforeend", `
-      <div class="fund-card${href ? " fund-card--linked" : ""}">
-        ${href ? `<a class="fund-card__stretch" href="${href}" aria-label="${f.name}"></a>` : ""}
-        <div class="fund-card__name">${f.name} ${cite}</div>
-        <div class="fund-card__balance">${endStr}</div>
-        <div class="fund-card__delta ${deltaCls}">${deltaStr}</div>
-        ${href ? `<a href="${href}" class="fund-card__cta">See breakdown</a>` : ""}
-      </div>
-    `);
+    tdcTarget.insertAdjacentHTML("beforeend", FundCard.render({
+      name:   f.name,
+      end:    f.end,
+      begin:  f.begin,
+      change: f.change,
+      page:   f.page,
+      href:   slug ? `${slug}.html` : null,
+      showCta: !!slug,
+    }));
   });
 })();
 </script>

@@ -168,6 +168,7 @@
 
 <script src="assets/js/data.js?v=1779053588"></script>
 <script src="assets/js/format.js?v=1779053588"></script>
+<script src="assets/js/fund-card.js?v=1779053588"></script>
 <script>
 (function () {
   const B = window.BUDGET;
@@ -273,18 +274,17 @@
     `);
   });
 
-  // ----- Fund grid
+  // ----- Fund grid (uses the shared FundCard partial in assets/js/fund-card.js)
   const fg = document.getElementById("fund-grid");
   B.fundBalances.slice().sort((a, b) => b.end - a.end).forEach(f => {
-    const deltaCls = f.change > 0 ? "fund-card__delta--up" : f.change < 0 ? "fund-card__delta--down" : "fund-card__delta--flat";
-    const sign = f.change > 0 ? "+" : f.change < 0 ? "−" : "";
-    fg.insertAdjacentHTML("beforeend", `
-      <a class="fund-card" href="funds/${f.slug}.html">
-        <div class="fund-card__name">${f.name}</div>
-        <div class="fund-card__balance">${fmt.currency(f.end, { short: true })}</div>
-        <div class="fund-card__delta ${deltaCls}">${sign}${fmt.currency(Math.abs(f.change), { short: true })} change</div>
-      </a>
-    `);
+    fg.insertAdjacentHTML("beforeend", FundCard.render({
+      name:   f.name,
+      end:    f.end,
+      begin:  f.begin,
+      change: f.change,
+      href:   `funds/${f.slug}.html`,
+      showCta: false,   // homepage cards are compact — the whole card is the link
+    }));
   });
 })();
 </script>
