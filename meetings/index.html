@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Budget Committee meetings · Tualatin FY 2026–27</title>
+<title>Meetings · Tualatin FY 2026–27</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="../assets/css/site.css?v=1779207839951">
+<link rel="stylesheet" href="../assets/css/site.css?v=1779208959996">
 </head>
 <body>
 <div class="ai-disclaimer" role="note">
@@ -40,9 +40,9 @@
 <div class="page-header">
   <div class="container">
     <div class="page-header__crumbs">
-      <a href="../index.html">Overview</a> · Budget Advisory Committee meetings
+      <a href="../index.html">Overview</a> · Meetings
     </div>
-    <h1>Budget Advisory Committee meetings</h1>
+    <h1>Meetings</h1>
     <p class="page-header__sub">What came up at each meeting of Tualatin's citizen Budget Advisory Committee (BAC) — the body that reviews the City Manager's proposed budget before City Council adopts it. Cards show the role the meeting played in the cycle, a one-glance summary, and links to the agenda, packet, and minutes.</p>
     <div class="tag-row">
       <a class="tag" href="https://www.tualatinoregon.gov/bac" target="_blank" rel="noopener">↗ BAC home</a>
@@ -140,19 +140,23 @@
         {
           date: "May 6, 2024", role: "Kickoff",
           uuid: "37837366d4534f0ba187607c3f32f112",
-          docs: { agenda: true, packet: true, minutes: false },
+          docs: { agenda: true, packet: true, minutes: true },
+          // Minutes are embedded in the next year's kickoff packet.
+          minutesUuid: "e206efae0b4b4cdfb0000484395dbe1d", minutesKind: "Packet", minutesLabel: "in May 12 packet",
           body: "Budget message and proposed FY 24-25 overview. No standalone minutes published.",
         },
         {
           date: "May 13, 2024", role: "Continuation",
           uuid: "3e890d7993a8478785a8567b7dafb9d8",
-          docs: { agenda: true, packet: true, minutes: false },
+          docs: { agenda: true, packet: true, minutes: true },
+          minutesUuid: "e206efae0b4b4cdfb0000484395dbe1d", minutesKind: "Packet", minutesLabel: "in May 12 packet",
           body: "Department discussion and continued deliberation.",
         },
         {
           date: "May 29, 2024", role: "Public hearing & recommendation", color: "accent",
           uuid: "569e5c15acc04ce19dc9dded5b7dc6d0",
-          docs: { agenda: true, packet: true, minutes: false },
+          docs: { agenda: true, packet: true, minutes: true },
+          minutesUuid: "e206efae0b4b4cdfb0000484395dbe1d", minutesKind: "Packet", minutesLabel: "in May 12 packet",
           body: "State-shared revenue hearing (~$479,130 liquor tax). FY 24-25 budget of $156.7M proposed (1.99% increase). Q&amp;A on the 15% contingency policy and interest in a Parks Replacement Fund.",
         },
       ],
@@ -164,13 +168,15 @@
         {
           date: "May 8, 2023", role: "Kickoff",
           uuid: "ba685ebdf4f6492ba3416f0281735d82",
-          docs: { agenda: true, packet: true, minutes: false },
+          docs: { agenda: true, packet: true, minutes: true },
+          minutesUuid: "3e890d7993a8478785a8567b7dafb9d8", minutesKind: "Packet", minutesLabel: "in May 13 packet",
           body: "Brittany Valli elected Chair. FY 23-24 proposed budget of $152.8M (3.55% increase). Recap of the $25M Parks Bond passage and the first $15M bond sale at premium ($17.1M for projects).",
         },
         {
           date: "May 30, 2023", role: "Public hearing & recommendation", color: "accent",
           uuid: "5e1de1b81ea3485d8c9e1c24fffb7d32",
-          docs: { agenda: true, packet: true, minutes: false },
+          docs: { agenda: true, packet: true, minutes: true },
+          minutesUuid: "3e890d7993a8478785a8567b7dafb9d8", minutesKind: "Packet", minutesLabel: "in May 13 packet",
           body: "State-shared revenue hearing (~$456,315 liquor tax). Discussion: ARPA funds, Leveton Project / urban renewal districts, HB 3115, and a $8.04/month typical utility-bill increase.",
         },
       ],
@@ -240,21 +246,35 @@
     const stretch = linked ? `<a class="callout__stretch" href="${m.fullMinutes}" aria-label="${m.date} ${m.role}"></a>` : "";
     const time = m.time ? ` <span class="meeting-card__time">· ${m.time}</span>` : "";
 
-    // Docs row: always shows agenda / packet / minutes in the same order.
-    const docHref = (kind) => {
-      if (kind === "agenda" && m.agendaUrlOverride) return m.agendaUrlOverride;
-      const uuid = (kind === "minutes" && m.minutesUuid) ? m.minutesUuid : m.uuid;
-      return docUrl(kind === "agenda" ? "Agenda" : kind === "packet" ? "Packet" : "Minutes", uuid);
-    };
-    const docLink = (label, kind) => m.docs[kind]
-      ? `<a href="${docHref(kind)}" target="_blank" rel="noopener">↗ ${label}</a>`
-      : `<span class="meeting-card__docs-pending">${label} pending</span>`;
-    const docs = `
+    // Cards with a Read-full-minutes page hide the doc-links row — the
+    // per-meeting page already carries Agenda/Packet/Minutes tags. Cards
+    // without an internal page show the doc-links row so PDFs remain
+    // reachable directly from the index.
+    let docs = "";
+    if (!linked) {
+      const docHref = (kind) => {
+        if (kind === "agenda" && m.agendaUrlOverride) return m.agendaUrlOverride;
+        // Some cycles' minutes are embedded in the next year's kickoff packet;
+        // route the "Minutes" slot to that packet when minutesUuid is set.
+        if (kind === "minutes" && m.minutesUuid) {
+          return docUrl(m.minutesKind || "Minutes", m.minutesUuid);
+        }
+        return docUrl(kind === "agenda" ? "Agenda" : kind === "packet" ? "Packet" : "Minutes", m.uuid);
+      };
+      const docLink = (label, kind) => {
+        if (!m.docs[kind]) {
+          return `<span class="meeting-card__docs-pending">${label} pending</span>`;
+        }
+        const displayLabel = (kind === "minutes" && m.minutesLabel) ? `Minutes ${m.minutesLabel}` : label;
+        return `<a href="${docHref(kind)}" target="_blank" rel="noopener">↗ ${displayLabel}</a>`;
+      };
+      docs = `
       <div class="meeting-card__docs">
         ${docLink("Agenda", "agenda")}
         ${docLink("Packet", "packet")}
         ${docLink("Minutes", "minutes")}
       </div>`;
+    }
 
     const cta = linked ? `<a class="callout__cta" href="${m.fullMinutes}">Read full minutes</a>` : "";
 
