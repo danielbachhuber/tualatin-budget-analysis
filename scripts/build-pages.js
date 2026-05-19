@@ -551,11 +551,17 @@ function deptPage(d, extra) {
 }
 
 // Render bar-chart rows from a 4-year-values array; pulls FY 26-27 (index 3).
+// Beginning Fund Balance is split out and rendered last with a faded bar so
+// the math (beginning + new revenue = total inflows) stays visible to the
+// reader without polluting the "where does this fund get its revenue" story.
 function renderBars(rows, fillClass) {
-  const active = rows.filter((r) => (r.values || [])[3] > 0);
-  if (!active.length) return `<div style="color: var(--ink-3); font-size: 0.85rem; font-style: italic;">No FY 26-27 entries.</div>`;
-  const max = Math.max(...active.map((r) => r.values[3]));
-  return active.slice().sort((a, b) => b.values[3] - a.values[3]).map((r) => {
+  const beginRow = rows.find((r) => /^Beginning Fund Balance$/i.test(r.name));
+  const others   = rows.filter((r) => !/^Beginning Fund Balance$/i.test(r.name) && (r.values || [])[3] > 0);
+  const beginVal = beginRow ? (beginRow.values || [])[3] || 0 : 0;
+  if (!others.length && !beginVal) return `<div style="color: var(--ink-3); font-size: 0.85rem; font-style: italic;">No FY 26-27 entries.</div>`;
+  // Scale relative to the largest entry across both groups so widths read fairly.
+  const max = Math.max(...others.map((r) => r.values[3]), beginVal);
+  const otherBars = others.slice().sort((a, b) => b.values[3] - a.values[3]).map((r) => {
     const w = (r.values[3] / max) * 100;
     return `
       <div class="bar-row">
@@ -564,6 +570,13 @@ function renderBars(rows, fillClass) {
         <div class="bar-row__value">${fmtUSDshort(r.values[3])}</div>
       </div>`;
   }).join("");
+  const beginBar = beginVal > 0 ? `
+      <div class="bar-row" style="opacity: 0.7;">
+        <div class="bar-row__label">+ Beginning Balance</div>
+        <div class="bar-row__bar"><div class="bar-row__fill" style="width: ${((beginVal / max) * 100).toFixed(1)}%; background: var(--rule-strong);"></div></div>
+        <div class="bar-row__value">${fmtUSDshort(beginVal)}</div>
+      </div>` : "";
+  return otherBars + beginBar;
 }
 
 // Render a multi-year line-item table (revenues or expenditures).
@@ -678,7 +691,7 @@ function fundPage(f, bal, extra) {
               <div class="card__title">Revenue sources</div>
               <div class="card__note">${revTotal != null ? fmtUSDshort(revTotal) : "—"} total inflows</div>
             </div>
-            <div class="barchart">${renderBars((extra.revenues || []).filter((r) => !/^Beginning Fund Balance$/i.test(r.name)), "bar-row__fill--good")}</div>
+            <div class="barchart">${renderBars(extra.revenues || [], "bar-row__fill--good")}</div>
           </div>
           <div class="card">
             <div class="card__head">
