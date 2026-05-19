@@ -5,7 +5,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const { head, aiBanner, siteHeader, siteFooter } = require("./lib/partials");
+const { head, aiBanner, siteHeader, siteFooter, bustCache } = require("./lib/partials");
 
 const ROOT = path.resolve(__dirname, "..");
 const EXTRACTED = path.join(ROOT, "meetings", "extracted");
@@ -289,7 +289,7 @@ for (const [date, meta] of Object.entries(MEETINGS)) {
   const raw = fs.readFileSync(txtPath, "utf8");
   const { html } = renderMinutes(raw);
   const out = path.join(OUT_DIR, `${date}.html`);
-  fs.writeFileSync(out, page(date, meta, html));
+  fs.writeFileSync(out, bustCache(page(date, meta, html)));
   console.log(`  wrote ${path.relative(ROOT, out)}`);
   written++;
 }

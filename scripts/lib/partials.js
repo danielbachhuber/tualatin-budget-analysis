@@ -5,6 +5,32 @@
 // upPath: relative path back to the repo root, "" for root-level pages,
 // ".." for one-level-deep pages (funds/, departments/, meetings/, process/).
 
+const fs = require("fs");
+const path = require("path");
+
+const ROOT = path.resolve(__dirname, "..", "..");
+
+// Asset cache-busting: use the file's mtime (in seconds) as ?v=. Browsers
+// re-fetch when the value changes, and the value only changes when the file
+// actually does — so unchanged assets stay cached across rebuilds.
+function assetVersion(relPath) {
+  try {
+    return Math.floor(fs.statSync(path.join(ROOT, relPath)).mtimeMs / 1000).toString();
+  } catch {
+    return "0";
+  }
+}
+
+// Post-process: scan rendered HTML for asset references with ?v= query
+// strings and rewrite them to the current mtime. Lets body fragments use
+// any placeholder value and have it normalized at build time.
+function bustCache(html) {
+  return html.replace(
+    /(\bhref|\bsrc)=(["'])((?:[^"']*?\/)?(assets\/[^"'?]+))\?v=[^"']*\2/g,
+    (m, attr, q, fullPath, relPath) => `${attr}=${q}${fullPath}?v=${assetVersion(relPath)}${q}`
+  );
+}
+
 const VER = String(Date.now());
 
 const NAV_ORDER = ["Overview", "Process", "Funds", "TDC", "Departments", "Meetings"];
@@ -22,7 +48,7 @@ function navHref(label, upPath) {
   }
 }
 
-function head({ title, upPath = "", version = VER, extra = "" }) {
+function head({ title, upPath = "", extra = "" }) {
   return `<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,7 +56,7 @@ function head({ title, upPath = "", version = VER, extra = "" }) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="${upPath ? upPath + "/" : ""}assets/css/site.css?v=${version}">${extra ? "\n" + extra : ""}
+<link rel="stylesheet" href="${upPath ? upPath + "/" : ""}assets/css/site.css?v=${assetVersion("assets/css/site.css")}">${extra ? "\n" + extra : ""}
 </head>`;
 }
 
@@ -82,4 +108,4 @@ function siteFooter({ sourceHtml = DEFAULT_FOOTER_SOURCE } = {}) {
 </footer>`;
 }
 
-module.exports = { head, aiBanner, siteHeader, siteFooter, navHref, VER };
+module.exports = { head, aiBanner, siteHeader, siteFooter, navHref, VER, assetVersion, bustCache };

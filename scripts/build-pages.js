@@ -13,7 +13,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const { head, aiBanner, siteHeader, siteFooter, VER } = require("./lib/partials");
+const { head, aiBanner, siteHeader, siteFooter, VER, bustCache } = require("./lib/partials");
 
 const ROOT = path.resolve(__dirname, "..");
 
@@ -973,7 +973,7 @@ let written = 0, skipped = 0;
 for (const d of DEPARTMENTS) {
   const rel = `departments/${d.slug}.html`;
   if (SKIP.has(rel)) { skipped++; continue; }
-  fs.writeFileSync(path.join(ROOT, rel), deptPage(d, deptExtras[d.slug]));
+  fs.writeFileSync(path.join(ROOT, rel), bustCache(deptPage(d, deptExtras[d.slug])));
   written++;
   console.log(`  wrote ${rel}`);
 }
@@ -981,14 +981,14 @@ for (const f of FUNDS) {
   const rel = `funds/${f.slug}.html`;
   if (SKIP.has(rel)) { skipped++; continue; }
   const name = fundExtras[f.slug]?.name || bySlug[f.slug]?.name || nameFromSlug(f.slug);
-  fs.writeFileSync(path.join(ROOT, rel), fundPage({ ...f, name }, bySlug[f.slug], fundExtras[f.slug]));
+  fs.writeFileSync(path.join(ROOT, rel), bustCache(fundPage({ ...f, name }, bySlug[f.slug], fundExtras[f.slug])));
   written++;
   console.log(`  wrote ${rel}`);
 }
 for (const t of TDC_FUNDS) {
   const rel = `funds/${t.slug}.html`;
   if (SKIP.has(rel)) { skipped++; continue; }
-  fs.writeFileSync(path.join(ROOT, rel), fundPage({ ...t, printedPage: t.printedPage }, t, fundExtras[t.slug]));
+  fs.writeFileSync(path.join(ROOT, rel), bustCache(fundPage({ ...t, printedPage: t.printedPage }, t, fundExtras[t.slug])));
   written++;
   console.log(`  wrote ${rel}`);
 }

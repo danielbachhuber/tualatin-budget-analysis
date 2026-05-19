@@ -8,7 +8,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const { head, aiBanner, siteHeader, siteFooter } = require("./lib/partials");
+const { head, aiBanner, siteHeader, siteFooter, bustCache } = require("./lib/partials");
 
 const ROOT = path.resolve(__dirname, "..");
 const FRAGMENTS = path.join(__dirname, "indexes");
@@ -39,7 +39,7 @@ ${siteFooter(footerSource ? { sourceHtml: footerSource } : undefined)}
 </body>
 </html>
 `;
-  fs.writeFileSync(path.join(ROOT, outPath), html);
+  fs.writeFileSync(path.join(ROOT, outPath), bustCache(html));
   console.log(`  wrote ${outPath}`);
 }
 
