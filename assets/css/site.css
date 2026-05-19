@@ -577,9 +577,9 @@ tr.row-total td { font-weight: 600; background: var(--surface-2); }
 .callout--linked .callout__title-name { color: var(--ink); }
 .callout--linked:hover .callout__title-name { color: var(--primary); }
 
-/* "See breakdown" button — anchored to the bottom of the card via margin-top:
-   auto inside the flex column. Same treatment for callouts and fund-cards. */
-.callout__cta, .fund-card__cta {
+/* Callout CTA: solid filled button (used on the Departments index where the
+   callouts list is heavier and a stronger affordance reads well). */
+.callout__cta {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -601,15 +601,49 @@ tr.row-total td { font-weight: 600; background: var(--surface-2); }
   z-index: 2;
   transition: background 120ms ease, transform 120ms ease;
 }
-.callout__cta:hover, .fund-card__cta:hover {
+.callout__cta:hover {
   background: var(--primary-2);
   color: var(--surface);
   border-bottom: none;
   transform: translateY(-1px);
 }
-.callout__cta:focus-visible, .fund-card__cta:focus-visible {
+.callout__cta:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
+}
+
+/* Fund-card CTA: lightweight text link, right-aligned at the bottom of the
+   card. The card itself is the primary affordance (stretched anchor) so the
+   CTA is just a clarifying signpost — keep it visually quiet. */
+.fund-card__cta {
+  align-self: flex-end;
+  margin-top: auto;
+  padding-top: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--primary-2);
+  text-decoration: none;
+  border-bottom: none;
+  position: relative;
+  z-index: 2;
+  transition: color 120ms ease;
+}
+.fund-card__cta::after {
+  content: "→";
+  margin-left: 5px;
+  transition: transform 120ms ease;
+  display: inline-block;
+}
+.fund-card__cta:hover {
+  color: var(--primary);
+  border-bottom: none;
+}
+.fund-card__cta:hover::after { transform: translateX(2px); }
+.fund-card__cta:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 /* ============================================================
