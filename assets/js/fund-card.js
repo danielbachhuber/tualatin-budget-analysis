@@ -35,50 +35,57 @@
   }
 
   function render(opts) {
-    const {
-      name,
-      end,
-      begin,
-      change,
-      page,
-      href,
-      label = "Ending balance",
-      showCta = href != null,
-    } = opts;
+    const { name, end, begin, change, page, href, showCta = href != null } = opts;
 
     const isLinked = href != null;
-    const balanceText = end == null ? "—" : fmt.currency(end, { short: true });
     const cite = citeFor(page);
-
-    // Delta row: colored pill (change) + dimmed beginning. When change is null
-    // (TDC funds without FY 26-27 data), show a fallback.
-    let deltaRow;
-    if (change == null) {
-      deltaRow = `<div class="fund-card__meta">See PDF for current balances</div>`;
-    } else {
-      const cls = change > 0 ? "delta--up" : change < 0 ? "delta--down" : "delta--neutral";
-      const arrow = change > 0 ? "▲" : change < 0 ? "▼" : "—";
-      const pill = `<span class="delta ${cls}">${arrow} ${fmt.currency(Math.abs(change), { short: true })}</span>`;
-      const beginPart = begin != null
-        ? `<span class="fund-card__begin">begin ${fmt.currency(begin, { short: true })}</span>`
-        : "";
-      deltaRow = `<div class="fund-card__meta">${pill}${beginPart}</div>`;
-    }
-
     const stretch = isLinked ? `<a class="fund-card__stretch" href="${href}" aria-label="${name}"></a>` : "";
     const cta = isLinked && showCta ? `<a class="fund-card__cta" href="${href}">See breakdown</a>` : "";
     const linkedCls = isLinked ? " fund-card--linked" : "";
+
+    // Number row: begin → change → end. When change is null (TDC funds with
+    // no FY 26-27 data) the whole flow collapses to a single fallback line.
+    let flow;
+    if (change == null && begin == null && end == null) {
+      flow = `<div class="fund-card__meta">See PDF for current balances</div>`;
+    } else {
+      const beginText = begin == null ? "—" : fmt.currency(begin, { short: true });
+      const endText   = end   == null ? "—" : fmt.currency(end,   { short: true });
+      let changeCell;
+      if (change == null) {
+        changeCell = `<span class="fund-card__stat-value fund-card__stat-value--neutral">—</span>`;
+      } else {
+        const cls = change > 0 ? "delta--up" : change < 0 ? "delta--down" : "delta--neutral";
+        const arrow = change > 0 ? "▲" : change < 0 ? "▼" : "—";
+        changeCell = `<span class="delta ${cls}">${arrow} ${fmt.currency(Math.abs(change), { short: true })}</span>`;
+      }
+      flow = `
+        <div class="fund-card__flow">
+          <div class="fund-card__stat">
+            <div class="fund-card__stat-value">${beginText}</div>
+            <div class="fund-card__stat-label">begin</div>
+          </div>
+          <span class="fund-card__flow-sep" aria-hidden="true">→</span>
+          <div class="fund-card__stat">
+            <div class="fund-card__stat-value">${changeCell}</div>
+            <div class="fund-card__stat-label">change</div>
+          </div>
+          <span class="fund-card__flow-sep" aria-hidden="true">→</span>
+          <div class="fund-card__stat">
+            <div class="fund-card__stat-value">${endText}</div>
+            <div class="fund-card__stat-label">end</div>
+          </div>
+        </div>`;
+    }
 
     return `
       <div class="fund-card${linkedCls}">
         ${stretch}
         <div class="fund-card__head">
-          <span class="fund-card__label">${label}</span>
+          <div class="fund-card__name">${name}</div>
           ${cite}
         </div>
-        <div class="fund-card__name">${name}</div>
-        <div class="fund-card__balance">${balanceText}</div>
-        ${deltaRow}
+        ${flow}
         ${cta}
       </div>`;
   }
