@@ -5,11 +5,11 @@
 
 const fs = require("fs");
 const path = require("path");
+const { head, aiBanner, siteHeader, siteFooter } = require("./lib/partials");
 
 const ROOT = path.resolve(__dirname, "..");
 const EXTRACTED = path.join(ROOT, "meetings", "extracted");
 const OUT_DIR = path.join(ROOT, "meetings");
-const VER = String(Date.now());
 
 // Meta for each meeting — mirrors meetings/index.html. Keyed by date.
 const MEETINGS = {
@@ -193,34 +193,11 @@ function page(date, meta, body) {
   const minutesUrl = docUrl("Minutes", meta.uuid);
   return `<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${meta.label} BAC meeting · Tualatin FY 2026–27</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="../assets/css/site.css?v=${VER}">
-</head>
+${head({ title: `${meta.label} BAC meeting · Tualatin FY 2026–27`, upPath: ".." })}
 <body>
+${aiBanner()}
 
-<header class="site-header">
-  <div class="container site-header__inner">
-    <a class="brand" href="../index.html">
-      <span class="brand__seal">T</span>
-      <span class="brand__text">
-        <span class="brand__name">Tualatin Budget Explorer</span>
-        <span class="brand__sub">FY 2026–2027 PROPOSED</span>
-      </span>
-    </a>
-    <nav class="site-nav">
-      <a href="../index.html">Overview</a>
-      <a href="../funds/index.html">Funds</a>
-      <a href="../departments/index.html">Departments</a>
-      <a class="is-active" href="index.html">Meetings</a>
-    </nav>
-  </div>
-</header>
+${siteHeader({ activeNav: "Meetings", upPath: ".." })}
 
 <div class="page-header">
   <div class="container">
@@ -260,14 +237,7 @@ function page(date, meta, body) {
 </div>
 </main>
 
-<footer class="site-footer">
-  <div class="container site-footer__inner">
-    <div>
-      Source: <a href="https://www.tualatinoregon.gov/bac" target="_blank" rel="noopener">Tualatin Budget Advisory Committee</a>, official minutes via the Municode Meetings system.
-    </div>
-    <div>Built as a personal study tool by Daniel Bachhuber, Budget Advisory Committee member.</div>
-  </div>
-</footer>
+${siteFooter({ sourceHtml: `Source: <a href="https://www.tualatinoregon.gov/bac" target="_blank" rel="noopener">Tualatin Budget Advisory Committee</a>, official minutes via the Municode Meetings system.` })}
 
 </body>
 </html>

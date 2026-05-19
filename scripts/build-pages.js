@@ -13,9 +13,9 @@
 
 const fs = require("fs");
 const path = require("path");
+const { head, aiBanner, siteHeader, siteFooter, VER } = require("./lib/partials");
 
 const ROOT = path.resolve(__dirname, "..");
-const VER = String(Date.now());
 
 // Hand-built deep-dives we don't want to overwrite. (Fund deep-dives are now
 // fully data-driven, so parks-utility-fee no longer needs to be hand-curated.)
@@ -849,47 +849,15 @@ function nameFromSlug(slug) {
 }
 
 function template({ title, crumb, h1, sub, tags, kpis, contextList, richContent, activeNav, upPath }) {
-  const navFunds       = activeNav === "Funds"       ? `<a class="is-active" href="${activeNav === "Funds" ? "index.html" : `${upPath}/funds/index.html`}">Funds</a>` : `<a href="${upPath}/funds/index.html">Funds</a>`;
-  const navDepartments = activeNav === "Departments" ? `<a class="is-active" href="${activeNav === "Departments" ? "index.html" : `${upPath}/departments/index.html`}">Departments</a>` : `<a href="${upPath}/departments/index.html">Departments</a>`;
-  const navMeetings    = `<a href="${upPath}/meetings/index.html">Meetings</a>`;
+  const fallbackPdfPage = (activeNav === "Funds" ? printedToPdf : ((p) => PAGE_MAP[p] || p))((tags.match(/PDF p\. (\d+)/) || [])[1] || 1);
 
   return `<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${title}</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="${upPath}/assets/css/site.css?v=${VER}">
-</head>
+${head({ title, upPath })}
 <body>
-<div class="ai-disclaimer" role="note">
-  <div class="ai-disclaimer__inner">
-    <span class="ai-disclaimer__icon" aria-hidden="true">⚠</span>
-    <span class="ai-disclaimer__text"><strong>This isn't an official city publication.</strong> It was generated in a few hours with a large language model. Please click through and verify facts and figures on the associated PDFs.</span>
-  </div>
-</div>
+${aiBanner()}
 
-<header class="site-header">
-  <div class="container site-header__inner">
-    <a class="brand" href="${upPath}/index.html">
-      <span class="brand__seal">T</span>
-      <span class="brand__text">
-        <span class="brand__name">Tualatin Budget Explorer</span>
-        <span class="brand__sub">FY 2026–2027 PROPOSED</span>
-      </span>
-    </a>
-    <nav class="site-nav">
-      <a href="${upPath}/index.html">Overview</a>
-      <a href="${upPath}/process/index.html">Process</a>
-      ${navFunds}
-      ${navDepartments}
-      ${navMeetings}
-    </nav>
-  </div>
-</header>
+${siteHeader({ activeNav, upPath })}
 
 <div class="page-header">
   <div class="container">
@@ -919,7 +887,7 @@ function template({ title, crumb, h1, sub, tags, kpis, contextList, richContent,
     <div class="callout callout--accent">
       <div class="callout__title">Source-of-truth: the proposed budget</div>
       <div class="callout__detail">
-        This page is a quick index. The authoritative source — line-item budget tables, performance measures, division detail, and the city manager's commentary — is in the FY 2026–27 Proposed Budget document. <a href="${pdfBase}#page=${(activeNav === "Funds" ? printedToPdf : ((p) => PAGE_MAP[p] || p))((tags.match(/PDF p\. (\d+)/) || [])[1] || 1)}" target="_blank" rel="noopener">Open this section in the PDF →</a>
+        This page is a quick index. The authoritative source — line-item budget tables, performance measures, division detail, and the city manager's commentary — is in the FY 2026–27 Proposed Budget document. <a href="${pdfBase}#page=${fallbackPdfPage}" target="_blank" rel="noopener">Open this section in the PDF →</a>
       </div>
     </div>
     <p class="note" style="margin-top: 12px;">A fuller deep-dive page like <a href="${upPath}/departments/parks-and-recreation.html">Parks and Recreation</a> or <a href="${upPath}/funds/parks-utility-fee.html">Parks Utility Fee Fund</a> is planned for this entry; until then, the PDF link above is the most complete source.</p>
@@ -927,15 +895,7 @@ function template({ title, crumb, h1, sub, tags, kpis, contextList, richContent,
 </div>
 </main>
 
-<footer class="site-footer">
-  <div class="container site-footer__inner">
-    <div>
-      Source: <a href="${pdfBase}" target="_blank" rel="noopener">FY 2026–2027 Proposed Budget</a> (City of Tualatin, OR · 405pp · PDF).<br>
-      Historical budgets: <a href="https://www.tualatinoregon.gov/finance/adopted-budget-and-budget-brief">tualatinoregon.gov</a>.
-    </div>
-    <div>Built as a personal study tool by Daniel Bachhuber, Budget Advisory Committee member.</div>
-  </div>
-</footer>
+${siteFooter()}
 
 </body>
 </html>
