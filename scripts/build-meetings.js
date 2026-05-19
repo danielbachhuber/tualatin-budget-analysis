@@ -34,6 +34,27 @@ const MEETINGS = {
     purpose: "Public hearing &amp; adoption",
     uuid: "b210c61eea204e94a9df0129d5a544d8",
   },
+  // The May 29, 2024 minutes are embedded in the May 12, 2025 kickoff packet
+  // (PDF UUID e206efae0b4b4cdfb0000484395dbe1d). No standalone minutes UUID
+  // exists — extractedMinutesSource notes the host PDF for the citation link.
+  "2024-05-29": {
+    label: "May 29, 2024",
+    time: "evening",
+    cycle: "FY 2024-25",
+    purpose: "Public hearing &amp; budget recommendation",
+    uuid: "569e5c15acc04ce19dc9dded5b7dc6d0",
+    extractedMinutesSource: { kind: "Packet", uuid: "e206efae0b4b4cdfb0000484395dbe1d", label: "May 12, 2025 packet" },
+  },
+  // The May 30, 2023 minutes are embedded in the May 13, 2024 continuation
+  // packet (PDF UUID 3e890d7993a8478785a8567b7dafb9d8).
+  "2023-05-30": {
+    label: "May 30, 2023",
+    time: "evening",
+    cycle: "FY 2023-24",
+    purpose: "Public hearing &amp; budget recommendation",
+    uuid: "5e1de1b81ea3485d8c9e1c24fffb7d32",
+    extractedMinutesSource: { kind: "Packet", uuid: "3e890d7993a8478785a8567b7dafb9d8", label: "May 13, 2024 packet" },
+  },
   "2022-05-16": {
     label: "May 16, 2022",
     time: "evening",
@@ -188,9 +209,22 @@ function escapeHTML(s) {
 }
 
 function page(date, meta, body) {
-  const agendaUrl  = docUrl("Agenda", meta.uuid);
-  const packetUrl  = docUrl("Packet", meta.uuid);
-  const minutesUrl = docUrl("Minutes", meta.uuid);
+  const agendaUrl = docUrl("Agenda", meta.uuid);
+  const packetUrl = docUrl("Packet", meta.uuid);
+  // Minutes can live either at this meeting's own UUID (standalone PDF) or
+  // inside another packet (embedded). The about-these-minutes callout
+  // explains the embedding so the reader knows where the source text comes from.
+  const minutesSrc = meta.extractedMinutesSource;
+  const minutesUrl = minutesSrc
+    ? docUrl(minutesSrc.kind, minutesSrc.uuid)
+    : docUrl("Minutes", meta.uuid);
+  const minutesTagLabel = minutesSrc
+    ? `↗ Minutes (in ${minutesSrc.label})`
+    : `↗ Minutes (PDF)`;
+  const aboutMinutes = minutesSrc
+    ? `The text below is quoted from the City of Tualatin's official minutes for this Budget Advisory Committee meeting, embedded inside the <a href="${minutesUrl}" target="_blank" rel="noopener">${minutesSrc.label}</a> on the City's Municode Meetings system — the city stopped publishing standalone BAC minutes PDFs starting FY 2023-24 and instead embeds them in the following year's packet. Speakers, agenda items, and recognised section headings have been formatted for easier reading but the text is otherwise verbatim.`
+    : `The text below is quoted from the City of Tualatin's official minutes for this Budget Advisory Committee meeting, as published on the City's Municode Meetings system. The signed PDF is the authoritative source — open it with the <a href="${minutesUrl}" target="_blank" rel="noopener">↗ Minutes (PDF)</a> link above. Speakers, agenda items, and recognised section headings have been formatted for easier reading but the text is otherwise verbatim.`;
+
   return `<!doctype html>
 <html lang="en">
 ${head({ title: `${meta.label} BAC meeting · Tualatin FY 2026–27`, upPath: ".." })}
@@ -209,7 +243,7 @@ ${siteHeader({ activeNav: "Meetings", upPath: ".." })}
     <div class="tag-row">
       <span class="tag tag--primary">${meta.cycle}</span>
       <span class="tag">${meta.time}</span>
-      <a class="tag" href="${minutesUrl}" target="_blank" rel="noopener">↗ Minutes (PDF)</a>
+      <a class="tag" href="${minutesUrl}" target="_blank" rel="noopener">${minutesTagLabel}</a>
       <a class="tag" href="${agendaUrl}" target="_blank" rel="noopener">↗ Agenda</a>
       <a class="tag" href="${packetUrl}" target="_blank" rel="noopener">↗ Packet</a>
     </div>
@@ -222,7 +256,7 @@ ${siteHeader({ activeNav: "Meetings", upPath: ".." })}
   <div class="callout" style="margin-bottom: 32px;">
     <div class="callout__title">About these minutes</div>
     <div class="callout__detail">
-      The text below is quoted from the City of Tualatin's official minutes for this Budget Advisory Committee meeting, as published on the City's Municode Meetings system. The signed PDF is the authoritative source — open it with the <a href="${minutesUrl}" target="_blank" rel="noopener">↗ Minutes (PDF)</a> link above. Speakers, agenda items, and recognised section headings have been formatted for easier reading but the text is otherwise verbatim.
+      ${aboutMinutes}
     </div>
   </div>
 
