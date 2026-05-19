@@ -238,23 +238,38 @@ h4 { font-size: 1.0625rem; }
 }
 .kpi {
   background: var(--surface);
-  padding: 22px 24px;
+  padding: 18px 22px 20px;
   /* Make each card a column so the big value sits on the same baseline
      across cards regardless of label or sub-text line counts. */
   display: flex;
   flex-direction: column;
+  position: relative; /* anchor the absolute cite chip */
 }
 .kpi__label {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--ink-3);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  /* Leave room for the cite chip pinned in the top-right corner so the
+     label text can use the full first line for itself. */
+  padding-right: 56px;
   font-weight: 600;
   /* Reserve two lines so labels that wrap (e.g. "Tualatin Development
      Commission") don't push the big value down on that card. */
   min-height: calc(0.75rem * 1.4 * 2);
   line-height: 1.4;
+}
+/* Pin the cite chip to the top-right corner of the card. text-transform
+   and letter-spacing are reset so "p. 91" stays lowercase regardless of
+   what its parent declares. */
+.kpi .cite {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-left: 0;
 }
 .kpi__value {
   font-family: var(--font-mono);

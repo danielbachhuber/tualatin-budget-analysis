@@ -487,7 +487,7 @@ function deptPage(d, extra) {
     const pct = priorTotal ? (((totalBudget - priorTotal) / priorTotal) * 100).toFixed(1) : null;
     kpiBlocks.push(`
       <div class="kpi">
-        <div class="kpi__label">Total budget FY 26-27</div>
+        <div class="kpi__label">Total budget</div>
         <div class="kpi__value">${fmtUSDshort(totalBudget)}</div>
         <div class="kpi__sub">${pct != null ? `<span class="delta ${pct >= 0 ? "delta--up" : "delta--down"}">${pct >= 0 ? "▲" : "▼"} ${Math.abs(pct)}%</span>` : ""} vs FY 25-26 <a class="cite" href="${pdfBase}#page=${d.pdfPage}" target="_blank" rel="noopener">p. ${d.printedPage}</a></div>
       </div>`);
@@ -633,7 +633,7 @@ function fundPage(f, bal, extra) {
   const kpiBlocks = [
     `
     <div class="kpi">
-      <div class="kpi__label">Total budget FY 26-27 <a class="cite" href="${pdfBase}#page=${pdfPg}" target="_blank" rel="noopener">↗ p. ${f.printedPage}</a></div>
+      <div class="kpi__label">Total budget <a class="cite" href="${pdfBase}#page=${pdfPg}" target="_blank" rel="noopener">↗ p. ${f.printedPage}</a></div>
       <div class="kpi__value">${expTotal != null ? fmtUSDshort(expTotal) : "—"}</div>
       <div class="kpi__sub">${yoyPct != null ? `<span class="delta ${yoyCls}">${yoyArrow} ${Math.abs(yoyPct).toFixed(1)}%</span> vs FY 25-26` : "FY 26-27 proposed"}</div>
     </div>`,
