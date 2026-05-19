@@ -1254,6 +1254,63 @@ tr.row-total td { font-weight: 600; background: var(--surface-2); }
 .framework-note strong { color: var(--ink); }
 
 /* ============================================================
+   Meeting-card extras (used on meetings/index.html)
+   ============================================================ */
+
+/* Small uppercase role tag at the top of each meeting card — Kickoff,
+   Working session, Department presentations, Public hearing, etc. */
+.meeting-card__role {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-3);
+  font-weight: 600;
+  margin-bottom: 4px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Time sits next to date but at a smaller size so the visual lockup of
+   "date · time" doesn't tempt the browser into mid-word breaks. */
+.meeting-card__time {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+
+/* Document-links row at the bottom of each card. Always shows agenda,
+   packet, minutes in that order; missing items are rendered as muted
+   "X pending" so reader can see exactly what's available. */
+.meeting-card__docs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  position: relative;
+  z-index: 2;
+}
+.meeting-card__docs a {
+  color: var(--primary-2);
+  border-bottom: none;
+  pointer-events: auto;
+}
+.meeting-card__docs a:hover { color: var(--primary); border-bottom: none; }
+.meeting-card__docs-pending {
+  color: var(--ink-3);
+  font-style: italic;
+}
+
+/* When the card is also a stretched-link to the full-minutes page,
+   keep the docs row independently clickable above the stretch overlay. */
+.callout--linked .meeting-card__docs { position: relative; z-index: 2; }
+.callout--linked .meeting-card__role { position: relative; z-index: 2; }
+
+/* ============================================================
    Print styles
    ============================================================ */
 
