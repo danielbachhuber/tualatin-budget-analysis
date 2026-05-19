@@ -815,6 +815,15 @@ function fundPage(f, bal, extra) {
     </div>
   </div>`;
 
+  // Framework note: same banner that sits atop funds/index.html, repeated on
+  // every individual fund page so the legal definition of a "fund" is one
+  // glance away from the per-fund numbers.
+  const notice = `
+  <div class="framework-note">
+    <span class="framework-note__label">State law</span>
+    Oregon Local Budget Law (ORS Ch. 294) defines a <strong>fund</strong> as a self-balancing accounting entity set aside to carry on a specific activity or to meet certain objectives under a specific regulation. Every Oregon budget has at least one — almost always called the General Fund — for everyday operations; restricted revenues (utility rates, system-development charges, bond proceeds) live in their own funds so they can only be spent on what the law allows. <a href="../process/index.html#budget-document">See why funds are structured this way →</a>
+  </div>`;
+
   // Compose the page using the shared template (which provides nav + ai-disclaimer + footer).
   return template({
     title: `${f.name || nameFromSlug(f.slug)} · Tualatin FY 2026–27`,
@@ -822,6 +831,7 @@ function fundPage(f, bal, extra) {
     h1: f.name || nameFromSlug(f.slug),
     sub: extra?.purpose && extra.purpose.length > 0 ? extra.purpose : f.description,
     tags: `<span class="tag tag--primary">${escapeHTML(f.type)}</span> <a class="tag" href="${pdfBase}#page=${pdfPg}" target="_blank" rel="noopener">↗ PDF p. ${f.printedPage}</a>`,
+    notice,
     kpis: kpiBlocks.join(""),
     contextList: "",
     richContent,
@@ -848,7 +858,7 @@ function nameFromSlug(slug) {
   return slug.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
 }
 
-function template({ title, crumb, h1, sub, tags, kpis, contextList, richContent, activeNav, upPath }) {
+function template({ title, crumb, h1, sub, tags, notice, kpis, contextList, richContent, activeNav, upPath }) {
   const fallbackPdfPage = (activeNav === "Funds" ? printedToPdf : ((p) => PAGE_MAP[p] || p))((tags.match(/PDF p\. (\d+)/) || [])[1] || 1);
 
   return `<!doctype html>
@@ -870,6 +880,7 @@ ${siteHeader({ activeNav, upPath })}
 
 <main>
 <div class="container" style="padding-top: 32px;">
+  ${notice || ""}
   <div class="kpi-strip">${kpis}</div>
 
   ${contextList ? `
