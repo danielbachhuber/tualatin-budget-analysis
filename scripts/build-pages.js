@@ -633,32 +633,32 @@ function fundPage(f, bal, extra) {
   const kpiBlocks = [
     `
     <div class="kpi">
-      <div class="kpi__label">Total budget <a class="cite" href="${pdfBase}#page=${pdfPg}" target="_blank" rel="noopener">↗ p. ${f.printedPage}</a></div>
+      <div class="kpi__label">Total budget <a class="cite" href="${pdfBase}#page=${pdfPg}" target="_blank" rel="noopener">p. ${f.printedPage}</a></div>
       <div class="kpi__value">${expTotal != null ? fmtUSDshort(expTotal) : "—"}</div>
       <div class="kpi__sub">${yoyPct != null ? `<span class="delta ${yoyCls}">${yoyArrow} ${Math.abs(yoyPct).toFixed(1)}%</span> vs FY 25-26` : "FY 26-27 proposed"}</div>
     </div>`,
     `
     <div class="kpi">
-      <div class="kpi__label">Beginning balance <a class="cite" href="${pdfBase}#page=${balPdfPg}" target="_blank" rel="noopener">↗ p. 58</a></div>
+      <div class="kpi__label">Beginning balance <a class="cite" href="${pdfBase}#page=${balPdfPg}" target="_blank" rel="noopener">p. 58</a></div>
       <div class="kpi__value">${begin == null ? "—" : fmtUSDshort(begin)}</div>
       <div class="kpi__sub">July 1, 2026</div>
     </div>`,
     `
     <div class="kpi">
-      <div class="kpi__label">Ending balance <a class="cite" href="${pdfBase}#page=${balPdfPg}" target="_blank" rel="noopener">↗ p. 58</a></div>
+      <div class="kpi__label">Ending balance <a class="cite" href="${pdfBase}#page=${balPdfPg}" target="_blank" rel="noopener">p. 58</a></div>
       <div class="kpi__value">${end == null ? "—" : fmtUSDshort(end)}</div>
       <div class="kpi__sub">${change == null ? "see PDF" : `<span class="delta ${deltaCls}">${arrow} ${fmtUSDshort(Math.abs(change))}</span> change`}</div>
     </div>`,
     capValue != null && capShare != null && capValue > 0 ? `
     <div class="kpi">
-      <div class="kpi__label">Capital Outlay <a class="cite" href="${pdfBase}#page=${pdfPg}" target="_blank" rel="noopener">↗ p. ${f.printedPage}</a></div>
+      <div class="kpi__label">Capital Outlay <a class="cite" href="${pdfBase}#page=${pdfPg}" target="_blank" rel="noopener">p. ${f.printedPage}</a></div>
       <div class="kpi__value">${fmtUSDshort(capValue)}</div>
       <div class="kpi__sub">${capShare.toFixed(0)}% of total budget</div>
     </div>` : `
     <div class="kpi">
       <div class="kpi__label">Fund type</div>
       <div class="kpi__value" style="font-family: var(--font-serif); font-size: 1.2rem;">${escapeHTML(f.type)}</div>
-      <div class="kpi__sub"><a class="cite" href="${pdfBase}#page=${pdfPg}" target="_blank" rel="noopener">↗ p. ${f.printedPage}</a></div>
+      <div class="kpi__sub"><a class="cite" href="${pdfBase}#page=${pdfPg}" target="_blank" rel="noopener">p. ${f.printedPage}</a></div>
     </div>`,
   ];
 
@@ -824,10 +824,18 @@ function fundPage(f, bal, extra) {
     Oregon Local Budget Law (ORS Ch. 294) defines a <strong>fund</strong> as a self-balancing accounting entity set aside to carry on a specific activity or to meet certain objectives under a specific regulation. Every Oregon budget has at least one — almost always called the General Fund — for everyday operations; restricted revenues (utility rates, system-development charges, bond proceeds) live in their own funds so they can only be spent on what the law allows. <a href="../process/index.html#budget-document">See why funds are structured this way →</a>
   </div>`;
 
+  // TDC funds get their own active-nav slot and breadcrumb since the agency
+  // has a legally separate budget from the City. Detect by slug prefix.
+  const isTdc = (f.slug || "").startsWith("tdc-");
+  const crumb = isTdc
+    ? `<a href="../index.html">Overview</a> · <a href="../tdc/index.html">TDC</a> · ${escapeHTML(f.type)}`
+    : `<a href="../index.html">Overview</a> · <a href="index.html">Funds</a> · ${escapeHTML(f.type)}`;
+  const activeNav = isTdc ? "TDC" : "Funds";
+
   // Compose the page using the shared template (which provides nav + ai-disclaimer + footer).
   return template({
     title: `${f.name || nameFromSlug(f.slug)} · Tualatin FY 2026–27`,
-    crumb: `<a href="../index.html">Overview</a> · <a href="index.html">Funds</a> · ${escapeHTML(f.type)}`,
+    crumb,
     h1: f.name || nameFromSlug(f.slug),
     sub: extra?.purpose && extra.purpose.length > 0 ? extra.purpose : f.description,
     tags: `<span class="tag tag--primary">${escapeHTML(f.type)}</span> <a class="tag" href="${pdfBase}#page=${pdfPg}" target="_blank" rel="noopener">↗ PDF p. ${f.printedPage}</a>`,
@@ -835,7 +843,7 @@ function fundPage(f, bal, extra) {
     kpis: kpiBlocks.join(""),
     contextList: "",
     richContent,
-    activeNav: "Funds",
+    activeNav,
     upPath: "..",
     pageType: "fund",
   });

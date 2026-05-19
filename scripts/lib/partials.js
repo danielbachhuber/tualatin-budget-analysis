@@ -7,7 +7,7 @@
 
 const VER = String(Date.now());
 
-const NAV_ORDER = ["Overview", "Process", "Funds", "Departments", "Meetings"];
+const NAV_ORDER = ["Overview", "Process", "Funds", "TDC", "Departments", "Meetings"];
 
 function navHref(label, upPath) {
   const base = upPath ? upPath + "/" : "";
@@ -15,6 +15,7 @@ function navHref(label, upPath) {
     case "Overview":    return `${base}index.html`;
     case "Process":     return `${base}process/index.html`;
     case "Funds":       return `${base}funds/index.html`;
+    case "TDC":         return `${base}tdc/index.html`;
     case "Departments": return `${base}departments/index.html`;
     case "Meetings":    return `${base}meetings/index.html`;
     default: throw new Error(`unknown nav label ${label}`);

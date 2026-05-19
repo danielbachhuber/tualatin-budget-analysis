@@ -1,0 +1,64 @@
+<div class="page-header">
+  <div class="container">
+    <div class="page-header__crumbs">
+      <a href="../index.html">Overview</a> · Tualatin Development Commission
+    </div>
+    <h1>Tualatin Development Commission</h1>
+    <p class="page-header__sub">The City's urban-renewal agency. Governed by City Council acting as the TDC Board, but with a budget that is legally separate from the City's. Tax-increment revenue collected within designated urban-renewal districts is restricted to capital improvements and economic development within those districts.</p>
+    <div class="tag-row">
+      <span class="tag tag--primary">Urban Renewal Agency</span>
+      <span class="tag">6 funds · $8.05M FY 26-27</span>
+      <a class="tag" href="https://www.tualatinoregon.gov/sites/default/files/fileattachments/finance/page/6486/final_proposed_budget_fy2026-27-compressed.pdf#page=337" target="_blank" rel="noopener">↗ TDC Summary (p. 314)</a>
+    </div>
+  </div>
+</div>
+
+<main>
+<div class="container" style="padding-top: 40px;">
+
+  <div class="framework-note">
+    <span class="framework-note__label">Urban renewal</span>
+    Oregon urban-renewal agencies (ORS Ch. 457) raise revenue from <strong>tax-increment financing</strong> — the property-tax growth above a frozen base inside each district. That revenue stays inside the district and pays for capital improvements, infrastructure, and public-private investment. The TDC reports its budget under the same Local Budget Law cycle as the City but is its own taxing district with its own funds, debt, and reserves. <a href="../process/index.html#budget-document">See how state budget law applies →</a>
+  </div>
+
+  <section class="subsection" style="margin-top: 32px;">
+    <h3>TDC funds</h3>
+    <p class="prose" style="font-size: 0.95rem; margin-bottom: 16px;">Two urban-renewal districts (Southwest URD and Core Opportunity &amp; Reinvestment Area) each have a Bond fund for proceeds + debt service and a Project fund for capital spending. Plus a small Administration fund and the closed Leveton Projects fund.</p>
+    <div class="fund-grid" id="fund-grid-tdc"></div>
+  </section>
+
+  <p class="note" style="font-size: 0.875rem; color: var(--ink-3); margin: 32px 0 0;">
+    TDC fund balances reflect the FY 2026–27 proposed budget's Changes in Fund Balance schedule (printed p. 58). Funds with dashes for begin/change/end either had no activity in the prior year or report only project-level balances; see the linked PDF section for full detail.
+  </p>
+
+</div>
+</main>
+
+<script src="../assets/js/data.js?v=1779053588"></script>
+<script src="../assets/js/format.js?v=1779053588"></script>
+<script src="../assets/js/fund-card.js?v=1779053588"></script>
+<script>
+(function () {
+  // TDC funds — transcribed from the Changes in Fund Balance table (printed p. 58).
+  const TDC_FUNDS = [
+    { name: "TDC Administration",                              slug: "tdc-admin",        begin: 159875,  change:  105045,  end:  264920, page: 315 },
+    { name: "Southwest Urban Renewal District Bond",           slug: "tdc-sw-bond",      begin: 3368255, change: 2816950,  end: 6185205, page: 325 },
+    { name: "Core Opportunity & Reinvestment Area Bond",       slug: "tdc-cora-bond",    begin: 150000,  change:  176380,  end:  326380, page: 332 },
+    { name: "Core Opportunity & Reinvestment Area Project",    slug: "tdc-cora-project", begin: 12450,   change:  -12450,  end:       0, page: 336 },
+    { name: "Leveton Projects",                                slug: "tdc-leveton",      begin: null,    change: null,     end: null,    page: 321 },
+    { name: "Southwest Urban Renewal District Project",        slug: "tdc-sw-project",   begin: null,    change: null,     end: null,    page: 329 },
+  ];
+  const target = document.getElementById("fund-grid-tdc");
+  TDC_FUNDS.forEach((f) => {
+    target.insertAdjacentHTML("beforeend", FundCard.render({
+      name:   f.name,
+      end:    f.end,
+      begin:  f.begin,
+      change: f.change,
+      page:   f.page,
+      href:   `../funds/${f.slug}.html`,
+      showCta: true,
+    }));
+  });
+})();
+</script>

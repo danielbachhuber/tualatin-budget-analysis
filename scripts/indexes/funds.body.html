@@ -4,10 +4,9 @@
       <a href="../index.html">Overview</a> · Funds
     </div>
     <h1>Funds</h1>
-    <p class="page-header__sub">Every fund in the FY 2026–27 proposed budget, grouped by purpose. Beginning balance plus net change equals ending balance; a negative change means the city is intentionally spending down accumulated reserves on planned capital work.</p>
+    <p class="page-header__sub">Every City of Tualatin fund in the FY 2026–27 proposed budget, grouped by purpose. Beginning balance plus net change equals ending balance; a negative change means the city is intentionally spending down accumulated reserves on planned capital work. <a href="../tdc/index.html">Tualatin Development Commission funds</a> are a legally separate budget and live on their own page.</p>
     <div class="tag-row">
       <span class="tag">19 city funds</span>
-      <span class="tag">+ TDC funds</span>
       <a class="tag" href="https://www.tualatinoregon.gov/sites/default/files/fileattachments/finance/page/6486/final_proposed_budget_fy2026-27-compressed.pdf#page=67" target="_blank" rel="noopener">↗ Changes in Fund Balance (p. 58)</a>
     </div>
   </div>
@@ -51,14 +50,8 @@
     <div class="fund-grid" id="fund-grid-special"></div>
   </section>
 
-  <section class="subsection">
-    <h3>Tualatin Development Commission</h3>
-    <p class="prose" style="font-size: 0.95rem; margin-bottom: 16px;">The city's urban-renewal agency, governed by City Council but with a legally separate budget. <a class="cite" href="https://www.tualatinoregon.gov/sites/default/files/fileattachments/finance/page/6486/final_proposed_budget_fy2026-27-compressed.pdf#page=337" target="_blank" rel="noopener">TDC Summary p. 314</a></p>
-    <div class="fund-grid" id="fund-grid-tdc"></div>
-  </section>
-
   <p class="note" style="font-size: 0.875rem; color: var(--ink-3); margin: 32px 0 0;">
-    All fund balances reflect the FY 2026–27 proposed budget's Changes in Fund Balance schedule (page 58). The Parks Utility Fee Fund has a full deep-dive page; the others link directly to their section in the source PDF.
+    All fund balances reflect the FY 2026–27 proposed budget's Changes in Fund Balance schedule (page 58). The Tualatin Development Commission's urban-renewal funds are on the <a href="../tdc/index.html">TDC page</a>.
   </p>
 
 </div>
@@ -130,37 +123,5 @@
   renderGroup("fund-grid-parks",     GROUPS.parks);
   renderGroup("fund-grid-utilities", GROUPS.utilities);
   renderGroup("fund-grid-special",   GROUPS.special);
-
-  // TDC funds — values from the Changes in Fund Balance table (printed p. 58).
-  const TDC_FUNDS = [
-    { name: "TDC Administration",                              begin: 159875,  change:  105045,  end:  264920, page: 315 },
-    { name: "Southwest Urban Renewal District Bond",           begin: 3368255, change: 2816950,  end: 6185205, page: 325 },
-    { name: "Core Opportunity & Reinvestment Area Bond",       begin: 150000,  change:  176380,  end:  326380, page: 332 },
-    { name: "Core Opportunity & Reinvestment Area Project",    begin: 12450,   change:  -12450,  end:       0, page: 336 },
-    { name: "Leveton Projects",                                begin: null,    change: null,     end: null,    page: 321 },
-    { name: "Southwest Urban Renewal District Project",        begin: null,    change: null,     end: null,    page: 329 },
-  ];
-  const tdcTarget = document.getElementById("fund-grid-tdc");
-  // TDC fund slugs in the per-fund stubs use a "tdc-" prefix.
-  const TDC_SLUGS = {
-    "TDC Administration": "tdc-admin",
-    "Southwest Urban Renewal District Bond": "tdc-sw-bond",
-    "Core Opportunity & Reinvestment Area Bond": "tdc-cora-bond",
-    "Core Opportunity & Reinvestment Area Project": "tdc-cora-project",
-    "Leveton Projects": "tdc-leveton",
-    "Southwest Urban Renewal District Project": "tdc-sw-project",
-  };
-  TDC_FUNDS.forEach((f) => {
-    const slug = TDC_SLUGS[f.name];
-    tdcTarget.insertAdjacentHTML("beforeend", FundCard.render({
-      name:   f.name,
-      end:    f.end,
-      begin:  f.begin,
-      change: f.change,
-      page:   f.page,
-      href:   slug ? `${slug}.html` : null,
-      showCta: !!slug,
-    }));
-  });
 })();
 </script>

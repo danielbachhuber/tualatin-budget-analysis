@@ -49,6 +49,7 @@ const PAGES = [
   { slug: "homepage",    title: "Tualatin FY 2026–27 Proposed Budget",                       activeNav: "Overview",    upPath: "",   outPath: "index.html" },
   { slug: "process",     title: "How Oregon's local budget law works · Tualatin FY 2026–27", activeNav: "Process",     upPath: "..", outPath: "process/index.html" },
   { slug: "funds",       title: "Funds · Tualatin FY 2026–27",                               activeNav: "Funds",       upPath: "..", outPath: "funds/index.html" },
+  { slug: "tdc",         title: "Tualatin Development Commission · FY 2026–27",              activeNav: "TDC",         upPath: "..", outPath: "tdc/index.html" },
   { slug: "departments", title: "Departments · Tualatin FY 2026–27",                         activeNav: "Departments", upPath: "..", outPath: "departments/index.html" },
   { slug: "meetings",    title: "Budget Committee meetings · Tualatin FY 2026–27",           activeNav: "Meetings",    upPath: "..", outPath: "meetings/index.html", footerSource: MEETINGS_FOOTER_SOURCE },
 ];
