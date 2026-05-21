@@ -7,24 +7,40 @@
     "performance": [],
     "cipProjects": [
       {
-        "name": "200,000 General Fund - Information Services Primary Server Infrastructure",
-        "amount": 100000
-      },
-      {
-        "name": "60,000 General Fund - Maintenance Services Police Station HVAC Unit Replacement",
-        "amount": 85000
-      },
-      {
-        "name": "435,000 General Fund - Maintenance Services Police Station Interior Update",
+        "name": "General Fund - Information Services - VMWare Replacement",
         "amount": 200000
       },
       {
-        "name": "40,000 General Fund - Parks Maintenance ADA Improvements - Trails, Sidewalks, Paths, Ramps",
+        "name": "General Fund - Information Services - Primary Server Infrastructure",
+        "amount": 100000
+      },
+      {
+        "name": "General Fund - Maintenance Services - City Parking Lot Pavement Slurry Seal",
+        "amount": 60000
+      },
+      {
+        "name": "General Fund - Maintenance Services - Police Station HVAC Unit Replacement",
+        "amount": 85000
+      },
+      {
+        "name": "General Fund - Maintenance Services - Tualatin City Offices Roof Overlay",
+        "amount": 435000
+      },
+      {
+        "name": "General Fund - Maintenance Services - Police Station Interior Update",
+        "amount": 200000
+      },
+      {
+        "name": "General Fund - Parks Maintenance - Tualatin Community Park Trail Asphalt Replacement",
+        "amount": 40000
+      },
+      {
+        "name": "General Fund - Parks Maintenance - ADA Improvements - Trails, Sidewalks, Paths, Ramps",
         "amount": 50000
       },
       {
-        "name": "50,000 Total General Fund",
-        "amount": 1220000
+        "name": "General Fund - Parks Maintenance - Tualatin Commons Lake Renovations",
+        "amount": 50000
       }
     ],
     "revenues": [
