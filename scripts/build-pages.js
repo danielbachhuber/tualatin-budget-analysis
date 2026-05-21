@@ -32,7 +32,7 @@ const DEPARTMENTS = [
     programArea: "Policy & Administration",
     fundedBy: ["General Fund"],
     printedPage: 122,
-    pdfPage: 140,
+    pdfPage: 139,
     personalServices: 67350,
     description: "Six councilors plus the mayor. Sets policy direction, adopts the budget and tax rate, and represents the City to state and federal partners. Operates on small stipends and minimal materials — the smallest budget of any city department.",
     contextSentences: [
@@ -46,7 +46,7 @@ const DEPARTMENTS = [
     programArea: "Policy & Administration",
     fundedBy: ["General Fund"],
     printedPage: 126,
-    pdfPage: 145,
+    pdfPage: 143,
     personalServices: 2446520,
     description: "The City Manager's office. Includes the City Manager, Assistant City Manager / Finance Director, Deputy City Manager, Human Resources, Volunteer Services, Communications, and economic-development functions.",
     contextSentences: [
@@ -60,7 +60,7 @@ const DEPARTMENTS = [
     programArea: "Policy & Administration",
     fundedBy: ["General Fund"],
     printedPage: 132,
-    pdfPage: 156,
+    pdfPage: 149,
     personalServices: 574360,
     description: "Accounting, financial reporting, budget administration, utility billing, accounts payable and receivable, payroll, and management of the City's investment portfolio.",
     contextSentences: [
@@ -74,7 +74,7 @@ const DEPARTMENTS = [
     programArea: "Policy & Administration",
     fundedBy: ["General Fund"],
     printedPage: 137,
-    pdfPage: 158,
+    pdfPage: 154,
     description: "Adjudicates city ordinance violations, traffic infractions, and certain misdemeanor offenses. Staffed by a Court Administrator and Court Clerks, with contracted judicial services.",
     contextSentences: [
       "Hears traffic citations issued through the photo-enforcement program, plus local code-compliance cases referred by Police and Code Compliance.",
@@ -87,7 +87,7 @@ const DEPARTMENTS = [
     programArea: "Policy & Administration",
     fundedBy: ["General Fund"],
     printedPage: 142,
-    pdfPage: 160,
+    pdfPage: 159,
     personalServices: 624445,
     description: "The City Attorney's office. Drafts ordinances and contracts, advises Council and staff, represents the City in litigation, and supports code compliance.",
     contextSentences: [
@@ -101,7 +101,7 @@ const DEPARTMENTS = [
     programArea: "Policy & Administration",
     fundedBy: ["General Fund"],
     printedPage: 146,
-    pdfPage: 165,
+    pdfPage: 163,
     personalServices: 1129190,
     description: "IT infrastructure, cybersecurity, GIS, audio-visual for Council chambers, and applications support across every City department.",
     contextSentences: [
@@ -115,7 +115,7 @@ const DEPARTMENTS = [
     programArea: "Community Development",
     fundedBy: ["General Fund"],
     printedPage: 159,
-    pdfPage: 181,
+    pdfPage: 179,
     personalServices: 1277010,
     description: "Long-range and current planning, land-use applications, the Transportation System Plan update, the Climate Action Plan, the Core Opportunity & Reinvestment Area (CORA), and housing strategy implementation.",
     contextSentences: [
@@ -129,7 +129,7 @@ const DEPARTMENTS = [
     programArea: "Community Development",
     fundedBy: ["General Fund"],
     printedPage: 165,
-    pdfPage: 187,
+    pdfPage: 185,
     personalServices: 1200120,
     description: "Capital project delivery for transportation, water, sewer, and stormwater. Reviews development plans and oversees right-of-way work and Public Works permits.",
     contextSentences: [
@@ -143,7 +143,7 @@ const DEPARTMENTS = [
     programArea: "Community Development",
     fundedBy: ["Building Fund"],
     printedPage: 171,
-    pdfPage: 192,
+    pdfPage: 191,
     personalServices: 1238735,
     description: "Plan review, building inspections, and code compliance under statewide building codes. Operates from a dedicated permit-revenue fund (Building Fund), not the General Fund.",
     contextSentences: [
@@ -157,7 +157,7 @@ const DEPARTMENTS = [
     programArea: "Culture & Recreation",
     fundedBy: ["General Fund", "Intergovernmental (WCCLS, CCLD)"],
     printedPage: 177,
-    pdfPage: 201,
+    pdfPage: 199,
     personalServices: 2592075,
     description: "Tualatin Public Library, Teen Room, Makerspace, programs, and the Summer Reading Program. About 72% of the budget is funded by intergovernmental revenue from the Washington County Cooperative Library System (WCCLS) and the Clackamas County Library District.",
     contextSentences: [
@@ -171,7 +171,7 @@ const DEPARTMENTS = [
     programArea: "Culture & Recreation",
     fundedBy: ["General Fund"],
     printedPage: 186,
-    pdfPage: 210,
+    pdfPage: 208,
     personalServices: 1497130,
     description: "Parks & Recreation runs in two divisions: Parks Planning and Development (which manages bond projects, the parks utility fee, SDCs, and capital renovations) and Recreation (general programming, youth development, summer camps, older adult programs, arts and culture, and signature community events).",
     contextSentences: [
@@ -185,7 +185,7 @@ const DEPARTMENTS = [
     programArea: "Culture & Recreation",
     fundedBy: ["General Fund", "Parks Utility Fee Fund"],
     printedPage: 192,
-    pdfPage: 216,
+    pdfPage: 214,
     personalServices: 1257165,
     description: "Day-to-day maintenance of twelve parks (340 acres), 180 acres of greenway and natural areas, athletic fields, playgrounds, and trails. Operates alongside the Parks & Recreation programming team but is its own division.",
     contextSentences: [
@@ -199,7 +199,7 @@ const DEPARTMENTS = [
     programArea: "Public Safety",
     fundedBy: ["General Fund"],
     printedPage: 208,
-    pdfPage: 235,
+    pdfPage: 233,
     personalServices: 9906655,
     description: "Patrol, investigations, traffic safety (including the photo-enforcement program), school resource officers contracted to the Tigard-Tualatin School District, and police services contracted to the City of Durham.",
     contextSentences: [
@@ -213,7 +213,7 @@ const DEPARTMENTS = [
     programArea: "Public Works",
     fundedBy: ["General Fund", "Vehicle Replacement Fund"],
     printedPage: 216,
-    pdfPage: 245,
+    pdfPage: 243,
     personalServices: 1109510,
     description: "Public Works shared leadership and cross-utility services: facilities maintenance, fleet, equipment shop, and the coordination that supports every utility division.",
     contextSentences: [
@@ -227,7 +227,7 @@ const DEPARTMENTS = [
     programArea: "Public Works",
     fundedBy: ["Water Operating Fund"],
     printedPage: 225,
-    pdfPage: 254,
+    pdfPage: 252,
     personalServices: 1490435,
     description: "Operates 115 miles of pipe, 6 reservoirs (14 million gallons), and 1,120 fire hydrants. Buys treated water wholesale from the City of Portland.",
     contextSentences: [
@@ -241,7 +241,7 @@ const DEPARTMENTS = [
     programArea: "Public Works",
     fundedBy: ["Sewer Operating Fund"],
     printedPage: 236,
-    pdfPage: 265,
+    pdfPage: 263,
     personalServices: 531650,
     description: "Sanitary sewer collection. Partners with Clean Water Services for treatment under a regional intergovernmental agreement. The largest capital growth in FY 26-27.",
     contextSentences: [
@@ -255,7 +255,7 @@ const DEPARTMENTS = [
     programArea: "Public Works",
     fundedBy: ["Stormwater Operating Fund"],
     printedPage: 246,
-    pdfPage: 275,
+    pdfPage: 273,
     personalServices: 499160,
     description: "Storm drain network and water-quality infrastructure: catch basins, conveyance, treatment facilities, and regulatory compliance.",
     contextSentences: [
@@ -269,7 +269,7 @@ const DEPARTMENTS = [
     programArea: "Public Works",
     fundedBy: ["Road Operating Fund"],
     printedPage: 259,
-    pdfPage: 289,
+    pdfPage: 286,
     personalServices: 723285,
     description: "Street maintenance, traffic signs and signals (52 signals), and the mag-chloride de-icing program. Maintains 73 miles of streets.",
     contextSentences: [
