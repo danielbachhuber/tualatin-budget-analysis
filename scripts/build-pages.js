@@ -19,9 +19,7 @@ const ROOT = path.resolve(__dirname, "..");
 
 // Hand-built deep-dives we don't want to overwrite. (Fund deep-dives are now
 // fully data-driven, so parks-utility-fee no longer needs to be hand-curated.)
-const SKIP = new Set([
-  "departments/parks-and-recreation.html",
-]);
+const SKIP = new Set([]);
 
 // ---------- DEPARTMENTS ----------
 // printedPage = the page number printed on the PDF page
@@ -165,6 +163,20 @@ const DEPARTMENTS = [
     contextSentences: [
       "Over 22,800 program attendees, 639,000 checkouts, and 221,800 ebook checkouts in FY 2024-25.",
       "WCCLS funding rises 5% in FY 26-27 under the renewed countywide funding formula.",
+    ],
+  },
+  {
+    slug: "parks-and-recreation",
+    name: "Parks and Recreation",
+    programArea: "Culture & Recreation",
+    fundedBy: ["General Fund"],
+    printedPage: 186,
+    pdfPage: 210,
+    personalServices: 1497130,
+    description: "Parks & Recreation runs in two divisions: Parks Planning and Development (which manages bond projects, the parks utility fee, SDCs, and capital renovations) and Recreation (general programming, youth development, summer camps, older adult programs, arts and culture, and signature community events).",
+    contextSentences: [
+      "Recreation programming, Juanita Pohl Center for active aging adults, signature community events (Pumpkin Regatta, Holiday Lights), and parks planning & development.",
+      "Adding a Recreation Supervisor in FY 26-27 — the only new FTE in this department.",
     ],
   },
   {
@@ -392,6 +404,56 @@ function renderObjectives(extra, pdfPage, printedPage) {
   </section>`;
 }
 
+function renderFy25Highlights(extra, pdfPage, printedPage) {
+  if (!extra.fy25Highlights || !extra.fy25Highlights.length) return "";
+  const items = extra.fy25Highlights.map((h) => `<li>${escapeHTML(h)}</li>`).join("\n        ");
+  return `
+  <section class="subsection" id="fy25" style="margin-top: 48px;">
+    <h3>FY 25-26 highlights <a class="cite" href="${pdfBase}#page=${pdfPage}" target="_blank" rel="noopener">p. ${printedPage}</a></h3>
+    <ul class="bullets">
+      ${items}
+    </ul>
+  </section>`;
+}
+
+const NEW_FTE_MARKER = /\s*\(NEW FY 26-27\)\s*$/;
+function countNewFTE(orgChart) {
+  if (!orgChart || !orgChart.reports) return 0;
+  let n = 0;
+  for (const branch of orgChart.reports) {
+    for (const r of branch.subReports || []) {
+      if (NEW_FTE_MARKER.test(r)) n++;
+    }
+  }
+  return n;
+}
+
+function renderOrganization(extra, pdfPage, printedPage, fteBudget) {
+  if (!extra.orgChart) return "";
+  const newFTE = countNewFTE(extra.orgChart);
+  const fteLine = fteBudget != null
+    ? `<p style="color: var(--ink-2); font-size: 0.95rem; max-width: 720px; margin-bottom: 16px;">FY 2026–2027 Personal Services budget: <strong class="num">${fmtUSD(fteBudget)}</strong>.${newFTE > 0 ? ` New FTE this year: <strong>+${newFTE}</strong>.` : ""}</p>`
+    : "";
+  const branchesHTML = extra.orgChart.reports.map((branch) => {
+    const subs = (branch.subReports || []).map((r) => {
+      const isNew = NEW_FTE_MARKER.test(r);
+      const clean = r.replace(NEW_FTE_MARKER, "");
+      const label = isNew ? `${escapeHTML(clean)} · NEW FY 26-27` : escapeHTML(clean);
+      return `<div class="org-report${isNew ? " org-report--new" : ""}">${label}</div>`;
+    }).join("");
+    return `<div class="org-branch"><div class="org-branch__manager">${escapeHTML(branch.name)}</div><div class="org-branch__reports">${subs}</div></div>`;
+  }).join("");
+  return `
+  <section class="subsection" id="org" style="margin-top: 48px;">
+    <h3>Organization <a class="cite" href="${pdfBase}#page=${pdfPage}" target="_blank" rel="noopener">p. ${printedPage}</a></h3>
+    ${fteLine}
+    <div class="orgchart">
+      <div class="org-head">${escapeHTML(extra.orgChart.head)}</div>
+      <div class="org-branches">${branchesHTML}</div>
+    </div>
+  </section>`;
+}
+
 function renderPerformance(extra, pdfPage, printedPage) {
   if (!extra.performance || !extra.performance.length) return "";
   const rows = extra.performance.map((m) => `
@@ -509,12 +571,28 @@ function deptPage(d, extra) {
         <div class="kpi__sub">FY 26-27 proposed</div>
       </div>`);
   }
-  kpiBlocks.push(`
-    <div class="kpi">
-      <div class="kpi__label">Program area</div>
-      <div class="kpi__value" style="font-family: var(--font-serif); font-size: 1.2rem;">${d.programArea}</div>
-      <div class="kpi__sub">Funded by ${d.fundedBy.join(" + ")}</div>
-    </div>`);
+  const newFTE = extra?.orgChart ? countNewFTE(extra.orgChart) : 0;
+  if (newFTE > 0) {
+    const positions = [];
+    for (const branch of extra.orgChart.reports) {
+      for (const r of branch.subReports || []) {
+        if (NEW_FTE_MARKER.test(r)) positions.push(r.replace(NEW_FTE_MARKER, ""));
+      }
+    }
+    kpiBlocks.push(`
+      <div class="kpi">
+        <div class="kpi__label">New FTE this year</div>
+        <div class="kpi__value">+${newFTE}</div>
+        <div class="kpi__sub">${positions.map((p) => escapeHTML(p)).join(", ")}</div>
+      </div>`);
+  } else {
+    kpiBlocks.push(`
+      <div class="kpi">
+        <div class="kpi__label">Program area</div>
+        <div class="kpi__value" style="font-family: var(--font-serif); font-size: 1.2rem;">${d.programArea}</div>
+        <div class="kpi__sub">Funded by ${d.fundedBy.join(" + ")}</div>
+      </div>`);
+  }
   while (kpiBlocks.length < 4) {
     kpiBlocks.push(`
       <div class="kpi">
@@ -527,8 +605,10 @@ function deptPage(d, extra) {
   // Rich content sections, conditional on extracted data.
   const richContent = extra ? [
     renderTrends(extra, d.pdfPage, d.printedPage),
+    renderFy25Highlights(extra, d.pdfPage, d.printedPage),
     renderObjectives(extra, d.pdfPage, d.printedPage),
     renderPerformance(extra, d.pdfPage, d.printedPage),
+    renderOrganization(extra, d.pdfPage, d.printedPage, extra.fteBudget ?? ps),
     renderExpenditures(extra, d.pdfPage, d.printedPage),
   ].filter(Boolean).join("") : "";
 

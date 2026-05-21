@@ -2418,6 +2418,227 @@
     ]
   },
   {
+    "slug": "parks-and-recreation",
+    "name": "Parks and Recreation",
+    "fteBudget": 1497130,
+    "fy25Highlights": [
+      "Used Parks Bond funding for investigative work on the Riverfront Park and to start construction at Nyberg Creek Trail.",
+      "Completed Victoria Woods stairs, Little Woodrose Trail, and Community Park shelter repair using the parks utility fee.",
+      "ARPA funding supported Las Casitas Park renovation and design of the Basalt Creek linear park.",
+      "Juanita Pohl Center meal program shift drove >300% increase in meal program participation; overall JPC participation grew 27% to over 16,000 visits.",
+      "570 youth in summer camp with 39 scholarships provided.",
+      "Three service-inspired sculptures installed at Veterans Plaza after two years of planning."
+    ],
+    "fy27Objectives": [
+      "Facilitate community engagement for the future Riverfront Park; begin first stage of design.",
+      "Engage department- and community-wide on park projects and recreational uses of new parks, trails, and facilities.",
+      "Incorporate environmentally friendly features that value and protect natural resources, wildlife, and habitats.",
+      "Continue good value for recreation programs while phasing in market-based fee adjustments for sustainability.",
+      "Use new branding to deliver frequent, high-value communication across print, social, and in-person.",
+      "Build on Juanita Pohl Center meal program with more drop-in programs and meal-program enhancement."
+    ],
+    "performance": [
+      {
+        "metric": "Participants registered for recreation programs (Community Pass)",
+        "values": [
+          4151,
+          4498,
+          4200,
+          5000
+        ]
+      },
+      {
+        "metric": "Holiday Lights Parade vehicles registered",
+        "values": [
+          90,
+          75,
+          90,
+          75
+        ]
+      },
+      {
+        "metric": "Program scholarships offered",
+        "values": [
+          53,
+          39,
+          60,
+          50
+        ]
+      }
+    ],
+    "expenditures": [
+      {
+        "category": "Personal Services",
+        "values": [
+          1155599,
+          1224437,
+          1327875,
+          1497130
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries & Wages \u2014 Full Time",
+            "values": [
+              572313,
+              606602,
+              721200,
+              823030
+            ]
+          },
+          {
+            "name": "Salaries & Wages \u2014 Temporary",
+            "values": [
+              131078,
+              136345,
+              180390,
+              155555
+            ]
+          },
+          {
+            "name": "Benefits \u2014 Pension",
+            "values": [
+              184717,
+              189387,
+              217345,
+              248745
+            ]
+          },
+          {
+            "name": "Benefits \u2014 Insurance",
+            "values": [
+              110484,
+              105488,
+              118400,
+              168085
+            ]
+          },
+          {
+            "name": "Benefits \u2014 FICA",
+            "values": [
+              58473,
+              63661,
+              68500,
+              74225
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Materials & Services",
+        "values": [
+          317435,
+          331880,
+          486685,
+          523255
+        ],
+        "lineItems": [
+          {
+            "name": "Recreation Program Expend \u2014 JPC",
+            "values": [
+              51657,
+              52404,
+              60110,
+              160110
+            ]
+          },
+          {
+            "name": "Special Programs",
+            "values": [
+              77439,
+              79082,
+              129400,
+              90500
+            ]
+          },
+          {
+            "name": "Recreation Program Expend",
+            "values": [
+              21672,
+              19621,
+              29020,
+              46690
+            ]
+          },
+          {
+            "name": "Advertising \u2014 Promotional",
+            "values": [
+              28097,
+              29022,
+              35050,
+              35050
+            ]
+          },
+          {
+            "name": "Concerts on The Commons",
+            "values": [
+              28810,
+              29887,
+              33250,
+              33250
+            ]
+          },
+          {
+            "name": "Consultants",
+            "values": [
+              2744,
+              0,
+              60000,
+              35000
+            ]
+          },
+          {
+            "name": "Conferences & Meetings",
+            "values": [
+              12618,
+              18606,
+              23600,
+              23600
+            ]
+          },
+          {
+            "name": "Equipment Rental",
+            "values": [
+              22444,
+              21885,
+              25510,
+              30510
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Capital Outlay",
+        "values": [
+          1171920,
+          0,
+          23000,
+          0
+        ]
+      }
+    ],
+    "orgChart": {
+      "head": "Parks & Recreation Director",
+      "reports": [
+        {
+          "name": "Recreation Manager",
+          "subReports": [
+            "Juanita Pohl Center Supervisor",
+            "Recreation Supervisor (NEW FY 26-27)",
+            "Program Coordinator",
+            "Office Coordinator",
+            "Program Specialist"
+          ]
+        },
+        {
+          "name": "Deputy Parks & Recreation Director",
+          "subReports": [
+            "Project Manager (funded by Parks Project Fund)"
+          ]
+        }
+      ]
+    }
+  },
+  {
     "slug": "parks-maintenance",
     "name": "Parks Maintenance",
     "fy27Objectives": [
