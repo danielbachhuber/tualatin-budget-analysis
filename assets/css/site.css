@@ -124,8 +124,9 @@ h4 { font-size: 1.0625rem; }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 14px 0;
-  gap: 24px;
+  gap: 12px 24px;
 }
 .brand {
   display: flex;
@@ -166,6 +167,8 @@ h4 { font-size: 1.0625rem; }
 .site-nav {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 4px;
 }
 .site-nav a {
@@ -174,6 +177,9 @@ h4 { font-size: 1.0625rem; }
   padding: 8px 12px;
   border-radius: var(--radius);
   border: none;
+}
+@media (max-width: 600px) {
+  .site-nav a { padding: 6px 8px; font-size: 0.85rem; }
 }
 .site-nav a:hover {
   background: var(--surface-2);
@@ -1004,6 +1010,11 @@ tr.row-total td { font-weight: 600; background: var(--surface-2); }
   .detail-nav { position: static; }
   .detail-nav ul { flex-direction: row; flex-wrap: wrap; gap: 4px; }
 }
+/* Grid items default to min-width: auto, which lets min-content (wide
+   tables) push past the viewport. Force them to shrink so `.table-wrap`
+   can scroll horizontally instead of expanding the page. */
+.detail-layout > * { min-width: 0; }
+.grid-2 > *, .grid-3 > *, .kpi-strip > * { min-width: 0; }
 
 /* ============================================================
    Subsection
