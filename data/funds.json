@@ -331,6 +331,134 @@
           945580,
           1168585,
           1238735
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              739126,
+              573794,
+              716080,
+              751915
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Temporary",
+            "values": [
+              0,
+              5054,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Overtime",
+            "values": [
+              2728,
+              7946,
+              3000,
+              3000
+            ]
+          },
+          {
+            "name": "Salaries and Wages-On-Call",
+            "values": [
+              43,
+              23,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              2520,
+              3904,
+              2035,
+              2260
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              55422,
+              45343,
+              53735,
+              56310
+            ]
+          },
+          {
+            "name": "Benefits-WC Insurance & Tax",
+            "values": [
+              5725,
+              4847,
+              5615,
+              5895
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              208004,
+              156359,
+              222515,
+              233730
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              163609,
+              115856,
+              159825,
+              179555
+            ]
+          },
+          {
+            "name": "Benefits-TriMet Excise Tax",
+            "values": [
+              8205,
+              5001,
+              5780,
+              6070
+            ]
+          },
+          {
+            "name": "Benefits-Vacation Buy Back",
+            "values": [
+              11287,
+              16576,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Comp Time Buy Back",
+            "values": [
+              11,
+              6491,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Paid Leave OR Tax",
+            "values": [
+              3068,
+              2387,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-WC Contra",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         ]
       },
       {
@@ -340,6 +468,170 @@
           243157,
           748775,
           799710
+        ],
+        "lineItems": [
+          {
+            "name": "Office Supplies",
+            "values": [
+              0,
+              431,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Printing & Postage",
+            "values": [
+              120,
+              371,
+              200,
+              200
+            ]
+          },
+          {
+            "name": "Field Supplies",
+            "values": [
+              208,
+              24,
+              500,
+              500
+            ]
+          },
+          {
+            "name": "Uniforms & Safety Equipment",
+            "values": [
+              1018,
+              2125,
+              1000,
+              1800
+            ]
+          },
+          {
+            "name": "Cell Phones",
+            "values": [
+              2213,
+              2152,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Network/Online",
+            "values": [
+              4081,
+              1061,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Office Equipment & Furniture",
+            "values": [
+              43,
+              302,
+              1000,
+              1000
+            ]
+          },
+          {
+            "name": "Computer Equip & Software",
+            "values": [
+              2868,
+              2149,
+              4000,
+              2000
+            ]
+          },
+          {
+            "name": "Consultants",
+            "values": [
+              8516,
+              9306,
+              600000,
+              655200
+            ]
+          },
+          {
+            "name": "Conferences & Meetings",
+            "values": [
+              6057,
+              8022,
+              9320,
+              9320
+            ]
+          },
+          {
+            "name": "Membership Dues",
+            "values": [
+              1420,
+              1155,
+              1810,
+              1810
+            ]
+          },
+          {
+            "name": "Publication, Rpt, Ref Matl",
+            "values": [
+              1891,
+              1051,
+              1000,
+              1000
+            ]
+          },
+          {
+            "name": "Staff Training",
+            "values": [
+              7368,
+              8072,
+              14160,
+              9310
+            ]
+          },
+          {
+            "name": "Administrative Expense",
+            "values": [
+              208,
+              165,
+              1400,
+              1400
+            ]
+          },
+          {
+            "name": "Advertising - Legal/Judicial",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Advertising - Recruitment",
+            "values": [
+              601,
+              6426,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Merchant Discount Fees",
+            "values": [
+              182577,
+              199345,
+              100000,
+              100000
+            ]
+          },
+          {
+            "name": "Vehicle Replacement Expense",
+            "values": [
+              0,
+              0,
+              14385,
+              16070
+            ]
+          }
         ]
       },
       {
@@ -349,6 +641,17 @@
           0,
           60000,
           60000
+        ],
+        "lineItems": [
+          {
+            "name": "Equipment & Furnishings",
+            "values": [
+              0,
+              0,
+              60000,
+              60000
+            ]
+          }
         ]
       },
       {
@@ -358,6 +661,26 @@
           522642,
           662700,
           679240
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - General Fund",
+            "values": [
+              472720,
+              449860,
+              589920,
+              679240
+            ]
+          },
+          {
+            "name": "Transfers Out - Enterprise Bond",
+            "values": [
+              72780,
+              72782,
+              72780,
+              0
+            ]
+          }
         ]
       },
       {
@@ -367,6 +690,17 @@
           0,
           396010,
           416655
+        ],
+        "lineItems": [
+          {
+            "name": "Contingency",
+            "values": [
+              0,
+              0,
+              396010,
+              416655
+            ]
+          }
         ]
       },
       {
@@ -376,6 +710,17 @@
           1472435,
           140185,
           479990
+        ],
+        "lineItems": [
+          {
+            "name": "General Account Reserve",
+            "values": [
+              723379,
+              1472435,
+              140185,
+              479990
+            ]
+          }
         ]
       }
     ]
@@ -506,6 +851,143 @@
           530254,
           586610,
           723285
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              303908,
+              311014,
+              335975,
+              397610
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Temporary",
+            "values": [
+              5911,
+              3737,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Overtime",
+            "values": [
+              8628,
+              4550,
+              9000,
+              9000
+            ]
+          },
+          {
+            "name": "Salaries and Wages-On-Call",
+            "values": [
+              3115,
+              2571,
+              6395,
+              4965
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              3597,
+              3694,
+              3340,
+              3955
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              23961,
+              23801,
+              26145,
+              30405
+            ]
+          },
+          {
+            "name": "Benefits-WC Insurance & Tax",
+            "values": [
+              8854,
+              6554,
+              8815,
+              11130
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              91634,
+              91233,
+              106635,
+              133125
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              75560,
+              79094,
+              87485,
+              129790
+            ]
+          },
+          {
+            "name": "Benefits-TriMet Excise Tax",
+            "values": [
+              2673,
+              2645,
+              2820,
+              3305
+            ]
+          },
+          {
+            "name": "Benefits-Sick Leave Buy Back",
+            "values": [
+              1316,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Vacation Buy Back",
+            "values": [
+              465,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Comp Time Buy Back",
+            "values": [
+              483,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Paid Leave OR Tax",
+            "values": [
+              1322,
+              1261,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-WC Contra",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         ]
       },
       {
@@ -515,6 +997,287 @@
           1044479,
           1217630,
           1299445
+        ],
+        "lineItems": [
+          {
+            "name": "Office Supplies",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Printing & Postage",
+            "values": [
+              2864,
+              1802,
+              1500,
+              1500
+            ]
+          },
+          {
+            "name": "Street Trees",
+            "values": [
+              0,
+              0,
+              0,
+              19600
+            ]
+          },
+          {
+            "name": "Street Landscape Material",
+            "values": [
+              1291,
+              1890,
+              2260,
+              2260
+            ]
+          },
+          {
+            "name": "Uniforms & Safety Equipment",
+            "values": [
+              2596,
+              3067,
+              2800,
+              3200
+            ]
+          },
+          {
+            "name": "Cell Phones",
+            "values": [
+              1320,
+              1705,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Network/Online",
+            "values": [
+              2454,
+              979,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Small Tools",
+            "values": [
+              1378,
+              4099,
+              3345,
+              3345
+            ]
+          },
+          {
+            "name": "Office Equipment & Furniture",
+            "values": [
+              130,
+              0,
+              500,
+              500
+            ]
+          },
+          {
+            "name": "Computer Equip & Software",
+            "values": [
+              2106,
+              2150,
+              3000,
+              3000
+            ]
+          },
+          {
+            "name": "Personal Computer/Laptop",
+            "values": [
+              784,
+              0,
+              750,
+              750
+            ]
+          },
+          {
+            "name": "Consultants",
+            "values": [
+              21369,
+              14506,
+              25000,
+              45000
+            ]
+          },
+          {
+            "name": "Utilities",
+            "values": [
+              0,
+              0,
+              0,
+              3700
+            ]
+          },
+          {
+            "name": "Utilities - Signals",
+            "values": [
+              36258,
+              39590,
+              40055,
+              50000
+            ]
+          },
+          {
+            "name": "Street Lights",
+            "values": [
+              421323,
+              443518,
+              507110,
+              507110
+            ]
+          },
+          {
+            "name": "Conferences & Meetings",
+            "values": [
+              495,
+              2812,
+              6800,
+              6900
+            ]
+          },
+          {
+            "name": "Membership Dues",
+            "values": [
+              1949,
+              556,
+              2385,
+              850
+            ]
+          },
+          {
+            "name": "Staff Training",
+            "values": [
+              0,
+              269,
+              2150,
+              2150
+            ]
+          },
+          {
+            "name": "Administrative Expense",
+            "values": [
+              350,
+              749,
+              600,
+              600
+            ]
+          },
+          {
+            "name": "Advertising - Recruitment",
+            "values": [
+              0,
+              1214,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Grounds & Landscaping",
+            "values": [
+              26695,
+              18125,
+              20000,
+              65000
+            ]
+          },
+          {
+            "name": "Utilities - Road Strip",
+            "values": [
+              75342,
+              84055,
+              80000,
+              80000
+            ]
+          },
+          {
+            "name": "Street Sweeping",
+            "values": [
+              259933,
+              251817,
+              255000,
+              273000
+            ]
+          },
+          {
+            "name": "Emergency Road Clean-up",
+            "values": [
+              914,
+              879,
+              11850,
+              11850
+            ]
+          },
+          {
+            "name": "Signal Maintenance",
+            "values": [
+              109806,
+              56899,
+              111380,
+              70000
+            ]
+          },
+          {
+            "name": "Roadside Landscape",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Inventory Supplies",
+            "values": [
+              10483,
+              5892,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "R&M - Guardrails, signs",
+            "values": [
+              38178,
+              30370,
+              48200,
+              52600
+            ]
+          },
+          {
+            "name": "R&M - Streets",
+            "values": [
+              35988,
+              4027,
+              53640,
+              50000
+            ]
+          },
+          {
+            "name": "Vehicle Replacement",
+            "values": [
+              92810,
+              73510,
+              38145,
+              46530
+            ]
+          },
+          {
+            "name": "R&M - Equipment",
+            "values": [
+              65,
+              0,
+              1050,
+              0
+            ]
+          }
         ]
       },
       {
@@ -524,6 +1287,44 @@
           689143,
           370000,
           1075000
+        ],
+        "lineItems": [
+          {
+            "name": "Equipment & Furnishings",
+            "values": [
+              0,
+              0,
+              100000,
+              0
+            ]
+          },
+          {
+            "name": "Projects Professional Svc",
+            "values": [
+              332812,
+              304005,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Projects Construction",
+            "values": [
+              0,
+              385138,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Fund Projects",
+            "values": [
+              46538,
+              0,
+              270000,
+              1075000
+            ]
+          }
         ]
       },
       {
@@ -533,6 +1334,35 @@
           1517645,
           1547070,
           1538475
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - General Fund",
+            "values": [
+              855700,
+              988300,
+              930800,
+              1058075
+            ]
+          },
+          {
+            "name": "Transfers Out - Road Utility",
+            "values": [
+              511430,
+              470979,
+              557900,
+              480400
+            ]
+          },
+          {
+            "name": "Transfers Out - Enterprise Bond",
+            "values": [
+              77278,
+              58366,
+              58370,
+              0
+            ]
+          }
         ]
       },
       {
@@ -542,6 +1372,17 @@
           0,
           558195,
           695430
+        ],
+        "lineItems": [
+          {
+            "name": "Contingency",
+            "values": [
+              0,
+              0,
+              558195,
+              695430
+            ]
+          }
         ]
       },
       {
@@ -551,6 +1392,26 @@
           3718442,
           2494245,
           932370
+        ],
+        "lineItems": [
+          {
+            "name": "Future Years Projects",
+            "values": [
+              3861064,
+              3718442,
+              2471585,
+              910095
+            ]
+          },
+          {
+            "name": "Footpath/Biketrail Reserve",
+            "values": [
+              0,
+              0,
+              22660,
+              22275
+            ]
+          }
         ]
       }
     ]
@@ -634,6 +1495,62 @@
           844335,
           2269840,
           1875235
+        ],
+        "lineItems": [
+          {
+            "name": "Sidewalk/Tree Program",
+            "values": [
+              141534,
+              188118,
+              150000,
+              700000
+            ]
+          },
+          {
+            "name": "Printing & Postage",
+            "values": [
+              10371,
+              9611,
+              10500,
+              12000
+            ]
+          },
+          {
+            "name": "Road Fees to Tigard",
+            "values": [
+              13579,
+              11571,
+              15900,
+              0
+            ]
+          },
+          {
+            "name": "Special Programs",
+            "values": [
+              1347,
+              928,
+              5000,
+              5000
+            ]
+          },
+          {
+            "name": "R&M - Streets",
+            "values": [
+              1421339,
+              436137,
+              1870000,
+              935000
+            ]
+          },
+          {
+            "name": "Reverse Frontage Program",
+            "values": [
+              189101,
+              197970,
+              218440,
+              223235
+            ]
+          }
         ]
       },
       {
@@ -643,6 +1560,35 @@
           414590,
           462680,
           509945
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - General Fund",
+            "values": [
+              177610,
+              151440,
+              237995,
+              191130
+            ]
+          },
+          {
+            "name": "Transfers Out - Road Operating",
+            "values": [
+              259346,
+              263150,
+              224685,
+              318815
+            ]
+          },
+          {
+            "name": "Transfers Out - Enterprise Bond",
+            "values": [
+              6304,
+              0,
+              0,
+              0
+            ]
+          }
         ]
       },
       {
@@ -652,6 +1598,17 @@
           0,
           409880,
           357775
+        ],
+        "lineItems": [
+          {
+            "name": "Contingency",
+            "values": [
+              0,
+              0,
+              409880,
+              357775
+            ]
+          }
         ]
       },
       {
@@ -661,6 +1618,17 @@
           2579873,
           2202120,
           2952835
+        ],
+        "lineItems": [
+          {
+            "name": "Road Maintenance Reserve",
+            "values": [
+              1204706,
+              2579873,
+              2202120,
+              2952835
+            ]
+          }
         ]
       }
     ]
@@ -725,6 +1693,125 @@
           35034,
           39025,
           50135
+        ],
+        "lineItems": [
+          {
+            "name": "Printing & Postage",
+            "values": [
+              0,
+              0,
+              100,
+              100
+            ]
+          },
+          {
+            "name": "Botanical & Chem Supplies",
+            "values": [
+              0,
+              0,
+              1150,
+              1185
+            ]
+          },
+          {
+            "name": "Consultants",
+            "values": [
+              0,
+              0,
+              1100,
+              1100
+            ]
+          },
+          {
+            "name": "Utilities",
+            "values": [
+              0,
+              0,
+              0,
+              22860
+            ]
+          },
+          {
+            "name": "Utilities - Parking Lots",
+            "values": [
+              11531,
+              11844,
+              14700,
+              0
+            ]
+          },
+          {
+            "name": "Administrative Expense",
+            "values": [
+              181,
+              277,
+              325,
+              300
+            ]
+          },
+          {
+            "name": "Guardrails & Signs",
+            "values": [
+              0,
+              0,
+              400,
+              400
+            ]
+          },
+          {
+            "name": "Street/Parking Lot Lights",
+            "values": [
+              255,
+              0,
+              600,
+              600
+            ]
+          },
+          {
+            "name": "Grounds & Landscaping",
+            "values": [
+              7857,
+              15177,
+              6950,
+              7780
+            ]
+          },
+          {
+            "name": "Parking Lot Striping",
+            "values": [
+              4783,
+              2485,
+              4400,
+              6400
+            ]
+          },
+          {
+            "name": "Parking Lot Sweeping",
+            "values": [
+              3746,
+              3960,
+              4300,
+              4410
+            ]
+          },
+          {
+            "name": "R&M - Parking Lots",
+            "values": [
+              0,
+              1290,
+              5000,
+              5000
+            ]
+          },
+          {
+            "name": "R&M - Equipment",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         ]
       },
       {
@@ -734,6 +1821,17 @@
           22214,
           0,
           72500
+        ],
+        "lineItems": [
+          {
+            "name": "Fund Projects",
+            "values": [
+              0,
+              22214,
+              0,
+              72500
+            ]
+          }
         ]
       },
       {
@@ -743,6 +1841,17 @@
           42730,
           31250,
           35820
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - General Fund",
+            "values": [
+              37360,
+              42730,
+              31250,
+              35820
+            ]
+          }
         ]
       },
       {
@@ -752,6 +1861,17 @@
           0,
           10540,
           23770
+        ],
+        "lineItems": [
+          {
+            "name": "Contingency",
+            "values": [
+              0,
+              0,
+              10540,
+              23770
+            ]
+          }
         ]
       },
       {
@@ -761,6 +1881,26 @@
           288231,
           313625,
           260100
+        ],
+        "lineItems": [
+          {
+            "name": "General Account Reserve",
+            "values": [
+              298358,
+              268231,
+              268125,
+              214600
+            ]
+          },
+          {
+            "name": "Future Years Projects",
+            "values": [
+              0,
+              0,
+              45500,
+              45500
+            ]
+          }
         ]
       }
     ]
@@ -865,6 +2005,44 @@
           13939,
           32000,
           12000
+        ],
+        "lineItems": [
+          {
+            "name": "Printing & Postage",
+            "values": [
+              10365,
+              9611,
+              9000,
+              11000
+            ]
+          },
+          {
+            "name": "Special Programs",
+            "values": [
+              1031,
+              648,
+              3000,
+              1000
+            ]
+          },
+          {
+            "name": "Consultants",
+            "values": [
+              0,
+              3680,
+              20000,
+              0
+            ]
+          },
+          {
+            "name": "Administrative Expense",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         ]
       },
       {
@@ -874,6 +2052,35 @@
           843025,
           1060000,
           1080000
+        ],
+        "lineItems": [
+          {
+            "name": "Projects Professional Svc",
+            "values": [
+              96407,
+              91186,
+              175000,
+              130000
+            ]
+          },
+          {
+            "name": "Projects Construction",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Fund Projects",
+            "values": [
+              328810,
+              751839,
+              885000,
+              950000
+            ]
+          }
         ]
       },
       {
@@ -883,6 +2090,35 @@
           96330,
           181675,
           162880
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - General Fund",
+            "values": [
+              77180,
+              96330,
+              135415,
+              112860
+            ]
+          },
+          {
+            "name": "Transfer Out - Park Develop",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Transfers Out - Parks Project",
+            "values": [
+              0,
+              0,
+              46260,
+              50020
+            ]
+          }
         ]
       },
       {
@@ -892,6 +2128,17 @@
           0,
           163800,
           188230
+        ],
+        "lineItems": [
+          {
+            "name": "Contingency",
+            "values": [
+              0,
+              0,
+              163800,
+              188230
+            ]
+          }
         ]
       },
       {
@@ -901,6 +2148,17 @@
           804039,
           541025,
           171150
+        ],
+        "lineItems": [
+          {
+            "name": "General Account Reserve",
+            "values": [
+              983833,
+              804039,
+              541025,
+              171150
+            ]
+          }
         ]
       }
     ]
@@ -978,6 +2236,17 @@
           0,
           50000,
           0
+        ],
+        "lineItems": [
+          {
+            "name": "Consultants",
+            "values": [
+              0,
+              0,
+              50000,
+              0
+            ]
+          }
         ]
       },
       {
@@ -987,6 +2256,35 @@
           1284795,
           1320000,
           3420000
+        ],
+        "lineItems": [
+          {
+            "name": "Projects Professional Svc",
+            "values": [
+              0,
+              159104,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Projects Construction",
+            "values": [
+              5093933,
+              1108467,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Fund Projects",
+            "values": [
+              0,
+              17224,
+              1320000,
+              3420000
+            ]
+          }
         ]
       },
       {
@@ -996,6 +2294,35 @@
           104250,
           185865,
           278710
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - General Fund",
+            "values": [
+              250060,
+              53680,
+              169840,
+              261920
+            ]
+          },
+          {
+            "name": "Transfers Out - Building",
+            "values": [
+              49015,
+              50570,
+              16025,
+              16790
+            ]
+          },
+          {
+            "name": "Transfers Out - Road Operating",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         ]
       },
       {
@@ -1005,6 +2332,17 @@
           0,
           12446175,
           11521890
+        ],
+        "lineItems": [
+          {
+            "name": "Contingency",
+            "values": [
+              0,
+              0,
+              12446175,
+              11521890
+            ]
+          }
         ]
       },
       {
@@ -1014,6 +2352,17 @@
           12192585,
           0,
           0
+        ],
+        "lineItems": [
+          {
+            "name": "Future Years Projects",
+            "values": [
+              10741614,
+              12192585,
+              0,
+              0
+            ]
+          }
         ]
       }
     ]
@@ -1093,6 +2442,17 @@
           2906447,
           2063725,
           565950
+        ],
+        "lineItems": [
+          {
+            "name": "Fund Projects",
+            "values": [
+              363465,
+              2906447,
+              2063725,
+              565950
+            ]
+          }
         ]
       },
       {
@@ -1102,6 +2462,17 @@
           111830,
           136275,
           0
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - General Fund",
+            "values": [
+              70330,
+              111830,
+              136275,
+              0
+            ]
+          }
         ]
       },
       {
@@ -1120,6 +2491,17 @@
           2303212,
           0,
           0
+        ],
+        "lineItems": [
+          {
+            "name": "General Account Reserve",
+            "values": [
+              5321490,
+              2303212,
+              0,
+              0
+            ]
+          }
         ]
       }
     ]
@@ -1177,6 +2559,44 @@
           4866750,
           5144250,
           4064000
+        ],
+        "lineItems": [
+          {
+            "name": "Principal - 18 Transportation Bonds",
+            "values": [
+              2440000,
+              2645000,
+              2885000,
+              3125000
+            ]
+          },
+          {
+            "name": "Principal - 23 Parks Bond",
+            "values": [
+              710000,
+              905000,
+              1120000,
+              0
+            ]
+          },
+          {
+            "name": "Interest - 18 Transportation Bonds",
+            "values": [
+              723250,
+              602250,
+              470000,
+              325750
+            ]
+          },
+          {
+            "name": "Interest - 23 Parks Bond",
+            "values": [
+              850000,
+              714500,
+              669250,
+              613250
+            ]
+          }
         ]
       },
       {
@@ -1186,6 +2606,17 @@
           182904,
           100000,
           391375
+        ],
+        "lineItems": [
+          {
+            "name": "General Account Reserve",
+            "values": [
+              194313,
+              182904,
+              100000,
+              391375
+            ]
+          }
         ]
       }
     ]
@@ -1300,6 +2731,35 @@
           471,
           254000,
           54000
+        ],
+        "lineItems": [
+          {
+            "name": "Office Supplies",
+            "values": [
+              0,
+              471,
+              2000,
+              2000
+            ]
+          },
+          {
+            "name": "Printing & Postage",
+            "values": [
+              0,
+              0,
+              2000,
+              2000
+            ]
+          },
+          {
+            "name": "Consultants",
+            "values": [
+              300,
+              0,
+              250000,
+              50000
+            ]
+          }
         ]
       },
       {
@@ -1309,6 +2769,44 @@
           127141,
           150000,
           170000
+        ],
+        "lineItems": [
+          {
+            "name": "Land Acquisition",
+            "values": [
+              19771,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Projects Professional Svc",
+            "values": [
+              60000,
+              49310,
+              150000,
+              100000
+            ]
+          },
+          {
+            "name": "Projects Construction",
+            "values": [
+              50174,
+              77831,
+              0,
+              70000
+            ]
+          },
+          {
+            "name": "Feasibility Studies",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         ]
       },
       {
@@ -1318,6 +2816,35 @@
           154638,
           76375,
           91920
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - General Fund",
+            "values": [
+              74450,
+              53170,
+              25110,
+              24320
+            ]
+          },
+          {
+            "name": "Transfers Out - Building",
+            "values": [
+              37035,
+              101468,
+              28480,
+              42965
+            ]
+          },
+          {
+            "name": "Transfers Out - Parks Project",
+            "values": [
+              0,
+              0,
+              22785,
+              24635
+            ]
+          }
         ]
       },
       {
@@ -1327,6 +2854,17 @@
           0,
           72055,
           47390
+        ],
+        "lineItems": [
+          {
+            "name": "Contingency",
+            "values": [
+              0,
+              0,
+              72055,
+              47390
+            ]
+          }
         ]
       },
       {
@@ -1336,6 +2874,17 @@
           5341295,
           5888200,
           6407190
+        ],
+        "lineItems": [
+          {
+            "name": "Future Years Projects",
+            "values": [
+              3933857,
+              5341295,
+              5888200,
+              6407190
+            ]
+          }
         ]
       }
     ]
@@ -1425,6 +2974,89 @@
           140615,
           153440,
           165895
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              64625,
+              87961,
+              94965,
+              101245
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              1270,
+              360,
+              360,
+              360
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              4825,
+              6431,
+              7080,
+              7530
+            ]
+          },
+          {
+            "name": "Benefits-WC Insurance & Tax",
+            "values": [
+              93,
+              102,
+              85,
+              90
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              1356,
+              24179,
+              28355,
+              30230
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              14367,
+              20517,
+              21830,
+              25625
+            ]
+          },
+          {
+            "name": "Benefits-TriMet Excise Tax",
+            "values": [
+              528,
+              720,
+              765,
+              815
+            ]
+          },
+          {
+            "name": "Benefits-Vacation Buy Back",
+            "values": [
+              531,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Paid Leave OR Tax",
+            "values": [
+              261,
+              343,
+              0,
+              0
+            ]
+          }
         ]
       },
       {
@@ -1434,6 +3066,35 @@
           1400,
           1000,
           1000
+        ],
+        "lineItems": [
+          {
+            "name": "Office Equipment & Furniture",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Consultants",
+            "values": [
+              0,
+              1400,
+              1000,
+              1000
+            ]
+          },
+          {
+            "name": "Bank Fees",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         ]
       },
       {
@@ -1443,6 +3104,35 @@
           3414451,
           3500000,
           3500000
+        ],
+        "lineItems": [
+          {
+            "name": "Land Acquisition",
+            "values": [
+              30163,
+              1110917,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Projects Construction",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Fund Projects",
+            "values": [
+              3680698,
+              2303534,
+              3500000,
+              3500000
+            ]
+          }
         ]
       },
       {
@@ -1452,6 +3142,17 @@
           280060,
           325495,
           288290
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - General Fund",
+            "values": [
+              124270,
+              280060,
+              325495,
+              288290
+            ]
+          }
         ]
       },
       {
@@ -1461,6 +3162,17 @@
           0,
           0,
           0
+        ],
+        "lineItems": [
+          {
+            "name": "Issuance Costs",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         ]
       },
       {
@@ -1470,6 +3182,17 @@
           0,
           596990,
           593280
+        ],
+        "lineItems": [
+          {
+            "name": "Contingency",
+            "values": [
+              0,
+              0,
+              596990,
+              593280
+            ]
+          }
         ]
       },
       {
@@ -1479,6 +3202,26 @@
           8136706,
           3422115,
           3456185
+        ],
+        "lineItems": [
+          {
+            "name": "Future Years Projects",
+            "values": [
+              11501648,
+              8136706,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Capital Reserve",
+            "values": [
+              0,
+              0,
+              3422115,
+              3456185
+            ]
+          }
         ]
       }
     ]
@@ -1539,6 +3282,17 @@
           1000,
           3000,
           2000
+        ],
+        "lineItems": [
+          {
+            "name": "Scholarships",
+            "values": [
+              1000,
+              1000,
+              3000,
+              2000
+            ]
+          }
         ]
       },
       {
@@ -1548,6 +3302,17 @@
           53205,
           53715,
           53200
+        ],
+        "lineItems": [
+          {
+            "name": "General Account Reserve",
+            "values": [
+              52115,
+              53205,
+              53715,
+              53200
+            ]
+          }
         ]
       }
     ]
@@ -1699,6 +3464,134 @@
           878112,
           1067525,
           991275
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              519891,
+              532711,
+              656065,
+              592545
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Temporary",
+            "values": [
+              0,
+              5147,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Overtime",
+            "values": [
+              14282,
+              16116,
+              15000,
+              15000
+            ]
+          },
+          {
+            "name": "Salaries and Wages-On-Call",
+            "values": [
+              8712,
+              9205,
+              9830,
+              9410
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              8078,
+              5442,
+              4920,
+              4315
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              41409,
+              42167,
+              50920,
+              45870
+            ]
+          },
+          {
+            "name": "Benefits-WC Insurance & Tax",
+            "values": [
+              8488,
+              8914,
+              9155,
+              9060
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              143179,
+              134231,
+              191075,
+              171095
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              112840,
+              114464,
+              125085,
+              139520
+            ]
+          },
+          {
+            "name": "Benefits-TriMet Excise Tax",
+            "values": [
+              4608,
+              4663,
+              5475,
+              4960
+            ]
+          },
+          {
+            "name": "Benefits-Vacation Buy Back",
+            "values": [
+              5728,
+              3210,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Comp Time Buy Back",
+            "values": [
+              1144,
+              1621,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Paid Leave OR Tax",
+            "values": [
+              2279,
+              2221,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-WC Contra",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         ]
       },
       {
@@ -1708,6 +3601,368 @@
           4497210,
           4999075,
           7233630
+        ],
+        "lineItems": [
+          {
+            "name": "Office Supplies",
+            "values": [
+              7,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Printing & Postage",
+            "values": [
+              15313,
+              13160,
+              17875,
+              32875
+            ]
+          },
+          {
+            "name": "Inventory Adjustment",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Water Conservation",
+            "values": [
+              158,
+              1260,
+              3000,
+              3000
+            ]
+          },
+          {
+            "name": "Water Purchases -For Tualatin",
+            "values": [
+              3416434,
+              3572497,
+              3789940,
+              5732685
+            ]
+          },
+          {
+            "name": "Hydrants",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Hydrant Meters",
+            "values": [
+              0,
+              107,
+              7000,
+              10000
+            ]
+          },
+          {
+            "name": "Uniforms & Safety Equipment",
+            "values": [
+              2736,
+              6350,
+              5760,
+              5760
+            ]
+          },
+          {
+            "name": "Medical & Other Testing",
+            "values": [
+              556,
+              473,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Cell Phones",
+            "values": [
+              1849,
+              2577,
+              1000,
+              1000
+            ]
+          },
+          {
+            "name": "Network/Online",
+            "values": [
+              7169,
+              13454,
+              16600,
+              16500
+            ]
+          },
+          {
+            "name": "Small Tools",
+            "values": [
+              3498,
+              6742,
+              4200,
+              5400
+            ]
+          },
+          {
+            "name": "Office Equipment & Furniture",
+            "values": [
+              100,
+              0,
+              500,
+              500
+            ]
+          },
+          {
+            "name": "Computer Equip & Software",
+            "values": [
+              20610,
+              26692,
+              22300,
+              29700
+            ]
+          },
+          {
+            "name": "Personal Computer/Laptop",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "TVWD - Jamtline",
+            "values": [
+              6963,
+              0,
+              15000,
+              15000
+            ]
+          },
+          {
+            "name": "TVWD - WA CO Lines",
+            "values": [
+              83245,
+              13684,
+              80000,
+              40000
+            ]
+          },
+          {
+            "name": "Special Programs",
+            "values": [
+              10850,
+              11972,
+              15000,
+              15000
+            ]
+          },
+          {
+            "name": "Consultants",
+            "values": [
+              79774,
+              85805,
+              175000,
+              355000
+            ]
+          },
+          {
+            "name": "Utilities",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Water System - Electricity",
+            "values": [
+              84477,
+              72189,
+              107500,
+              78000
+            ]
+          },
+          {
+            "name": "Conferences & Meetings",
+            "values": [
+              2267,
+              1275,
+              10950,
+              10950
+            ]
+          },
+          {
+            "name": "Membership Dues",
+            "values": [
+              41247,
+              40442,
+              51405,
+              49810
+            ]
+          },
+          {
+            "name": "Publication, Rpt, Ref Matl",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Staff Training",
+            "values": [
+              1802,
+              4769,
+              22500,
+              17500
+            ]
+          },
+          {
+            "name": "Staff/Dept Recognition",
+            "values": [
+              293,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Administrative Expense",
+            "values": [
+              903,
+              1451,
+              1000,
+              1000
+            ]
+          },
+          {
+            "name": "Advertising - Recruitment",
+            "values": [
+              1045,
+              856,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Merchant Discount Fees",
+            "values": [
+              154246,
+              170576,
+              165000,
+              200000
+            ]
+          },
+          {
+            "name": "Meter Reading",
+            "values": [
+              63630,
+              84349,
+              87000,
+              92000
+            ]
+          },
+          {
+            "name": "Contr R&M - Systems",
+            "values": [
+              237770,
+              190025,
+              254860,
+              270260
+            ]
+          },
+          {
+            "name": "Equipment Rental",
+            "values": [
+              0,
+              0,
+              1500,
+              1500
+            ]
+          },
+          {
+            "name": "Inventory Supplies",
+            "values": [
+              64053,
+              64052,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "R&M - Systems",
+            "values": [
+              34644,
+              34897,
+              67255,
+              67255
+            ]
+          },
+          {
+            "name": "R&M - Lines",
+            "values": [
+              695,
+              3522,
+              18000,
+              18000
+            ]
+          },
+          {
+            "name": "R&M - Hydrants",
+            "values": [
+              5312,
+              370,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "R&M - Reservoir",
+            "values": [
+              114,
+              555,
+              2620,
+              2620
+            ]
+          },
+          {
+            "name": "R&M - Pump Stations",
+            "values": [
+              0,
+              225,
+              1235,
+              96235
+            ]
+          },
+          {
+            "name": "Vehicle Replacement Expense",
+            "values": [
+              72930,
+              72930,
+              42925,
+              63930
+            ]
+          },
+          {
+            "name": "R&M - Equipment",
+            "values": [
+              50,
+              156,
+              2150,
+              2150
+            ]
+          }
         ]
       },
       {
@@ -1717,6 +3972,53 @@
           3665361,
           8885585,
           10200000
+        ],
+        "lineItems": [
+          {
+            "name": "Equipment & Furnishings",
+            "values": [
+              7378,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Projects Administration",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Projects Professional Svc",
+            "values": [
+              215271,
+              788064,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Projects Construction",
+            "values": [
+              1988517,
+              2793469,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Fund Projects",
+            "values": [
+              428862,
+              83829,
+              8885585,
+              10200000
+            ]
+          }
         ]
       },
       {
@@ -1726,6 +4028,26 @@
           1835046,
           2278380,
           1959825
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - General Fund",
+            "values": [
+              1210420,
+              1386730,
+              1706940,
+              1959825
+            ]
+          },
+          {
+            "name": "Transfers Out - Enterprise Bond",
+            "values": [
+              492849,
+              448316,
+              571440,
+              0
+            ]
+          }
         ]
       },
       {
@@ -1735,6 +4057,17 @@
           0,
           2584585,
           3057710
+        ],
+        "lineItems": [
+          {
+            "name": "Contingency",
+            "values": [
+              0,
+              0,
+              2584585,
+              3057710
+            ]
+          }
         ]
       },
       {
@@ -1744,6 +4077,26 @@
           12429545,
           10114395,
           7619035
+        ],
+        "lineItems": [
+          {
+            "name": "Rate Stabilization Reserve",
+            "values": [
+              11876357,
+              12429545,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Future Years Projects",
+            "values": [
+              0,
+              0,
+              10114395,
+              7619035
+            ]
+          }
         ]
       }
     ]
@@ -1824,6 +4177,35 @@
           945672,
           3892985,
           3278335
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - General Fund",
+            "values": [
+              35330,
+              43120,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Transfers Out - Building",
+            "values": [
+              40640,
+              57359,
+              18485,
+              33335
+            ]
+          },
+          {
+            "name": "Transfers Out - Water Operating",
+            "values": [
+              515640,
+              845193,
+              3874500,
+              3245000
+            ]
+          }
         ]
       },
       {
@@ -1833,6 +4215,17 @@
           0,
           0,
           0
+        ],
+        "lineItems": [
+          {
+            "name": "Contingency",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         ]
       },
       {
@@ -1842,6 +4235,17 @@
           2748348,
           393065,
           237205
+        ],
+        "lineItems": [
+          {
+            "name": "Future Years Projects",
+            "values": [
+              2031511,
+              2748348,
+              393065,
+              237205
+            ]
+          }
         ]
       }
     ]
@@ -1964,6 +4368,143 @@
           589469,
           682320,
           531650
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              327214,
+              332113,
+              391960,
+              307195
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Temporary",
+            "values": [
+              11470,
+              16015,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Salaries and Wages-Overtime",
+            "values": [
+              2750,
+              4665,
+              5000,
+              5000
+            ]
+          },
+          {
+            "name": "Salaries and Wages-On-Call",
+            "values": [
+              1536,
+              1227,
+              4295,
+              4445
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              3598,
+              3694,
+              3340,
+              3380
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              25305,
+              26242,
+              29665,
+              23530
+            ]
+          },
+          {
+            "name": "Benefits-WC Insurance & Tax",
+            "values": [
+              5542,
+              4675,
+              6540,
+              4005
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              90007,
+              90037,
+              115735,
+              94550
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              103417,
+              106451,
+              122560,
+              87000
+            ]
+          },
+          {
+            "name": "Benefits-TriMet Excise Tax",
+            "values": [
+              2851,
+              2939,
+              3225,
+              2545
+            ]
+          },
+          {
+            "name": "Benefits-Sick Leave Buy Back",
+            "values": [
+              1316,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Vacation Buy Back",
+            "values": [
+              465,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Comp Time Buy Back",
+            "values": [
+              483,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-Paid Leave OR Tax",
+            "values": [
+              1410,
+              1409,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Benefits-WC Contra",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         ]
       },
       {
@@ -1973,6 +4514,287 @@
           470660,
           560485,
           637375
+        ],
+        "lineItems": [
+          {
+            "name": "Office Supplies",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Printing & Postage",
+            "values": [
+              10377,
+              9634,
+              10000,
+              12000
+            ]
+          },
+          {
+            "name": "Inventory Adjustment",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Uniforms & Safety Equipment",
+            "values": [
+              2063,
+              1485,
+              2800,
+              4200
+            ]
+          },
+          {
+            "name": "Medical & Other Testing",
+            "values": [
+              0,
+              183,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Cell Phones",
+            "values": [
+              128,
+              128,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Network/Online",
+            "values": [
+              3364,
+              3720,
+              1450,
+              1550
+            ]
+          },
+          {
+            "name": "Small Tools",
+            "values": [
+              387,
+              1855,
+              2150,
+              2150
+            ]
+          },
+          {
+            "name": "Computer Equip & Software",
+            "values": [
+              171,
+              0,
+              500,
+              4900
+            ]
+          },
+          {
+            "name": "Personal Computer/Laptop",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "User Charges - Tigard",
+            "values": [
+              18566,
+              15398,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Sys Dev Chg - CWS",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "User Charges - CWS",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Special Programs",
+            "values": [
+              5892,
+              3085,
+              5000,
+              5000
+            ]
+          },
+          {
+            "name": "Consultants",
+            "values": [
+              9385,
+              2867,
+              25000,
+              45000
+            ]
+          },
+          {
+            "name": "Conferences & Meetings",
+            "values": [
+              1088,
+              2190,
+              6450,
+              6450
+            ]
+          },
+          {
+            "name": "Membership Dues",
+            "values": [
+              755,
+              1021,
+              2165,
+              2290
+            ]
+          },
+          {
+            "name": "Publication, Rpt, Ref Matl",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Staff Training",
+            "values": [
+              1636,
+              3635,
+              2000,
+              4950
+            ]
+          },
+          {
+            "name": "Administrative Expense",
+            "values": [
+              336,
+              203,
+              500,
+              500
+            ]
+          },
+          {
+            "name": "Advertising - Recruitment",
+            "values": [
+              0,
+              1166,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Merchant Discount Fees",
+            "values": [
+              154246,
+              170576,
+              165000,
+              200000
+            ]
+          },
+          {
+            "name": "Stream Shading",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Contr R&M - Systems",
+            "values": [
+              160729,
+              140010,
+              174940,
+              178075
+            ]
+          },
+          {
+            "name": "Contr R&M - FOG Insp",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Equipment Rental",
+            "values": [
+              0,
+              0,
+              500,
+              500
+            ]
+          },
+          {
+            "name": "Inventory Supplies",
+            "values": [
+              1354,
+              1166,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "R&M - Systems",
+            "values": [
+              82489,
+              14758,
+              100000,
+              100000
+            ]
+          },
+          {
+            "name": "R&M - Pump Stations",
+            "values": [
+              4140,
+              2445,
+              2450,
+              0
+            ]
+          },
+          {
+            "name": "Vehicle Replacement Expense",
+            "values": [
+              111190,
+              92460,
+              57180,
+              67410
+            ]
+          },
+          {
+            "name": "R&M - Equipment",
+            "values": [
+              0,
+              2675,
+              2400,
+              2400
+            ]
+          }
         ]
       },
       {
@@ -1982,6 +4804,35 @@
           2400551,
           2106960,
           8594000
+        ],
+        "lineItems": [
+          {
+            "name": "Projects Professional Svc",
+            "values": [
+              8992,
+              65,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Projects Construction",
+            "values": [
+              1139315,
+              2121786,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Fund Projects",
+            "values": [
+              189609,
+              278700,
+              2106960,
+              8594000
+            ]
+          }
         ]
       },
       {
@@ -1991,6 +4842,26 @@
           1045016,
           1003600,
           1335315
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - General Fund",
+            "values": [
+              953150,
+              987900,
+              951750,
+              1335315
+            ]
+          },
+          {
+            "name": "Transfers Out - Enterprise Bond",
+            "values": [
+              89887,
+              57116,
+              51850,
+              0
+            ]
+          }
         ]
       },
       {
@@ -2000,6 +4871,17 @@
           0,
           653005,
           1664750
+        ],
+        "lineItems": [
+          {
+            "name": "Contingency",
+            "values": [
+              0,
+              0,
+              653005,
+              1664750
+            ]
+          }
         ]
       },
       {
@@ -2009,6 +4891,17 @@
           4819809,
           5041870,
           4587795
+        ],
+        "lineItems": [
+          {
+            "name": "Future Years Projects",
+            "values": [
+              4111476,
+              4819809,
+              5041870,
+              4587795
+            ]
+          }
         ]
       }
     ]
@@ -2069,6 +4962,17 @@
           0,
           0,
           0
+        ],
+        "lineItems": [
+          {
+            "name": "Sys Dev Chg - CWS",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         ]
       },
       {
@@ -2078,6 +4982,17 @@
           0,
           100000,
           0
+        ],
+        "lineItems": [
+          {
+            "name": "Fund Projects",
+            "values": [
+              0,
+              0,
+              100000,
+              0
+            ]
+          }
         ]
       },
       {
@@ -2087,6 +5002,35 @@
           79027,
           293030,
           995085
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - General Fund",
+            "values": [
+              0,
+              1250,
+              6520,
+              0
+            ]
+          },
+          {
+            "name": "Transfers Out - Building",
+            "values": [
+              48415,
+              77777,
+              24610,
+              37185
+            ]
+          },
+          {
+            "name": "Transfers Out - Sewer",
+            "values": [
+              0,
+              0,
+              261900,
+              957900
+            ]
+          }
         ]
       },
       {
@@ -2096,6 +5040,17 @@
           0,
           0,
           0
+        ],
+        "lineItems": [
+          {
+            "name": "Contingency",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         ]
       },
       {
@@ -2105,6 +5060,17 @@
           4034511,
           3838510,
           3294525
+        ],
+        "lineItems": [
+          {
+            "name": "Future Years Projects",
+            "values": [
+              3888915,
+              4034511,
+              3838510,
+              3294525
+            ]
+          }
         ]
       }
     ]
@@ -2240,6 +5206,80 @@
           0,
           0,
           499160
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              0,
+              0,
+              0,
+              293500
+            ]
+          },
+          {
+            "name": "Salaries and Wages-On-Call",
+            "values": [
+              0,
+              0,
+              0,
+              4445
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              0,
+              0,
+              0,
+              3380
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              0,
+              0,
+              0,
+              22150
+            ]
+          },
+          {
+            "name": "Benefits-WC Insurance & Tax",
+            "values": [
+              0,
+              0,
+              0,
+              3695
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              0,
+              0,
+              0,
+              88970
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              0,
+              0,
+              0,
+              80625
+            ]
+          },
+          {
+            "name": "Benefits-TriMet Excise Tax",
+            "values": [
+              0,
+              0,
+              0,
+              2395
+            ]
+          }
         ]
       },
       {
@@ -2249,6 +5289,260 @@
           886058,
           898245,
           987190
+        ],
+        "lineItems": [
+          {
+            "name": "Printing & Postage",
+            "values": [
+              10785,
+              9611,
+              10500,
+              12000
+            ]
+          },
+          {
+            "name": "Uniforms & Safety Equipment",
+            "values": [
+              1133,
+              902,
+              2800,
+              2800
+            ]
+          },
+          {
+            "name": "Network/Online",
+            "values": [
+              1585,
+              979,
+              250,
+              250
+            ]
+          },
+          {
+            "name": "Small Tools",
+            "values": [
+              35,
+              431,
+              1375,
+              1375
+            ]
+          },
+          {
+            "name": "Computer Equip & Software",
+            "values": [
+              56,
+              0,
+              0,
+              4400
+            ]
+          },
+          {
+            "name": "User Charges - Tigard",
+            "values": [
+              17515,
+              13481,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "User Charge - Lake Oswego",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "User Charges - CWS",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Special Programs",
+            "values": [
+              1797,
+              6230,
+              18000,
+              18000
+            ]
+          },
+          {
+            "name": "Consultants",
+            "values": [
+              431,
+              0,
+              20000,
+              40000
+            ]
+          },
+          {
+            "name": "Utilities",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Utilities - Water",
+            "values": [
+              62,
+              229,
+              2000,
+              2000
+            ]
+          },
+          {
+            "name": "Membership Dues",
+            "values": [
+              0,
+              146,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Staff Training",
+            "values": [
+              0,
+              330,
+              1200,
+              3700
+            ]
+          },
+          {
+            "name": "Administrative Expense",
+            "values": [
+              168,
+              57,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Tualatin River Gauge",
+            "values": [
+              5274,
+              5511,
+              5600,
+              6000
+            ]
+          },
+          {
+            "name": "Stream Shading",
+            "values": [
+              21218,
+              26530,
+              24000,
+              24000
+            ]
+          },
+          {
+            "name": "Contr R&M - Systems",
+            "values": [
+              514704,
+              450562,
+              260500,
+              263950
+            ]
+          },
+          {
+            "name": "Contr R&M - Water Quality",
+            "values": [
+              87079,
+              78701,
+              81000,
+              81000
+            ]
+          },
+          {
+            "name": "Guardrails & Signs",
+            "values": [
+              639,
+              0,
+              5000,
+              5000
+            ]
+          },
+          {
+            "name": "Grounds & Landscaping",
+            "values": [
+              131064,
+              182937,
+              150820,
+              176065
+            ]
+          },
+          {
+            "name": "Street Sweeping",
+            "values": [
+              0,
+              16030,
+              255000,
+              273000
+            ]
+          },
+          {
+            "name": "Equipment Rental",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Inventory Supplies",
+            "values": [
+              432,
+              17,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "R&M - Systems",
+            "values": [
+              2653,
+              1849,
+              2750,
+              6000
+            ]
+          },
+          {
+            "name": "R&M - Pump Stations",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Vehicle Replacement Expense",
+            "values": [
+              110250,
+              91525,
+              56400,
+              66550
+            ]
+          },
+          {
+            "name": "R&M - Equipment",
+            "values": [
+              65,
+              0,
+              1100,
+              1100
+            ]
+          }
         ]
       },
       {
@@ -2258,6 +5552,35 @@
           587139,
           3400000,
           4050000
+        ],
+        "lineItems": [
+          {
+            "name": "Projects Professional Svc",
+            "values": [
+              58,
+              357139,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Projects Construction",
+            "values": [
+              0,
+              253953,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Fund Projects",
+            "values": [
+              0,
+              0,
+              3400000,
+              4050000
+            ]
+          }
         ]
       },
       {
@@ -2267,6 +5590,44 @@
           1215814,
           1343975,
           1093865
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - General Fund",
+            "values": [
+              707050,
+              877920,
+              983400,
+              1093865
+            ]
+          },
+          {
+            "name": "Transfers Out - Road Operating",
+            "values": [
+              102210,
+              83570,
+              89130,
+              0
+            ]
+          },
+          {
+            "name": "Transfers Out - Sewer",
+            "values": [
+              192030,
+              210550,
+              227670,
+              0
+            ]
+          },
+          {
+            "name": "Transfers Out - Enterprise Bond",
+            "values": [
+              62697,
+              43774,
+              43775,
+              0
+            ]
+          }
         ]
       },
       {
@@ -2276,6 +5637,17 @@
           0,
           846335,
           994530
+        ],
+        "lineItems": [
+          {
+            "name": "Contingency",
+            "values": [
+              0,
+              0,
+              846335,
+              994530
+            ]
+          }
         ]
       },
       {
@@ -2285,6 +5657,17 @@
           10804610,
           6998620,
           7842790
+        ],
+        "lineItems": [
+          {
+            "name": "Future Years Projects",
+            "values": [
+              9824856,
+              10804610,
+              6998620,
+              7842790
+            ]
+          }
         ]
       }
     ]
@@ -2336,6 +5719,17 @@
           0,
           0,
           0
+        ],
+        "lineItems": [
+          {
+            "name": "Fund Projects",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         ]
       },
       {
@@ -2345,6 +5739,35 @@
           63556,
           380000,
           508000
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - General Fund",
+            "values": [
+              23680,
+              8500,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Transfers Out - Building",
+            "values": [
+              17125,
+              1960,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Transfers Out - Stormwater Operating Fund",
+            "values": [
+              0,
+              53096,
+              380000,
+              508000
+            ]
+          }
         ]
       },
       {
@@ -2354,6 +5777,17 @@
           0,
           0,
           0
+        ],
+        "lineItems": [
+          {
+            "name": "Contingency",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         ]
       },
       {
@@ -2363,6 +5797,17 @@
           549772,
           218480,
           14850
+        ],
+        "lineItems": [
+          {
+            "name": "Future Years Projects",
+            "values": [
+              589944,
+              549772,
+              218480,
+              14850
+            ]
+          }
         ]
       }
     ]
@@ -2451,6 +5896,17 @@
           9469,
           16700,
           58400
+        ],
+        "lineItems": [
+          {
+            "name": "Small Tools",
+            "values": [
+              0,
+              9469,
+              16700,
+              58400
+            ]
+          }
         ]
       },
       {
@@ -2460,6 +5916,17 @@
           178396,
           593865,
           1136300
+        ],
+        "lineItems": [
+          {
+            "name": "Equipment & Furnishings",
+            "values": [
+              624046,
+              178396,
+              593865,
+              1136300
+            ]
+          }
         ]
       },
       {
@@ -2469,6 +5936,17 @@
           2960753,
           3033750,
           2625890
+        ],
+        "lineItems": [
+          {
+            "name": "Capital Reserve",
+            "values": [
+              2219682,
+              2960753,
+              3033750,
+              2625890
+            ]
+          }
         ]
       }
     ]
@@ -2521,6 +5999,80 @@
           109149,
           390020,
           385270
+        ],
+        "lineItems": [
+          {
+            "name": "Salaries and Wages-Full Time",
+            "values": [
+              0,
+              65502,
+              237465,
+              242845
+            ]
+          },
+          {
+            "name": "Benefits-Employee Benefits",
+            "values": [
+              0,
+              983,
+              0,
+              2170
+            ]
+          },
+          {
+            "name": "Benefits-FICA",
+            "values": [
+              0,
+              4823,
+              17650,
+              18180
+            ]
+          },
+          {
+            "name": "Benefits-WC Insurance & Tax",
+            "values": [
+              0,
+              95,
+              215,
+              220
+            ]
+          },
+          {
+            "name": "Benefits-Pension",
+            "values": [
+              0,
+              22327,
+              70905,
+              72515
+            ]
+          },
+          {
+            "name": "Benefits-Insurance",
+            "values": [
+              0,
+              14630,
+              61875,
+              47390
+            ]
+          },
+          {
+            "name": "Benefits-TriMet Excise Tax",
+            "values": [
+              0,
+              540,
+              1910,
+              1950
+            ]
+          },
+          {
+            "name": "Benefits-Paid Leave OR Tax",
+            "values": [
+              0,
+              249,
+              0,
+              0
+            ]
+          }
         ]
       },
       {
@@ -2530,6 +6082,170 @@
           37089,
           182525,
           68840
+        ],
+        "lineItems": [
+          {
+            "name": "Office Supplies",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Printing & Postage",
+            "values": [
+              0,
+              750,
+              1000,
+              1000
+            ]
+          },
+          {
+            "name": "Uniforms & Safety Equipment",
+            "values": [
+              0,
+              149,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Cell Phones",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Recording Fees",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Office Equipment & Furniture",
+            "values": [
+              0,
+              0,
+              2500,
+              500
+            ]
+          },
+          {
+            "name": "Computer Equip & Software",
+            "values": [
+              0,
+              138,
+              2740,
+              250
+            ]
+          },
+          {
+            "name": "Audit",
+            "values": [
+              5250,
+              5600,
+              5860,
+              6140
+            ]
+          },
+          {
+            "name": "Consultants",
+            "values": [
+              0,
+              19758,
+              137500,
+              30000
+            ]
+          },
+          {
+            "name": "Insurance",
+            "values": [
+              1364,
+              1384,
+              1500,
+              1500
+            ]
+          },
+          {
+            "name": "Conferences & Meetings",
+            "values": [
+              0,
+              0,
+              5000,
+              5800
+            ]
+          },
+          {
+            "name": "Membership Dues",
+            "values": [
+              5146,
+              5146,
+              6325,
+              12950
+            ]
+          },
+          {
+            "name": "Publication, Rpt, Ref Matl",
+            "values": [
+              403,
+              0,
+              300,
+              300
+            ]
+          },
+          {
+            "name": "Administrative Expense",
+            "values": [
+              0,
+              19,
+              600,
+              3700
+            ]
+          },
+          {
+            "name": "Economic Development Expense",
+            "values": [
+              8387,
+              3710,
+              5500,
+              5500
+            ]
+          },
+          {
+            "name": "Advertising - Informational",
+            "values": [
+              712,
+              434,
+              1200,
+              1200
+            ]
+          },
+          {
+            "name": "Advertising - Promotional",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Contract Services",
+            "values": [
+              0,
+              0,
+              12500,
+              0
+            ]
+          }
         ]
       },
       {
@@ -2539,6 +6255,17 @@
           64000,
           71710,
           57330
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - General Fund",
+            "values": [
+              0,
+              64000,
+              71710,
+              57330
+            ]
+          }
         ]
       },
       {
@@ -2548,6 +6275,17 @@
           0,
           101815,
           76715
+        ],
+        "lineItems": [
+          {
+            "name": "Contingency",
+            "values": [
+              0,
+              0,
+              101815,
+              76715
+            ]
+          }
         ]
       },
       {
@@ -2557,6 +6295,17 @@
           146694,
           0,
           188205
+        ],
+        "lineItems": [
+          {
+            "name": "Future Years Projects",
+            "values": [
+              138725,
+              146694,
+              0,
+              188205
+            ]
+          }
         ]
       }
     ]
@@ -2596,6 +6345,26 @@
           0,
           0,
           0
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - General Fund",
+            "values": [
+              132220,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Transfers Out - TDC Admin",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         ]
       },
       {
@@ -2605,6 +6374,46 @@
           0,
           0,
           0
+        ],
+        "lineItems": [
+          {
+            "name": "General Account Reserve",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Capital Outlay",
+        "values": [
+          2840880,
+          0,
+          0,
+          0
+        ],
+        "lineItems": [
+          {
+            "name": "Projects Construction",
+            "values": [
+              2840880,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "Fund Projects",
+            "values": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         ]
       }
     ]
@@ -2664,6 +6473,35 @@
           86888,
           823345,
           237850
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - TDC Admin",
+            "values": [
+              0,
+              86888,
+              223345,
+              137850
+            ]
+          },
+          {
+            "name": "Transfers Out - SWURD Project Fund",
+            "values": [
+              0,
+              0,
+              0,
+              100000
+            ]
+          },
+          {
+            "name": "Transfers Out - CORA Project Fund",
+            "values": [
+              0,
+              0,
+              600000,
+              0
+            ]
+          }
         ]
       },
       {
@@ -2673,6 +6511,17 @@
           3395473,
           5013995,
           6185205
+        ],
+        "lineItems": [
+          {
+            "name": "General Account Reserve",
+            "values": [
+              1481461,
+              3395473,
+              5013995,
+              6185205
+            ]
+          }
         ]
       }
     ]
@@ -2710,6 +6559,17 @@
           0,
           0,
           100000
+        ],
+        "lineItems": [
+          {
+            "name": "Fund Projects",
+            "values": [
+              0,
+              0,
+              0,
+              100000
+            ]
+          }
         ]
       }
     ]
@@ -2769,6 +6629,26 @@
           0,
           216675,
           352460
+        ],
+        "lineItems": [
+          {
+            "name": "Transfers Out - TDC Admin",
+            "values": [
+              0,
+              0,
+              166675,
+              282460
+            ]
+          },
+          {
+            "name": "Transfers Out - CORA Project Fund",
+            "values": [
+              0,
+              0,
+              50000,
+              70000
+            ]
+          }
         ]
       },
       {
@@ -2778,6 +6658,17 @@
           140380,
           190555,
           326380
+        ],
+        "lineItems": [
+          {
+            "name": "General Account Reserve",
+            "values": [
+              0,
+              140380,
+              190555,
+              326380
+            ]
+          }
         ]
       }
     ]
@@ -2819,6 +6710,17 @@
           0,
           0,
           82450
+        ],
+        "lineItems": [
+          {
+            "name": "Consultants",
+            "values": [
+              0,
+              0,
+              0,
+              82450
+            ]
+          }
         ]
       },
       {
@@ -2828,6 +6730,17 @@
           0,
           650000,
           0
+        ],
+        "lineItems": [
+          {
+            "name": "Land Acquisition",
+            "values": [
+              0,
+              0,
+              650000,
+              0
+            ]
+          }
         ]
       }
     ]

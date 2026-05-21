@@ -660,15 +660,31 @@ function renderBars(rows, fillClass) {
 }
 
 // Render a multi-year line-item table (revenues or expenditures).
+// Rows with a `lineItems` array render as a category total + nested sub-rows,
+// matching the styling used by the department expenditure renderer.
 function renderMultiYearTable(rows, totalsLabel) {
   if (!rows || !rows.length) return "";
   const totals = [0, 0, 0, 0];
   for (const r of rows) (r.values || []).forEach((v, i) => { if (v != null) totals[i] += v; });
-  const body = rows.map((r) => `
-        <tr>
+  const body = rows.map((r) => {
+    const hasSubs = Array.isArray(r.lineItems) && r.lineItems.length > 0;
+    const cls = hasSubs ? "row-total" : "";
+    let html = `
+        <tr${cls ? ` class="${cls}"` : ""}>
           <td>${escapeHTML(r.name)}</td>
           ${(r.values || [null, null, null, null]).map((v) => `<td class="col-num">${v ? fmtUSD(v) : "—"}</td>`).join("")}
-        </tr>`).join("");
+        </tr>`;
+    if (hasSubs) {
+      for (const li of r.lineItems) {
+        html += `
+        <tr class="row-sub">
+          <td>${escapeHTML(li.name)}</td>
+          ${(li.values || [null, null, null, null]).map((v) => `<td class="col-num">${v ? fmtUSD(v) : "—"}</td>`).join("")}
+        </tr>`;
+      }
+    }
+    return html;
+  }).join("");
   return `
     <div class="table-wrap">
       <table>
