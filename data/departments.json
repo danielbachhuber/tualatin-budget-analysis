@@ -2,6 +2,13 @@
   {
     "slug": "city-council",
     "name": "City Council",
+    "fy25Highlights": [
+      "Awarded $50,000 in grants to outside agencies.",
+      "Held a Board and Committee Summit to strengthen coordination and engagement across city boards and committees.",
+      "Advocated for high-visibility legislative priorities, including economic development and transportation initiatives.",
+      "Represented Tualatin on regional boards and committees.",
+      "Participated in professional development at the League of Oregon Cities and National League of Cities conferences."
+    ],
     "fy27Objectives": [],
     "performance": [],
     "expenditures": [
@@ -167,6 +174,14 @@
   {
     "slug": "administration",
     "name": "Administration",
+    "fy25Highlights": [
+      "City Manager's Office launched a new city website \u2014 the first redesign since 2012.",
+      "Worked with a lobbying firm and Council to secure state and federal funding for local projects.",
+      "Established two new funding sources to support implementation of the Climate Action Plan, which began collecting funds.",
+      "Supported the Community Involvement Organizations' efforts to update their boundary map, with a recommendation expected next fiscal year.",
+      "Human Resources recruited key positions across the organization, including the Climate Action Program Manager.",
+      "Bargained a successor contract with the Tualatin Police Officers Association and transitioned Paid Leave Oregon to an in-house program."
+    ],
     "fy27Objectives": [
       "Advance implementation of the Climate Action Plan in alignment with City Council goals.",
       "Explore sustainable revenue options to support the findings of the gaps and needs analysis.",
@@ -418,11 +433,45 @@
           }
         ]
       }
-    ]
+    ],
+    "orgChart": {
+      "head": "City Manager",
+      "reports": [
+        {
+          "name": "Human Resources / Volunteer Services Director",
+          "subReports": [
+            "Human Resources and Risk Manager",
+            "Volunteer Coordinator (1.75 FTE)",
+            "Human Resources Specialist",
+            "Human Resources Assistant"
+          ]
+        },
+        {
+          "name": "Climate Action Program Manager",
+          "subReports": []
+        },
+        {
+          "name": "Deputy City Manager",
+          "subReports": [
+            "Deputy City Recorder",
+            "Communications & Marketing Program Manager",
+            "Office Coordinator",
+            "Community Engagement Coordinator"
+          ]
+        }
+      ]
+    }
   },
   {
     "slug": "finance",
     "name": "Finance",
+    "fy25Highlights": [
+      "Implemented new budget publication software.",
+      "Completed a successful examination of the City's use of federal funds by an independent public accountant.",
+      "Maintained the City's Investment Program and secured improved, more stable investment returns to better weather market fluctuations.",
+      "Continued roll-out of the recently adopted grant acceptance and management policy, streamlining grant management citywide.",
+      "Provided additional resources to departments managing grants under the new policy."
+    ],
     "fy27Objectives": [
       "Upgrade the City's financial software to the latest, cloud-based Enterprise Resource Planning (ERP) system to enhance financial transparency, improve data accessibility, strengthen internal controls, and increase operational efficiency across all departments.",
       "Develop and deploy a meaningful, citywide performance measure system that aligns financial resources with strategic priorities, support data-driven decision-making, and improve accountability to the community.",
@@ -661,11 +710,34 @@
           }
         ]
       }
-    ]
+    ],
+    "orgChart": {
+      "head": "Assistant City Manager / Finance Director",
+      "reports": [
+        {
+          "name": "Assistant Finance Director",
+          "subReports": [
+            "Accountant",
+            "Accounting Technician (4.00 FTE)"
+          ]
+        },
+        {
+          "name": "Management Analyst",
+          "subReports": []
+        }
+      ]
+    }
   },
   {
     "slug": "municipal-court",
     "name": "Municipal Court",
+    "fy25Highlights": [
+      "Implemented a wedding ceremonies program, performed on-request by the City's Presiding Judge.",
+      "Maintained 100% same-day processing of suspended driver's license reinstatements when defendants became compliant.",
+      "Sustained 100% response rate to phone messages within 24 hours.",
+      "Continued providing a Spanish interpreter at arraignment hearings for equitable access to Spanish-speaking defendants.",
+      "Maintained bilingual coverage with half of court staff possessing Spanish-speaking skills, plus on-demand translation in other languages."
+    ],
     "fy27Objectives": [
       "Provide equitable service to all customers.",
       "Follow and keep the City knowledgeable of current legislative issues related to State Municipal Courts.",
@@ -895,11 +967,27 @@
           }
         ]
       }
-    ]
+    ],
+    "orgChart": {
+      "head": "Court Administrator",
+      "reports": [
+        {
+          "name": "Court Clerk (3.00 FTE)",
+          "subReports": []
+        }
+      ]
+    }
   },
   {
     "slug": "legal",
     "name": "Legal",
+    "fy25Highlights": [
+      "Prepared a City Contracting Manual to help staff comply with Public Contracting Rules, supplemented by a monthly Procurement Newsletter.",
+      "Drafted and presented a Food, Beverage, and Apparel Policy to City Council to ensure compliance with state ethics laws.",
+      "Supported Community Development on the Lam Research campus expansion, advising the Architectural Review Board and City Council.",
+      "Assisted Community Development with a City Manager interpretation decision requested by Northwest Cascade, Inc. (HoneyBucket) and its Council review.",
+      "Helped the Urban Renewal/Economic Development Manager acquire the Matthias property for the Core Opportunity and Reinvestment Area Plan's 18970 Catalyst Project."
+    ],
     "fy27Objectives": [
       "Provide legal advice and support to City Council, Boards and Commissions, Departments, and City staff.",
       "Continue to negotiate contracts, real estate transactions, intergovernmental agreements, and other legal documents.",
@@ -1109,11 +1197,32 @@
           }
         ]
       }
-    ]
+    ],
+    "orgChart": {
+      "head": "City Attorney",
+      "reports": [
+        {
+          "name": "Procurement & Contract Administrator",
+          "subReports": []
+        },
+        {
+          "name": "Paralegal",
+          "subReports": []
+        }
+      ]
+    }
   },
   {
     "slug": "information-services",
     "name": "Information Services",
+    "fy25Highlights": [
+      "Maintained secure, reliable, redundant core systems, networks, and phone infrastructure across all city facilities.",
+      "Provided responsive help desk support for devices, applications, and accounts, with average initial response under 2 hours, 35 minutes.",
+      "Strengthened cybersecurity defenses, kept the average phishing email click rate at 6%, and protected sensitive data and regulatory compliance.",
+      "Managed data backups, disaster recovery, and business continuity planning to keep services running during emergencies.",
+      "Implemented modern cloud-based collaboration tools to improve communication and information sharing across departments.",
+      "Began evaluating emerging tools including artificial intelligence and automation for efficiency and service improvements."
+    ],
     "fy27Objectives": [
       "Replace and upgrade the core virtual server infrastructure.",
       "Finish replacing the existing patron computers throughout the library with modern systems.",
@@ -1344,11 +1453,42 @@
           }
         ]
       }
-    ]
+    ],
+    "orgChart": {
+      "head": "Information Services Director",
+      "reports": [
+        {
+          "name": "Network Administrator",
+          "subReports": []
+        },
+        {
+          "name": "Field Systems Administrator",
+          "subReports": []
+        },
+        {
+          "name": "Desktop Support Technician",
+          "subReports": []
+        },
+        {
+          "name": "Database / GIS Administrator",
+          "subReports": [
+            "GIS Technician"
+          ]
+        }
+      ]
+    }
   },
   {
     "slug": "community-development",
     "name": "Community Development",
+    "fy25Highlights": [
+      "Reviewed 337 land use applications and permits, including 4 Architectural Reviews, 57 Minor Architectural Reviews, 69 Sign Permits, and 14 Pre-applications.",
+      "Completed the first major update to the City's Transportation System Plan since 2013, with corresponding Comprehensive Plan and Development Code updates.",
+      "Held a housing forum and resource fair featuring a community conversation about affordable housing and the impact of high housing costs.",
+      "Annexed 55 acres of land in the Basalt Creek Employment Planning District for future development.",
+      "Completed Conditional Use Permit and Architectural Review approvals for the 108th Avenue Reservoir and Pump Station.",
+      "Adopted the Climate Friendly and Equitable Communities Walkable Design Standards and approved the Lam TUX Expansion Industrial Master Plan."
+    ],
     "fy27Objectives": [
       "Ongoing work on a Housing Capacity Analysis which identifies housing types, characteristics, and locations needed to achieve housing choice and identify housing production targets.",
       "Complete a Clear and Objective Code Update required to bring the Tualatin Development Code into compliance with state law as it relates to the development of housing.",
@@ -1572,11 +1712,46 @@
           }
         ]
       }
-    ]
+    ],
+    "orgChart": {
+      "head": "Community Development Director",
+      "reports": [
+        {
+          "name": "Policy Analyst",
+          "subReports": []
+        },
+        {
+          "name": "Program Coordinator",
+          "subReports": []
+        },
+        {
+          "name": "Planning Manager",
+          "subReports": [
+            "Senior Planner",
+            "Associate Planner (2.00 FTE)",
+            "Office Coordinator"
+          ]
+        },
+        {
+          "name": "Urban Renewal / Economic Development Manager",
+          "subReports": [
+            "Policy Analyst"
+          ]
+        }
+      ]
+    }
   },
   {
     "slug": "engineering",
     "name": "Engineering",
+    "fy25Highlights": [
+      "Reviewed plans, issued permits, and inspected public infrastructure for major private developments including Autumn Sunrise Subdivision, Plambeck Gardens Housing, Hedges Industrial, and Lam Research campus buildings.",
+      "Managed CDBG-funded sidewalk and curb ramp repairs along 67th and 68th Avenues in the Las Casitas area and a new enhanced crosswalk on Hazelbrook Road at the Tualatin River Greenway Trail.",
+      "Delivered a new backup power generator for the Norwood pump station and managed relocation of city water and sewer utilities for the Washington County Tualatin-Sherwood Road widening project.",
+      "Completed design and began managing construction of a new water reservoir and pump station near 108th Avenue and Cottonwood Street.",
+      "Advanced design for Siuslaw Greenway storm drainage improvements, the 65th Avenue / Borland Road intersection, Nyberg Creek drainage, and a 108th Avenue sanitary sewer main for the Basalt Creek area.",
+      "Led a study on grade-separation options at the Tualatin-Sherwood Road / Boones Ferry Road / railroad intersection and updated the Transportation System Plan in collaboration with Community Development."
+    ],
     "fy27Objectives": [
       "Complete construction of the new reservoir and pump station near 108th Avenue in southern Tualatin.",
       "Construct phases 3 and 4 of Martinazzi sewer trunk upsizing (from Dakota Street to Avery Street) and stormwater improvements in the Nyberg Creek/Martinazzi and Siuslaw Greenway areas.",
@@ -1829,11 +2004,34 @@
           }
         ]
       }
-    ]
+    ],
+    "orgChart": {
+      "head": "City Engineer",
+      "reports": [
+        {
+          "name": "Principal Engineer",
+          "subReports": [
+            "Engineering Associate",
+            "Engineering Technician (2.00 FTE)"
+          ]
+        },
+        {
+          "name": "Engineering Associate (2.00 FTE)",
+          "subReports": []
+        }
+      ]
+    }
   },
   {
     "slug": "building",
     "name": "Building",
+    "fy25Highlights": [
+      "Processed over 2,300 building permits, with volumes continuing to grow year over year.",
+      "Performed over 8,700 building inspections across construction projects citywide.",
+      "Responded to 132 code compliance inquiries through the complaint-driven process.",
+      "Continued updating permit types to improve user-friendliness and monitored the Building Division fee schedules.",
+      "Refined policies and procedures within the permitting system to enhance cross-division coordination."
+    ],
     "fy27Objectives": [
       "Concentrate on managing the rising volume of plan reviews and inspections while maintaining a strong commitment to providing excellent customer service.",
       "Further develop our expertise, efficiency, and proficiency by participating in relevant training programs for both plan review and inspections.",
@@ -2151,11 +2349,47 @@
           }
         ]
       }
-    ]
+    ],
+    "orgChart": {
+      "head": "Building Official",
+      "reports": [
+        {
+          "name": "Building Construction Inspector / Plans Examiner",
+          "subReports": []
+        },
+        {
+          "name": "Building Construction Inspector (2.00 FTE)",
+          "subReports": []
+        },
+        {
+          "name": "Code Compliance Officer",
+          "subReports": []
+        },
+        {
+          "name": "Permit Coordinator",
+          "subReports": []
+        },
+        {
+          "name": "Permit Technician",
+          "subReports": []
+        },
+        {
+          "name": "Office Coordinator (0.25 FTE)",
+          "subReports": []
+        }
+      ]
+    }
   },
   {
     "slug": "library",
     "name": "Library",
+    "fy25Highlights": [
+      "Completed facility improvements including more accessible entry and restroom doors plus LED lighting installation.",
+      "Saw continued growth in program attendance, reaching 26,660 attendees, and increased Makerspace use.",
+      "Earned a 4.5-out-of-5-star customer service rating in 2025, with 92 percent of community members calling the library a welcoming place.",
+      "Delivered the Summer Reading Program to motivate kids and teens and reduce summer skill loss.",
+      "Hit 5.32 visits per capita and 18.9 circulations per capita, sustaining strong community usage."
+    ],
     "fy27Objectives": [
       "As part of the Library's new service area, begin promoting and providing library services to Durham residents and schools.",
       "Work in partnership with WCCLS to implement new expectations in the countywide library service agreement, including planning centralization of the Library's collection.",
@@ -2415,7 +2649,31 @@
           }
         ]
       }
-    ]
+    ],
+    "orgChart": {
+      "head": "Library Director",
+      "reports": [
+        {
+          "name": "Public Services Manager",
+          "subReports": [
+            "Librarian (5.00 FTE)",
+            "Library Outreach Specialist",
+            "Public Services Assistant (1.60 FTE)"
+          ]
+        },
+        {
+          "name": "Access Services Manager",
+          "subReports": [
+            "Librarian",
+            "Library Assistant (6.00 FTE)"
+          ]
+        },
+        {
+          "name": "Office Coordinator",
+          "subReports": []
+        }
+      ]
+    }
   },
   {
     "slug": "parks-and-recreation",
@@ -2641,6 +2899,13 @@
   {
     "slug": "parks-maintenance",
     "name": "Parks Maintenance",
+    "fy25Highlights": [
+      "Maintained 352 acres of parkland, including 166 acres of developed parks with public recreational amenities.",
+      "Held 4 community planting events to help restore natural areas, matching the prior-year level.",
+      "Repaired or resurfaced 1,530 linear feet of gravel surfaces across the park system.",
+      "Sustained Tree City and Bee City certifications through ongoing stewardship work.",
+      "Supported Recreation Division community events and coordinated volunteer projects on park lands."
+    ],
     "fy27Objectives": [
       "Continue to provide appropriate resources to properly maintain valuable city assets.",
       "Continue to provide support services to Community Events and Volunteer Programs to engage our community in valuable experiences.",
@@ -2910,11 +3175,27 @@
           }
         ]
       }
-    ]
+    ],
+    "orgChart": {
+      "head": "Parks Maintenance Manager",
+      "reports": [
+        {
+          "name": "Parks Maintenance Technician (8.00 FTE)",
+          "subReports": []
+        }
+      ]
+    }
   },
   {
     "slug": "police",
     "name": "Police",
+    "fy25Highlights": [
+      "Completed Trauma-Informed Practices training for Department and City supervisors in early 2026, to be disseminated organization-wide.",
+      "Sourced and secured a new narcotics detection K-9, Drea, a one-year-old English Springer Spaniel, following the prior K-9's retirement.",
+      "Strengthened community relationships by participating in Blender Dash, Viva Tualatin, and the West Coast Giant Pumpkin Regatta.",
+      "Sponsored engagement programs including Shop with a Cop, Police Summer Camp, and the Adopt-a-Family Program.",
+      "Presented to several Community Involvement Organizations including CCIO, Tualatin Rotary, the Latino Business Network, and the Las Casitas Neighborhood Meeting."
+    ],
     "fy27Objectives": [
       "Recruit & Retain Top Talent: Implement innovative strategies to attract and retain high-quality officers in response to retirements and turnover.",
       "Continue to expand Wellness Programs: Enhance officer wellness by improving access to fitness equipment and health programs.",
@@ -3183,11 +3464,46 @@
           }
         ]
       }
-    ]
+    ],
+    "orgChart": {
+      "head": "Police Chief",
+      "reports": [
+        {
+          "name": "Captain (Patrol)",
+          "subReports": [
+            "Sergeant (5.00 FTE)",
+            "Police Officer (21.00 FTE)"
+          ]
+        },
+        {
+          "name": "Captain (Support Services)",
+          "subReports": [
+            "Sergeant (2.00 FTE)",
+            "Police Officer (8.00 FTE)",
+            "Community Service Officer",
+            "Program Coordinator",
+            "Police Services Supervisor",
+            "Property Evidence Technician",
+            "Police Services Technician"
+          ]
+        },
+        {
+          "name": "Office Coordinator",
+          "subReports": []
+        }
+      ]
+    }
   },
   {
     "slug": "maintenance-services",
     "name": "Maintenance Services",
+    "fy25Highlights": [
+      "Facilities team completed hundreds of routine maintenance requests and coordinated several HVAC replacements.",
+      "Replaced the roof at the Police Station and made roof repairs at the library/city offices building.",
+      "Upgraded lighting at the library and completed ADA projects including replacing flagstone walkways at the Police Department.",
+      "Fleet team closed 529 vehicle and equipment service orders in calendar year 2025 and coordinated main gate upgrades.",
+      "Warehouse Technician processed approximately 550 supply and equipment acquisitions and 33 surplus dispositions via Govdeals."
+    ],
     "fy27Objectives": [
       "Provide timely, cost-effective, and high-quality customer service for all internal customers to ensure essential facilities, vehicles, supplies, and equipment are available and optimally functional for the rest of the city.",
       "Address and resolve emergent, unplanned, and non-routine vehicle and facility service and repair needs in a timely way.",
@@ -3465,11 +3781,40 @@
           }
         ]
       }
-    ]
+    ],
+    "orgChart": {
+      "head": "Fleet & Facilities Manager",
+      "reports": [
+        {
+          "name": "Facilities Maintenance Technician (2.00 FTE)",
+          "subReports": []
+        },
+        {
+          "name": "Fleet Technician (2.00 FTE)",
+          "subReports": []
+        },
+        {
+          "name": "Warehouse / Inventory Control Technician",
+          "subReports": []
+        },
+        {
+          "name": "Management Analyst",
+          "subReports": []
+        }
+      ]
+    }
   },
   {
     "slug": "water-operating",
     "name": "Water Operating",
+    "fy25Highlights": [
+      "Installed and implemented a new SCADA system, improving real-time monitoring of pressures, flows, reservoir levels, and alarms.",
+      "Installed a permanent on-site emergency generator at the Norwood Pump Station to ensure service during power outages.",
+      "Completed over 1,000 linear feet of seismically resistant water main upgrades in coordination with Parks and Engineering.",
+      "Secured grant funding for new seismic valves that will automatically isolate reservoirs during ground movement.",
+      "Advanced the InPipe Energy project, installing a control valve with a turbine that converts excess system pressure into renewable energy for the maintenance yard.",
+      "Conducted a comprehensive water quality study with a consultant in preparation for the Portland Water Bureau's new Bull Run treatment plant."
+    ],
     "fy27Objectives": [
       "SCADA System Familiarization: Adjust and become continuously familiarized with our new SCADA system and utilize it as a tool to operate our system even more efficiently.",
       "On-Boarding New Staff: With the new hires in the water department, training and investing in their development will be critical this upcoming year, as long-tenured staff will be transitioning into retirement.",
@@ -3844,11 +4189,38 @@
           }
         ]
       }
-    ]
+    ],
+    "orgChart": {
+      "head": "Public Works Director (0.25 FTE)",
+      "reports": [
+        {
+          "name": "Deputy Public Works Director (0.25 FTE)",
+          "subReports": [
+            "Management Analyst (0.25 FTE)",
+            "Office Coordinator (0.25 FTE)"
+          ]
+        },
+        {
+          "name": "Water Division Manager",
+          "subReports": [
+            "Water Technician (5.00 FTE)",
+            "Public Works Helper (0.25 FTE)"
+          ]
+        }
+      ]
+    }
   },
   {
     "slug": "sewer-operating",
     "name": "Sewer Operating",
+    "fy25Highlights": [
+      "Completed routine maintenance cleaning of 25% of the sewer system.",
+      "Conducted CCTV inspections of 12.5% of the sewer system.",
+      "Repaired sewer lines at multiple locations throughout the City.",
+      "Replaced 1,200 feet of sewer line on Martinazzi Avenue (led by the engineering team).",
+      "Completed strategic planning for the sewer relining program.",
+      "Worked on renegotiation of the intergovernmental agreement with Clean Water Services."
+    ],
     "fy27Objectives": [
       "Meet or exceed Clean Water Service (CWS) and Environmental Protection Agency (EPA) performance standards by cleaning over 25% and video-inspecting 12.5% of the Sanitary Sewer system.",
       "Clean, inspect, and repair the sanitary sewer system as needed to provide dependable service and to prevent harmful environmental impacts such as sanitary sewer overflows.",
@@ -4205,11 +4577,38 @@
           }
         ]
       }
-    ]
+    ],
+    "orgChart": {
+      "head": "Public Works Director (0.25 FTE)",
+      "reports": [
+        {
+          "name": "Deputy Public Works Director (0.25 FTE)",
+          "subReports": [
+            "Management Analyst (0.25 FTE)",
+            "Office Coordinator (0.25 FTE)"
+          ]
+        },
+        {
+          "name": "Storm / Sewer Manager (0.50 FTE)",
+          "subReports": [
+            "Storm / Sewer Technician (2.00 FTE)",
+            "Public Works Helper (0.25 FTE)"
+          ]
+        }
+      ]
+    }
   },
   {
     "slug": "stormwater-operating",
     "name": "Stormwater Operating",
+    "fy25Highlights": [
+      "Completed all routine maintenance for the stormwater system and the regional storm water debris dewatering facility.",
+      "Repaired storm pipe deficiencies identified by the CCTV inspection program.",
+      "Performed multiple rehabilitation and replanting projects in water quality facilities to address deferred maintenance.",
+      "Maintained pond levelers in partnership with a beaver specialist and the Wetlands Conservancy.",
+      "Established a formal beaver management plan and finalized an agreement with the Wetlands Conservancy.",
+      "Continued supporting the Backyard Habitat Certification Program administered by Columbia Land Trust and Bird Alliance of Oregon."
+    ],
     "fy27Objectives": [
       "Meet or exceed Clean Water Service (CWS) and Environmental Protection Agency (EPA) performance standards by cleaning over 16.66% and video-inspecting 12.5% of the stormwater system.",
       "Continue to sweep City streets monthly to reduce pollutants entering local rivers and streams.",
@@ -4552,11 +4951,37 @@
           }
         ]
       }
-    ]
+    ],
+    "orgChart": {
+      "head": "Public Works Director (0.25 FTE)",
+      "reports": [
+        {
+          "name": "Deputy Public Works Director (0.25 FTE)",
+          "subReports": [
+            "Management Analyst (0.25 FTE)",
+            "Office Coordinator (0.25 FTE)"
+          ]
+        },
+        {
+          "name": "Storm / Sewer Manager (0.50 FTE)",
+          "subReports": [
+            "Storm / Sewer Technician (2.00 FTE)",
+            "Public Works Helper (0.25 FTE)"
+          ]
+        }
+      ]
+    }
   },
   {
     "slug": "road-operating",
     "name": "Road Operating",
+    "fy25Highlights": [
+      "Completed routine inspections and maintenance across the City's 82 center miles of streets and 55 traffic signals.",
+      "Utilized the Street Saver asset management program to inform roadway maintenance decisions.",
+      "Designed and installed a new de-icer tank for winter weather operations.",
+      "Increased community education, engagement, and outreach.",
+      "Stood up a new standalone Streets Division (manager plus 2.5 FTEs) following the mid-year Street/Sewer/Storm restructure."
+    ],
     "fy27Objectives": [
       "Install, repair, and/or replace striping and pavement markings as needed to ensure visibility and safety for pedestrians, cyclists, and motorists.",
       "Clean and repair or replace traffic control signage such as street and road symbol signs to comply with the Manual on Uniform Traffic Control Devices (MUTCD) and provide clear and distinguishable guidance to the traveling public.",
@@ -4925,6 +5350,25 @@
           }
         ]
       }
-    ]
+    ],
+    "orgChart": {
+      "head": "Public Works Director (0.25 FTE)",
+      "reports": [
+        {
+          "name": "Deputy Public Works Director (0.25 FTE)",
+          "subReports": [
+            "Management Analyst (0.25 FTE)",
+            "Office Coordinator (0.25 FTE)"
+          ]
+        },
+        {
+          "name": "Street Division Manager",
+          "subReports": [
+            "Street Technician (2.00 FTE)",
+            "Public Works Helper (0.50 FTE)"
+          ]
+        }
+      ]
+    }
   }
 ]
